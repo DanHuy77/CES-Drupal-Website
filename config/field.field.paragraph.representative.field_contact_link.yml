@@ -1,0 +1,23 @@
+uuid: 6806317d-e2a9-4e68-bd03-ff8a93facdd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_link
+    - paragraphs.paragraphs_type.representative
+  module:
+    - link
+id: paragraph.representative.field_contact_link
+field_name: field_contact_link
+entity_type: paragraph
+bundle: representative
+label: 'Contact Link'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

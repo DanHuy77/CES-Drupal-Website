@@ -1,0 +1,66 @@
+uuid: 39482d9d-f669-41b5-950c-3d019a6e3266
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_offer
+    - field.field.block_content.mkt_offer.field_body
+    - field.field.block_content.mkt_offer.field_button_block_text
+    - field.field.block_content.mkt_offer.field_image_content
+    - field.field.block_content.mkt_offer.field_link
+    - field.field.block_content.mkt_offer.field_title_plain
+  module:
+    - link
+    - text
+id: block_content.mkt_offer.default
+targetEntityType: block_content
+bundle: mkt_offer
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_button_block_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title_plain:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,7 @@
+block.settings.job_type:
+  type: block_settings
+  label: 'Job type block settings'
+  mapping:
+    job_type:
+      type: string
+      label: 'Job Type'

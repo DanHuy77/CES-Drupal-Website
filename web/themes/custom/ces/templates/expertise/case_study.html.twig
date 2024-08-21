@@ -1,0 +1,17 @@
+<div class="expertise-case-study">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-12 g-0">
+        {% if title %}
+          <h3>{{title}}</h3>
+        {% endif %}
+
+        <div class="expertise-case-study__content">
+          <div class="expertise-case-study__items">
+            {% include '@ces/templates/expertise/content.html.twig' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

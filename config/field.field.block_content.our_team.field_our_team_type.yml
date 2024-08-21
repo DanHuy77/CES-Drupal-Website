@@ -1,0 +1,23 @@
+uuid: 58ccd761-0f86-4fce-b9b8-92039a0d1008
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.our_team
+    - field.storage.block_content.field_our_team_type
+  module:
+    - options
+id: block_content.our_team.field_our_team_type
+field_name: field_our_team_type
+entity_type: block_content
+bundle: our_team
+label: 'Our Team Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: executive
+default_value_callback: ''
+settings: {  }
+field_type: list_string

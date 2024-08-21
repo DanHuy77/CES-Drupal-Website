@@ -1,0 +1,10 @@
+uuid: 6a600404-8dc0-4ad9-87cb-8d8c78a2a744
+langcode: en
+status: true
+dependencies: {  }
+id: company_contact
+label: 'Company Contact'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

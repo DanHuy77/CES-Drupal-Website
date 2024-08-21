@@ -1,0 +1,23 @@
+uuid: ae2a4421-f558-4844-a7a2-4aaa1d382f48
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.mkt_video_hero.field_link
+field_name: field_link
+entity_type: block_content
+bundle: mkt_video_hero
+label: 'Button Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

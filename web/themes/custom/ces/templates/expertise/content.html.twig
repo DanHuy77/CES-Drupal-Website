@@ -1,0 +1,18 @@
+{% for item in content.field_expertises['#items']%}
+  {% set expertise = item.entity %}
+  {% if 12 % content.field_expertises['#items']|length == 0 %}
+    {% set item_size = 12 / content.field_expertises['#items']|length %}
+  {% else %}
+    {% set item_size = 12 % content.field_expertises['#items']|length %}
+  {% endif %}
+  {% set name = expertise.title.0.value %}
+  {% set icon_url = expertise.field_icon.0.entity|file_url %}
+  {% set redirect_url = expertise.field_redirect_url.0.url %}
+  {% if loop.index % 2 != 0 %}
+    {% set background_color = '#f5f5f5' %}
+  {% else %}
+    {% set background_color = '#fafafa' %}
+  {% endif %}
+
+  {% include '@ces/templates/expertise/content-' ~ layout ~ '.html.twig' %}
+{% endfor %}

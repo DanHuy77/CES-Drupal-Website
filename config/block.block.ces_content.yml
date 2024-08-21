@@ -1,0 +1,22 @@
+uuid: 854cf823-c3db-4f9e-9540-dfade6ad575d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ces
+_core:
+  default_config_hash: a0Yyx1GeyKarZ4T_yXQBR_ZFKnXiFLtxAb6gWLd8nr0
+id: ces_content
+theme: ces
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

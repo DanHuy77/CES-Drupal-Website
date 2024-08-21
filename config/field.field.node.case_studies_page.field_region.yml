@@ -1,0 +1,29 @@
+uuid: 355659f1-1d48-4433-9aed-993fb112ccb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_region
+    - node.type.case_studies_page
+    - taxonomy.vocabulary.region
+id: node.case_studies_page.field_region
+field_name: field_region
+entity_type: node
+bundle: case_studies_page
+label: Region
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      region: region
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

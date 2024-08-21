@@ -1,0 +1,40 @@
+uuid: 2e736e7f-91c8-44d1-ace3-c8e4cb389e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.our_team
+    - field.field.block_content.our_team.field_our_team_type
+    - field.field.block_content.our_team.field_team_member
+    - field.field.block_content.our_team.field_title
+  module:
+    - options
+    - text
+id: block_content.our_team.default
+targetEntityType: block_content
+bundle: our_team
+mode: default
+content:
+  field_our_team_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_team_member:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

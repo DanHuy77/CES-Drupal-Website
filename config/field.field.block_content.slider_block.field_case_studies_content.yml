@@ -1,0 +1,25 @@
+uuid: 3de85588-f22f-4939-82ec-3a9935cce79f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.storage.block_content.field_case_studies_content
+id: block_content.slider_block.field_case_studies_content
+field_name: field_case_studies_content
+entity_type: block_content
+bundle: slider_block
+label: 'Case Studies Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: case_study_entity_referend
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

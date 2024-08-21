@@ -1,0 +1,47 @@
+uuid: 7943de76-1d7a-4728-b737-9a2a9f5e830c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study_company_information
+    - field.field.block_content.case_study_company_information.body
+    - field.field.block_content.case_study_company_information.field_case_study_page
+  module:
+    - text
+id: block_content.case_study_company_information.default
+targetEntityType: block_content
+bundle: case_study_company_information
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_case_study_page:
+    type: options_buttons
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

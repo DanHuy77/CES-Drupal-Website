@@ -1,0 +1,15 @@
+uuid: 67a39977-cb1a-4875-8f6d-d7b6f8c95d07
+langcode: en
+status: true
+dependencies: {  }
+name: reviewer_avatar
+label: 'Reviewer Avatar'
+effects:
+  37d94455-231f-4e1a-839d-dddc1254fe23:
+    uuid: 37d94455-231f-4e1a-839d-dddc1254fe23
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 57
+      height: 57
+      anchor: center-center

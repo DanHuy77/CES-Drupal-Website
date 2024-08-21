@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ces_entity
+id: ces_entity_internship_save_action
+label: 'Save internships'
+type: ces_entity_internship
+plugin: entity:save_action:ces_entity_internship
+configuration: {  }

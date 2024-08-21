@@ -1,0 +1,71 @@
+#drupal-off-canvas-wrapper {
+  .inline-block-create-button {
+    &::before {
+      transform: translateY(50%);
+    }
+  }
+
+  .paragraphs-actions {
+    input {
+      &.paragraphs-icon-button {
+        width: 275px;
+      }
+    }
+
+    .paragraphs-dropdown {
+      width: 275px;
+    }
+  }
+
+  .paragraphs-subform {
+    input {
+      &.form-text {
+        width: 275px;
+      }
+    }
+  }
+
+  .ck-editor {
+    width: 275px;
+  }
+
+  .js-filter-wrapper {
+    display: none;
+  }
+
+  .tabledrag-toggle-weight-wrapper {
+    button {
+      cursor: pointer;
+    }
+  }
+
+  div[class^='field--type-entity-reference'] .field-multiple-table {
+    td {
+      &.tabledrag-cell {
+        display: table-cell;
+      }
+
+      & > .form-type--entity-autocomplete:only-child,
+      & > .form-submit:only-child,
+      &.delta-order .form-type--select {
+        margin: 0;
+      }
+    }
+  }
+
+  input[type='text'].form-autocomplete {
+    padding-right: 35px;
+  }
+
+  .layout-builder-configure-block {
+    .field--widget-media-library-widget {
+      .js-media-library-widget {
+        .fieldset__wrapper {
+          .js-hide {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

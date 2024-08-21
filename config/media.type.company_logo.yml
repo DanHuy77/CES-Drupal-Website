@@ -1,0 +1,13 @@
+uuid: 731c5c1e-d5fe-4b70-a464-e10f0cc8f9c2
+langcode: en
+status: true
+dependencies: {  }
+id: company_logo
+label: 'Company Logo'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

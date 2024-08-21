@@ -1,0 +1,26 @@
+uuid: 8a20b3bc-9b6c-4cdf-8f8a-34b3a81b4768
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+    - field.storage.block_content.field_side_text
+    - filter.format.basic_html
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.mkt_video_hero.field_side_text
+field_name: field_side_text
+entity_type: block_content
+bundle: mkt_video_hero
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - restricted_html
+field_type: text_long

@@ -1,0 +1,17 @@
+uuid: 993373e3-3b9c-4e70-9faa-ef8dc4366730
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate_aws_s3
+id: backup_to_s3
+label: 'Backup To S3'
+type: awss3
+config:
+  name: 'Backup To S3'
+  s3_endpoint: ''
+  s3_access_key_name: s3_access_key
+  s3_secret_key_name: s3_secret_key
+  s3_bucket: ces-drupal-website
+  s3_folder_prefix: backups
+  s3_region: us-west-1

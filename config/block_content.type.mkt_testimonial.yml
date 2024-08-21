@@ -1,0 +1,8 @@
+uuid: 1a12bf6e-4361-4ea3-9b2a-fb21da8071fe
+langcode: en
+status: true
+dependencies: {  }
+id: mkt_testimonial
+label: 'MKT - Testimonial'
+revision: 0
+description: ''

@@ -1,0 +1,24 @@
+uuid: 1e6759ea-7b8b-4884-a07e-aac3bb77b37b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_cta
+    - field.storage.block_content.field_cta_title
+    - filter.format.full_html
+  module:
+    - text
+id: block_content.mkt_cta.field_cta_title
+field_name: field_cta_title
+entity_type: block_content
+bundle: mkt_cta
+label: 'CTA Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

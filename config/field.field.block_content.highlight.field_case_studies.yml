@@ -1,0 +1,29 @@
+uuid: 93bedb0e-f547-42d4-b75a-7a1ca24f7fe4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.highlight
+    - field.storage.block_content.field_case_studies
+    - node.type.case_study
+id: block_content.highlight.field_case_studies
+field_name: field_case_studies
+entity_type: block_content
+bundle: highlight
+label: 'Case Studies'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      case_study: case_study
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

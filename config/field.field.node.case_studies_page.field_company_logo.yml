@@ -1,0 +1,29 @@
+uuid: 0019e254-affb-4be1-ba14-dddaf5e192bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_logo
+    - media.type.company_logo
+    - node.type.case_studies_page
+id: node.case_studies_page.field_company_logo
+field_name: field_company_logo
+entity_type: node
+bundle: case_studies_page
+label: 'Company Logo'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      company_logo: company_logo
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: company_logo
+field_type: entity_reference

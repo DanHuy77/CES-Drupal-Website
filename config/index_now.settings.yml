@@ -1,0 +1,27 @@
+api_key: 7655f4de-bae6-4d98-b0e9-ff7f32dbe9ae
+default_engine: bing
+exclude_node_types:
+  article: article
+  case_studies_page: case_studies_page
+  our_team: our_team
+  page: page
+  partnership: partnership
+  what_we_do: what_we_do
+  case_study: 0
+  expertise: 0
+  team_member: 0
+  testimonial: 0
+exclude_node_events:
+  insert: 0
+  update: 0
+  delete: 0
+exclude_vocabularies:
+  company_size: 0
+  industry: 0
+  region: 0
+  tags: 0
+  technology: 0
+exclude_taxonomy_events:
+  insert: 0
+  update: 0
+  delete: 0

@@ -1,0 +1,21 @@
+uuid: 69dae0b4-2a26-4c8e-9c08-b992a5f3d6f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_text
+    - field.storage.block_content.field_exclude_padding
+  module:
+    - options
+id: block_content.body_text.field_exclude_padding
+field_name: field_exclude_padding
+entity_type: block_content
+bundle: body_text
+label: 'Exclude Padding'
+description: '*For developers only* | Select options Top or Bottom to exclude the padding from current block | Only use this field when the Direction is "Vertical" and [Type is "Center" or Type is "Testimonial and Text"]'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

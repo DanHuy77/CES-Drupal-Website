@@ -1,0 +1,23 @@
+uuid: 69c3bddf-ef58-4552-aca8-57bfe407df31
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.testimonial
+    - field.storage.block_content.field_testimonial_layout
+  module:
+    - options
+id: block_content.testimonial.field_testimonial_layout
+field_name: field_testimonial_layout
+entity_type: block_content
+bundle: testimonial
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: classic_layout
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,68 @@
+uuid: ffb6ba67-2a9d-4dee-8708-f5a8ce4f6dfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.representative.field_area
+    - field.field.paragraph.representative.field_contact_link
+    - field.field.paragraph.representative.field_image
+    - field.field.paragraph.representative.field_image_hover
+    - field.field.paragraph.representative.field_title
+    - paragraphs.paragraphs_type.representative
+  module:
+    - link_attributes
+    - media_library
+id: paragraph.representative.default
+targetEntityType: paragraph
+bundle: representative
+mode: default
+content:
+  field_area:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_link:
+    type: link_attributes
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        id: false
+        name: false
+        target: true
+        rel: true
+        class: true
+        accesskey: false
+      widget_default_open: expandIfValuesSet
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_image_hover:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

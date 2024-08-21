@@ -1,0 +1,24 @@
+uuid: 26484268-9e4f-4a68-b071-ef260b91ba67
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.case_study.field_title
+field_name: field_title
+entity_type: block_content
+bundle: case_study
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

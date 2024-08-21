@@ -1,0 +1,62 @@
+uuid: 520e6157-9261-4747-bce1-30afb52afea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.homepage_hero
+    - field.field.block_content.homepage_hero.field_background_image
+    - field.field.block_content.homepage_hero.field_text_color_first
+    - field.field.block_content.homepage_hero.field_text_color_second
+    - field.field.block_content.homepage_hero.field_title_first_part
+    - field.field.block_content.homepage_hero.field_title_second_part
+  module:
+    - color_field
+id: block_content.homepage_hero.default
+targetEntityType: block_content
+bundle: homepage_hero
+mode: default
+content:
+  field_background_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_text_color_first:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text_color_second:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title_first_part:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title_second_part:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

@@ -1,0 +1,37 @@
+uuid: b45a7b0f-3c4a-444a-9854-5c50e13834fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_text
+    - field.storage.block_content.field_body_text
+    - paragraphs.paragraphs_type.basic
+  module:
+    - entity_reference_revisions
+id: block_content.body_text.field_body_text
+field_name: field_body_text
+entity_type: block_content
+bundle: body_text
+label: 'Body Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      basic: basic
+    negate: 0
+    target_bundles_drag_drop:
+      basic:
+        weight: 4
+        enabled: true
+      company_contact:
+        weight: 5
+        enabled: false
+      value:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

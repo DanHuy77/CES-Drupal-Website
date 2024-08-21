@@ -1,0 +1,24 @@
+uuid: cfccb6b8-d5dc-4fc7-b7a5-e769e0eb68d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_cta
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.mkt_cta.body
+field_name: body
+entity_type: block_content
+bundle: mkt_cta
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

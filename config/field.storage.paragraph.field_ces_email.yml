@@ -1,0 +1,18 @@
+uuid: 08f58df4-f5b5-4e3c-b7b8-924e770b5a8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_ces_email
+field_name: field_ces_email
+entity_type: paragraph
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

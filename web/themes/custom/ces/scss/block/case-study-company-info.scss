@@ -1,0 +1,167 @@
+.company-info {
+  &__container {
+    padding: 64px 0;
+    color: $dark-jungle-green;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    padding-bottom: 40px;
+  }
+
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    width: 100%;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__term-label {
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+    color: $gray-light;
+    font-family: $font-svn-circular;
+  }
+
+  &__term-name {
+    font-family: $font-svn-circular;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    a {
+      color: $dark-jungle-green;
+
+      &:hover {
+        text-decoration: underline;
+        color: $primary;
+
+        span {
+          &::after {
+            text-decoration: none;
+            color: $dark-jungle-green;
+          }
+        }
+      }
+
+      &:focus {
+        text-decoration: underline;
+        color: $primary;
+
+        span {
+          &::after {
+            text-decoration: none;
+            color: $dark-jungle-green;
+          }
+        }
+      }
+
+      span {
+        &::after {
+          content: ', ';
+        }
+      }
+
+      &:last-child {
+        span {
+          &::after {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    width: calc(100% * 2 / 3);
+  }
+
+  &__item {
+    &.services {
+      .company-info__term-name {
+        display: flex;
+        gap: 5px;
+        flex-flow: row wrap;
+      }
+    }
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    &__outer {
+      padding: 0 $padding-tablet;
+    }
+
+    &__container {
+      padding: 64px 0;
+
+      &.container {
+        margin: 0;
+      }
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    &__outer {
+      padding: 0 $padding-tablet;
+    }
+
+    &__container {
+      padding: 64px 0;
+
+      &.container {
+        max-width: 100%;
+      }
+    }
+
+    &__logo {
+      padding-bottom: 32px;
+    }
+
+    &__term-name {
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__outer {
+      padding: 0 $padding-mobile;
+    }
+
+    &__container {
+      padding: $padding-tablet 0;
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+
+    &__row {
+      column-gap: 10px;
+    }
+
+    &__item {
+      padding-bottom: 24px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

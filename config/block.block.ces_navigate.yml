@@ -1,0 +1,25 @@
+uuid: 64d10c97-e7aa-4ac4-a17f-602a1ade7729
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:060ac694-8cc8-484c-80ed-1ec2f6bf795e'
+  module:
+    - block_content
+  theme:
+    - ces
+id: ces_navigate
+theme: ces
+region: footer_second
+weight: 0
+provider: null
+plugin: 'block_content:060ac694-8cc8-484c-80ed-1ec2f6bf795e'
+settings:
+  id: 'block_content:060ac694-8cc8-484c-80ed-1ec2f6bf795e'
+  label: Navigate
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

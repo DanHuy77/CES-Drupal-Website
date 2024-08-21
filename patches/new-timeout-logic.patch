@@ -1,0 +1,13 @@
+diff --git a/modules/content_lock_timeout/content_lock_timeout.module b/modules/content_lock_timeout/content_lock_timeout.module
+index 86bc0a1..97e5522 100644
+--- a/modules/content_lock_timeout/content_lock_timeout.module
++++ b/modules/content_lock_timeout/content_lock_timeout.module
+@@ -80,7 +80,7 @@ function content_lock_timeout_entity_prepare_form(EntityInterface $entity, $oper
+       // because there's already a lock on this node.
+       // The user must have this permission to be able to break the lock.
+       // A valid user is needed for locking.
+-      && $user->hasPermission('break content lock')
++      && in_array('content_editor', $user->getRoles())
+       && ($user->id() > 0)
+     ) {
+       $lock_service->release($entity->id(), $entity->language()->getId(), $operation, $lock->uid, $entity->getEntityTypeId());

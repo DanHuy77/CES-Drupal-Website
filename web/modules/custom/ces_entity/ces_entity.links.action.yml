@@ -1,0 +1,5 @@
+ces_entity_internship.add_form:
+  title: 'Add internship'
+  route_name: entity.ces_entity_internship.add_form
+  appears_on:
+    - entity.ces_entity_internship.collection

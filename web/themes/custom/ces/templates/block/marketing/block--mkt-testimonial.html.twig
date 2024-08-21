@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% set title = content.field_title['#items'].0.value %}
+{% set body = content.body['#items'].0.value %}
+{% set testimonial = content.field_mkt_testimonial['#items'] %}
+
+<div{{attributes}}>
+  {{ title_suffix }}
+  {% block content %}
+    <div class="mkt-testimonial">
+      {% if title is not empty %}
+        <div class="mkt-testimonial__title">
+          {{ title }}
+        </div>
+      {% endif %}
+      {% if body is not empty %}
+        <div class="mkt-testimonial__description">
+          {{ body|striptags }}
+        </div>
+      {% endif %}
+      <div class="mkt-testimonial__content">
+        {% for item in testimonial %}
+          {% set node = item.entity %}
+          {% set name = node.field_reviewer_name.0.value %}
+          {% set position = node.field_reviewer_position.0.value %}
+          {% set avatar = node.field_reviewer_avatar.entity|file_url %}
+          {% set body = node.field_testimonial_body.0.value %}
+          {% set icon = node.field_company_icon.entity|file_url %}
+          <div class="mkt-testimonial__content__item">
+            <div class="mkt-testimonial__content__item__wrapper">
+              <div class="mkt-testimonial__content__item__wrapper__info">
+                {% if avatar is not empty %}
+                  <div class="avatar">
+                    <img alt="avatar" src="{{ avatar }}">
+                  </div>
+                {% endif %}
+                <div class="detail">
+                  {% if name is not empty %}
+                    <div class="name">
+                      {{ name }}
+                    </div>
+                  {% endif %}
+                  {% if position is not empty %}
+                    <div class="position">
+                      {{ position }}
+                    </div>
+                  {% endif %}
+                </div>
+                {% if icon is not empty %}
+                  <div class="icon">
+                    <img alt="icon" src="{{ icon }}">
+                  </div>
+                {% endif %}
+              </div>
+              <div class="rating">
+                {% for i in 0..4 %}
+                  <img alt="rating" src="/themes/custom/ces/assets/icons/star-rating.svg">
+                {% endfor %}
+              </div>
+              {% if body is not empty %}
+                <div class="body">
+                  {{ body|striptags }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endblock %}
+</div>

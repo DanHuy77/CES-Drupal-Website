@@ -1,0 +1,8 @@
+uuid: 94bef9af-d3df-488b-b9d3-84018f59661f
+langcode: en
+status: true
+dependencies: {  }
+id: mkt_offer
+label: 'MKT - Offer'
+revision: 0
+description: ''

@@ -1,0 +1,47 @@
+{% if background is not empty %}
+  <div class="container block-testimonial">
+    <div class="testimonial" style="background-image:url({{ background }});">
+      <div class="wrapper">
+        <div class="icon">
+          <img src="/themes/custom/ces/assets/icons/quote-right1.svg" alt="quote-right" loading="lazy">
+        </div>
+        <div class="inner">
+          <p>“{{body|striptags}}”</p>
+          <div class="detail">
+            {% if avatar is not empty %}
+              <div class="image-icon">
+                <img src="{{avatar}}" alt="avatar" loading="lazy">
+              </div>
+            {% endif %}
+            <div class="right-wrapper">
+              <div class="name">
+                {{name}}
+              </div>
+              <div class="position">
+                {{position}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="testimonial-fullwidth">
+    {% if avatar is not empty %}
+      <div class="avatar-wrapper">
+        <img src="{{avatar}}" alt="avatar" loading="lazy">
+      </div>
+    {% endif %}
+    <div class="body-wrapper">
+      <div class="name {{ avatar is empty ? 'no-avatar' : '' }}">{{name|upper}}</div>
+      <div class="position">{{position|upper}}</div>
+      <div class="body">
+        <p>“{{body|striptags}}”</p>
+      </div>
+      <div class="icon">
+        <img src="/themes/custom/ces/assets/icons/quote-right1.svg" alt="quote-right" loading="lazy">
+      </div>
+    </div>
+  </div>
+{% endif %}

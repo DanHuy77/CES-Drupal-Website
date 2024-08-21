@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: dVzMnHxYVRexoQlppz8l-Awt5EQWNuZ-bQyhT1e68rE
+spam_words:
+  - "SEO\r"
+  - "Digital Marketing\r"
+  - "Click Here\r"
+  - "unsubscribe\r"
+  - "FREE\r"
+  - trial
+spam_text_message: 'Unable to submit form. Please contact the site administrator, if the problem persists.'
+spam_field_name: 'message, emails, name'

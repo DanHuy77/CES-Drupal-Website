@@ -1,0 +1,6 @@
+name: 'Download S3 File'
+type: module
+description: 'A custom module to download files from S3 using Drush commands.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+

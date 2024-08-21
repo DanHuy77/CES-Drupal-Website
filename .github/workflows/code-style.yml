@@ -1,0 +1,50 @@
+name: Code Style
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2.18
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20.14.0
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Code Style
+        run: |
+          source web/scripts/codestyle/do.sh
+
+          # Iterate.
+          for FILEPATH in "${FILEPATHS[@]}"
+          do
+            echo "Processing ${FILEPATH}"
+            npm run prettier -- ${FILEPATH}
+            npm run stylelint -- ${FILEPATH}
+            npm run eslint -- ${FILEPATH}
+            npm run phpcs -- ${FILEPATH}
+          done

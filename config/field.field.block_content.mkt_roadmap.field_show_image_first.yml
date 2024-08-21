@@ -1,0 +1,21 @@
+uuid: 27ea1a97-55d3-4704-937f-e17d643c2676
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_roadmap
+    - field.storage.block_content.field_show_image_first
+id: block_content.mkt_roadmap.field_show_image_first
+field_name: field_show_image_first
+entity_type: block_content
+bundle: mkt_roadmap
+label: 'Show Image First'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

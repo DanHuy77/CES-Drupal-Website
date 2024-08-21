@@ -1,0 +1,29 @@
+uuid: 40a2ac84-b7bd-4dd9-8742-14c2b2e4f62c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slider_avatar
+    - media.type.team_member
+    - node.type.team_member
+id: node.team_member.field_slider_avatar
+field_name: field_slider_avatar
+entity_type: node
+bundle: team_member
+label: 'Slider Avatar'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      team_member: team_member
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

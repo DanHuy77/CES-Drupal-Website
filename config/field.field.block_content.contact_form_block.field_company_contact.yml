@@ -1,0 +1,31 @@
+uuid: 8759be65-4b1e-45af-9a6c-0d002067e612
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.storage.block_content.field_company_contact
+    - paragraphs.paragraphs_type.company_contact
+  module:
+    - entity_reference_revisions
+id: block_content.contact_form_block.field_company_contact
+field_name: field_company_contact
+entity_type: block_content
+bundle: contact_form_block
+label: 'Company Contact'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      company_contact: company_contact
+    negate: 0
+    target_bundles_drag_drop:
+      company_contact:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

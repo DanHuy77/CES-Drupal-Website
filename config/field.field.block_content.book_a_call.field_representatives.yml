@@ -1,0 +1,43 @@
+uuid: 0e2bc059-829b-43e0-ae66-afe828499be3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.book_a_call
+    - field.storage.block_content.field_representatives
+    - paragraphs.paragraphs_type.representative
+  module:
+    - entity_reference_revisions
+id: block_content.book_a_call.field_representatives
+field_name: field_representatives
+entity_type: block_content
+bundle: book_a_call
+label: Representatives
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      representative: representative
+    negate: 0
+    target_bundles_drag_drop:
+      basic:
+        weight: 6
+        enabled: false
+      company_contact:
+        weight: 7
+        enabled: false
+      counter:
+        weight: 8
+        enabled: false
+      representative:
+        weight: 9
+        enabled: true
+      value:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

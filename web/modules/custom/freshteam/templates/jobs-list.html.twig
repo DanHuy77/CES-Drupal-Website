@@ -1,0 +1,52 @@
+<div class="container career-wrapper" id="job-openings">
+  <div class="row">
+    <div class="right-content col-xl-6 col-12 col-md-12 col-lg-12 g-0">
+      <h2>
+        {{ data.contentTitle }}
+      </h2>
+      <p>
+        {{ data.contentSubTitle }}
+      </p>
+    </div>
+    <div class="career-job-list col-xl-6 col-12 col-md-12 col-lg-12 g-0">
+      {% if data.jobsList is not empty %}
+        {% for job in data.jobsList %}
+          {% if not job.deleted and ((data.jobType == 'full_time' and job.type != 'intern') or (data.jobType == 'intern' and job.type == 'intern')) %}
+            <div class="career-job-item">
+              <p class="career-job-title">
+                {{ job.title }}
+              </p>
+              <a class="career-job-view-detail" href="{{ job.applicant_apply_link }}" target="_blank" rel="noopener">
+                <span>
+                  View details
+                </span>
+                <i style="color: #f15926;" class="fa fa-angle-right ml-3"></i>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <div class="notification">
+          {% if data.jobType == 'full_time' %}
+            {% set text = 'jobs'%}
+          {% else %}
+            {% set text = 'internships' %}
+          {% endif %}
+          <h4>Unfortunately, we don't have any
+            {{ text }}
+            program open now. Please insert your email below if you want to be notified.</h4>
+        </div>
+
+        <form class='freshteam_register_internship webform-submission-form' data-drupal-selector="freshteam-register-internship" id="freshteam-register-internship" method="post" accept-charset="UTF-8">
+          {{ data.form.form_build_id }}
+          {{ data.form.form_token }}
+          {{ data.form.form_id }}
+          {{ data.form.email }}
+          {{ data.form.message }}
+          {{ data.form.actions }}
+        </form>
+
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+uuid: 9370dbed-a9e9-4f7d-9c36-0416caf0a9d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.expertises
+    - field.field.block_content.expertises.field_button_block_link
+    - field.field.block_content.expertises.field_button_block_text
+    - field.field.block_content.expertises.field_expertises
+    - field.field.block_content.expertises.field_layout
+    - field.field.block_content.expertises.field_title
+  module:
+    - link
+    - options
+    - text
+id: block_content.expertises.default
+targetEntityType: block_content
+bundle: expertises
+mode: default
+content:
+  field_button_block_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_button_block_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_expertises:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_layout:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

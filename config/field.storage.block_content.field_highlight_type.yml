@@ -1,0 +1,27 @@
+uuid: ef445b39-e63f-4e8d-956e-d81099bbada7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_highlight_type
+field_name: field_highlight_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: align_center
+      label: 'Align Center'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

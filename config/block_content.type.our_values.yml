@@ -1,0 +1,8 @@
+uuid: a1cb65a6-2575-4c7f-b052-d980e5007218
+langcode: en
+status: true
+dependencies: {  }
+id: our_values
+label: 'Our Values'
+revision: 0
+description: ''

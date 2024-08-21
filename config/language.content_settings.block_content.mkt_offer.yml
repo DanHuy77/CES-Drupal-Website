@@ -1,0 +1,11 @@
+uuid: e5468de2-e4a3-4dc3-94d2-b8d058f58ca6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_offer
+id: block_content.mkt_offer
+target_entity_type_id: block_content
+target_bundle: mkt_offer
+default_langcode: site_default
+language_alterable: false

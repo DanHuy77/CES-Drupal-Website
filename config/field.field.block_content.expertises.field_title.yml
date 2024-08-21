@@ -1,0 +1,24 @@
+uuid: cfd69764-be91-4115-8735-1c05778ec92b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.expertises
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.expertises.field_title
+field_name: field_title
+entity_type: block_content
+bundle: expertises
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

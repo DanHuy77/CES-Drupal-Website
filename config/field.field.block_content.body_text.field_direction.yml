@@ -1,0 +1,23 @@
+uuid: 34dc5c88-0d1d-491a-b885-b9a3ada1773d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_text
+    - field.storage.block_content.field_direction
+  module:
+    - options
+id: block_content.body_text.field_direction
+field_name: field_direction
+entity_type: block_content
+bundle: body_text
+label: Direction
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: vertical
+default_value_callback: ''
+settings: {  }
+field_type: list_string

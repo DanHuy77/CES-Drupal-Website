@@ -1,0 +1,19 @@
+uuid: b03773cc-c881-4365-9370-74966e317895
+langcode: en
+status: true
+dependencies: {  }
+id: others
+label: Others
+group: others
+info:
+  value: ''
+  format: basic_html
+consentRequired: true
+purpose: ''
+placeholderMainText: Others
+placeholderAcceptText: Others
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: ''

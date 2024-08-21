@@ -1,0 +1,49 @@
+uuid: e9f06a9d-668b-4bd1-a9b7-26b168940bdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_partners
+    - field.storage.block_content.field_partners
+    - paragraphs.paragraphs_type.partners
+  module:
+    - entity_reference_revisions
+id: block_content.mkt_partners.field_partners
+field_name: field_partners
+entity_type: block_content
+bundle: mkt_partners
+label: Partners
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      partners: partners
+    negate: 0
+    target_bundles_drag_drop:
+      basic:
+        weight: 8
+        enabled: false
+      company_contact:
+        weight: 9
+        enabled: false
+      counter:
+        weight: 10
+        enabled: false
+      partners:
+        weight: 11
+        enabled: true
+      representative:
+        weight: 12
+        enabled: false
+      roadmap:
+        weight: 13
+        enabled: false
+      value:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

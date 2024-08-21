@@ -1,0 +1,232 @@
+.rectangle-bottom {
+  .marketing-why {
+    margin-top: 120px;
+    position: relative;
+
+    .rectangle-background {
+      background-image: url('../assets/icons/rectangle-bottom.svg');
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      background-size: cover;
+      transform: translateY(calc(-100% - 62.4px));
+      aspect-ratio: 1511 / 511;
+    }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .rectangle-bottom {
+    .marketing-why {
+      margin-top: 100px;
+
+      .rectangle-background {
+        transform: translateY(calc(-100% - 46.4px));
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .rectangle-bottom {
+    .marketing-why {
+      .rectangle-background {
+        transform: translateY(calc(-100% - 30.4px));
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .rectangle-bottom {
+    .marketing-why {
+      margin-top: 80px;
+
+      .rectangle-background {
+        transform: translateY(calc(-100% - 30.4px));
+      }
+    }
+  }
+}
+
+.marketing-why {
+  display: flex;
+  justify-content: center;
+  padding: 64px 40px 20px;
+  background-color: #f2f2f2;
+
+  &-wrapper {
+    max-width: 840px;
+
+    .title {
+      display: flex;
+      justify-content: center;
+      font-family: $font-geometric-slabserif-medium;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 32px;
+    }
+
+    .body {
+      font-family: $font-svn-circular;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+
+      h5 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      p {
+        position: relative;
+        padding: 16px 40px 16px 16px;
+        transition: box-shadow 0.3s ease;
+        cursor: pointer;
+        margin-bottom: 0;
+
+        &::after {
+          content: '';
+          background-image: url('../assets/icons/focus-arrow.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 15px;
+          vertical-align: middle;
+          position: absolute;
+          transition: transform 0.6s ease-in-out;
+          top: 20px;
+          right: -4px;
+        }
+
+        &.expand::after {
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          box-shadow:
+            rgb(50 50 93 / 25%) 0 6px 12px -2px,
+            rgb(0 0 0 / 30%) 0 3px 7px -3px;
+          border-radius: 4px;
+        }
+      }
+
+      ul {
+        overflow: hidden;
+        padding-left: 50px;
+        transition: max-height 0.6s ease-in-out;
+        margin: 16px 0;
+        display: none;
+      }
+    }
+  }
+
+  &-cta {
+    &.ces-btn {
+      text-transform: none;
+      display: block;
+      font-size: 18px;
+      font-family: $font-svn-circular;
+      margin: 40px auto;
+      padding: 12px 16px;
+      line-height: 27px;
+      text-align: center;
+    }
+  }
+}
+
+// Mobile < 767 px.
+@include media-breakpoint-down(md) {
+  .marketing-why {
+    padding: 32px 16px 0;
+
+    &-wrapper {
+      .title {
+        font-size: 22.4px;
+        line-height: 25.9px;
+        margin-bottom: 24px;
+      }
+
+      .body {
+        font-size: 16px;
+        line-height: 21px;
+
+        h5 {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-cta {
+      &.ces-btn {
+        font-size: 16px;
+        line-height: 18px;
+        margin: 20px auto 32px;
+      }
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .marketing-why {
+    padding: 48px 48px 24px;
+
+    &-wrapper {
+      .title {
+        font-size: 22.4px;
+        line-height: 25.9px;
+      }
+
+      .body {
+        font-size: 16px;
+        line-height: 21px;
+
+        h5 {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-cta {
+      &.ces-btn {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .marketing-why {
+    padding: 48px 48px 24px;
+
+    &-wrapper {
+      .title {
+        font-size: 22.4px;
+        line-height: 25.9px;
+        margin-bottom: 24px;
+      }
+
+      .body {
+        font-size: 16px;
+        line-height: 21px;
+
+        h5 {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-cta {
+      &.ces-btn {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}

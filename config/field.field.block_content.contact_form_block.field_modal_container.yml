@@ -1,0 +1,23 @@
+uuid: cbe17ad4-e173-412a-9528-0a52705a7de0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.storage.block_content.field_modal_container
+id: block_content.contact_form_block.field_modal_container
+field_name: field_modal_container
+entity_type: block_content
+bundle: contact_form_block
+label: 'Modal Container'
+description: '*For Wizard Form Only* - Enable this if you want to place the wizard form inside a modal/popup/overlay'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

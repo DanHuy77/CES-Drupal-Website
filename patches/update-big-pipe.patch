@@ -1,0 +1,26 @@
+diff --git a/core/modules/big_pipe/big_pipe.module b/core/modules/big_pipe/big_pipe.module
+index fa0518ad3d..821f567b8b 100644
+--- a/core/modules/big_pipe/big_pipe.module
++++ b/core/modules/big_pipe/big_pipe.module
+@@ -69,7 +69,7 @@ function big_pipe_page_attachments(array &$page) {
+       $page['#attached']['html_head'][] = [
+         [
+           '#tag' => 'script',
+-          '#value' => 'document.cookie = "' . BigPipeStrategy::NOJS_COOKIE . '=1; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"',
++          '#value' => 'document.cookie = "' . BigPipeStrategy::NOJS_COOKIE . '=1; samesite; httponly; secure; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"',
+         ],
+         'big_pipe_detect_js',
+       ];
+diff --git a/core/modules/big_pipe/src/Controller/BigPipeController.php b/core/modules/big_pipe/src/Controller/BigPipeController.php
+index da95f6d9dc..74491b5f8c 100644
+--- a/core/modules/big_pipe/src/Controller/BigPipeController.php
++++ b/core/modules/big_pipe/src/Controller/BigPipeController.php
+@@ -52,7 +52,7 @@ public function setNoJsCookie(Request $request) {
+ 
+     $response = new LocalRedirectResponse($request->query->get('destination'));
+     // Set cookie without httpOnly, so that JavaScript can delete it.
+-    $response->headers->setCookie(new Cookie(BigPipeStrategy::NOJS_COOKIE, TRUE, 0, '/', NULL, FALSE, FALSE, FALSE, NULL));
++    $response->headers->setCookie(new Cookie(BigPipeStrategy::NOJS_COOKIE, TRUE, 0, '/', NULL, TRUE, TRUE, FALSE, 'strict'));
+     $response->addCacheableDependency((new CacheableMetadata())->addCacheContexts(['cookies:' . BigPipeStrategy::NOJS_COOKIE, 'session.exists']));
+     return $response;
+   }

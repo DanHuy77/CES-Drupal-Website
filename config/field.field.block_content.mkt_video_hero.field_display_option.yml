@@ -1,0 +1,23 @@
+uuid: c4068c47-8f9b-4217-b596-a78274399bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+    - field.storage.block_content.field_display_option
+  module:
+    - options
+id: block_content.mkt_video_hero.field_display_option
+field_name: field_display_option
+entity_type: block_content
+bundle: mkt_video_hero
+label: 'Display Option'
+description: 'The block will show image or video based on this selection.'
+required: true
+translatable: false
+default_value:
+  -
+    value: image
+default_value_callback: ''
+settings: {  }
+field_type: list_string

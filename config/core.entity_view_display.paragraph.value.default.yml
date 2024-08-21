@@ -1,0 +1,31 @@
+uuid: 4c220d25-b1ed-4f9d-abeb-effe82884a8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.value.field_icon
+    - field.field.paragraph.value.field_value_name
+    - paragraphs.paragraphs_type.value
+id: paragraph.value.default
+targetEntityType: paragraph
+bundle: value
+mode: default
+content:
+  field_icon:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_value_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

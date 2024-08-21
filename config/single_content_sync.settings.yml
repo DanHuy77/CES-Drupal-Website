@@ -1,0 +1,62 @@
+_core:
+  default_config_hash: F--1EKAki5zF_jdKTc4ZLmgN89WJ2SDrMOkwbqj06-Y
+allowed_entity_types:
+  block_content:
+    basic: true
+    body_text: true
+    book_a_call: true
+    case_study: true
+    case_study_company_information: true
+    case_study_text: true
+    contact_form_block: true
+    cookie_policy: true
+    expertises: true
+    hero: true
+    highlight: true
+    homepage_hero: true
+    image_content: true
+    key_insights: true
+    mkt_animated_image: true
+    mkt_cta: true
+    mkt_info: true
+    mkt_offer: true
+    mkt_partners: true
+    mkt_roadmap: true
+    mkt_testimonial: true
+    mkt_video_hero: true
+    mkt_why: true
+    our_team: true
+    our_values: true
+    slider_block: true
+    testimonial: true
+  media:
+    audio: true
+    company_logo: true
+    document: true
+    image: true
+    remote_video: true
+    reviewer_avatar: true
+    slider_image: true
+    team_member: true
+    video: true
+  menu_link_content:
+    menu_link_content: true
+  node:
+    article: true
+    case_studies_page: true
+    case_study: true
+    expertise: true
+    marketing: true
+    our_team: true
+    page: true
+    partnership: true
+    team_member: true
+    testimonial: true
+    what_we_do: true
+  taxonomy_term:
+    company_size: true
+    industry: true
+    region: true
+    tags: true
+    technology: true
+site_uuid_check: false

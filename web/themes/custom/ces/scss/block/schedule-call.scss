@@ -1,0 +1,291 @@
+.modal {
+  &__container {
+    .modal-content {
+      border-radius: 0;
+    }
+
+    h2 {
+      font-family: $font-geometric-slabserif-bold;
+      font-size: 64px;
+      line-height: 64px;
+      padding-bottom: 16px;
+    }
+
+    p {
+      font-family: $font-svn-circular;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    margin: auto;
+    text-align: center;
+    background-color: $darker-grey;
+    padding: 40px;
+    width: 100%;
+    color: $white;
+    border-radius: 0 0 25% 25%;
+
+    .case-studies__filters__more-btn {
+      top: 1px;
+      right: 3px;
+      border-radius: 4px;
+      border-radius: 50%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 16px 0;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.rep {
+  &__container {
+    display: flex;
+    flex-flow: wrap row;
+    padding: 32px 25px;
+  }
+
+  &__item {
+    flex: 1 0 30%;
+    text-align: center;
+    padding: 25px;
+    border-radius: 6px;
+    transition: box-shadow 0.25s ease-in-out;
+
+    h3 {
+      font-family: $font-geometric-slabserif-bold;
+      font-size: 24px;
+      line-height: 32px;
+      color: $dark-jungle-green;
+      word-break: break-word;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow:
+        rgb(50 50 93 / 25%) 0 6px 12px -2px,
+        rgb(0 0 0 / 30%) 0 3px 7px -3px;
+
+      .rep {
+        &__avatar {
+          &__bg-img {
+            opacity: 1;
+          }
+        }
+
+        &__btn {
+          &.ces-btn.load-more {
+            background-color: $primary;
+            color: $white;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &__region {
+    h3 {
+      text-decoration: underline;
+      text-decoration-color: $primary;
+    }
+  }
+
+  &__name {
+    padding: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__avatar {
+    position: relative;
+
+    &__bg-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    &__main-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__bg {
+    background-image: linear-gradient(to bottom, $white 33%, $primary 20%);
+    aspect-ratio: 313 / 333;
+  }
+
+  &__btn {
+    &.ces-btn.load-more {
+      width: 100%;
+      text-transform: none;
+      font-family: $font-svn-circular;
+      font-size: 16px;
+      padding: 13px 16px;
+      transition: all 0.25s ease-in-out;
+      margin-top: auto;
+      word-break: break-word;
+
+      &:hover {
+        transform: none;
+        background-color: transparent;
+        color: $primary;
+        border-color: $primary;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Ipad Pro.
+@include media-breakpoint-between(lg, xl) {
+  .modal {
+    &__footer {
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &__close {
+      width: 12px;
+    }
+  }
+
+  .rep {
+    &__item {
+      h3 {
+        font-size: 19.44px;
+      }
+    }
+
+    &__btn {
+      &.ces-btn.load-more {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Ipad Air / Mini
+@include media-breakpoint-between(md, lg) {
+  .modal {
+    &__container {
+      p {
+        font-size: 20px;
+      }
+    }
+
+    &__close {
+      width: 13px;
+    }
+
+    &__footer {
+      p {
+        font-size: 16px;
+        padding: 0 80px;
+      }
+    }
+  }
+
+  .rep {
+    &__container {
+      row-gap: 64px;
+      padding: 64px 48px;
+    }
+
+    &__item {
+      flex: 0 0 100%;
+      box-shadow:
+        rgb(50 50 93 / 25%) 0 6px 12px -2px,
+        rgb(0 0 0 / 30%) 0 3px 7px -3px;
+
+      h3 {
+        font-size: 28px;
+      }
+    }
+
+    &__btn {
+      &.ces-btn.load-more {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// Mobile
+@include media-breakpoint-down(md) {
+  .modal {
+    &__container {
+      p {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 48px;
+        line-height: 48px;
+      }
+    }
+
+    &__close {
+      width: 13px;
+    }
+
+    &__footer {
+      p {
+        padding: 0 40px;
+      }
+    }
+  }
+
+  .rep {
+    &__container {
+      row-gap: 50px;
+      padding: 50px 25px;
+    }
+
+    &__item {
+      flex: 0 0 100%;
+      box-shadow:
+        rgb(50 50 93 / 25%) 0 6px 12px -2px,
+        rgb(0 0 0 / 30%) 0 3px 7px -3px;
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
+}

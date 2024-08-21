@@ -1,0 +1,38 @@
+uuid: bdebcce1-2b6d-42cd-836c-e29364b65e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cookie_policy
+    - field.field.block_content.cookie_policy.field_body
+  module:
+    - text
+id: block_content.cookie_policy.default
+targetEntityType: block_content
+bundle: cookie_policy
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

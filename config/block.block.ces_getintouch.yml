@@ -1,0 +1,25 @@
+uuid: 3a3dedb3-a2f9-4040-8a12-31cb7c1af1b4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:110e2621-a2f1-48d0-be4d-57cf6d853350'
+  module:
+    - block_content
+  theme:
+    - ces
+id: ces_getintouch
+theme: ces
+region: footer_four
+weight: 0
+provider: null
+plugin: 'block_content:110e2621-a2f1-48d0-be4d-57cf6d853350'
+settings:
+  id: 'block_content:110e2621-a2f1-48d0-be4d-57cf6d853350'
+  label: 'Get In Touch'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

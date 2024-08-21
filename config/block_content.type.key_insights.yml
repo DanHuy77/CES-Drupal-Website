@@ -1,0 +1,8 @@
+uuid: 7e0b960e-fb51-4f3d-a19e-14f3be130035
+langcode: en
+status: true
+dependencies: {  }
+id: key_insights
+label: 'Key Insights'
+revision: 0
+description: ''

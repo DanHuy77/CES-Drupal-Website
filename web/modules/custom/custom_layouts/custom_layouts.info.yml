@@ -1,0 +1,7 @@
+name: CES Website Custom Layouts
+description: Provides custom layouts for Layout Builder.
+core_version_requirement: ^8 || ^9 || ^10
+type: module
+package: Custom
+dependencies:
+  - drupal:layout_builder

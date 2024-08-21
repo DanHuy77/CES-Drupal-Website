@@ -1,0 +1,8 @@
+uuid: beb0e8a0-e2a6-4f54-b5df-5a6cd75fb616
+langcode: en
+status: true
+dependencies: {  }
+id: contact_form_block
+label: 'Contact Form Block'
+revision: false
+description: 'A block contains Contact form and Contact information'

@@ -1,0 +1,10 @@
+entity.ces_entity_internship.edit_form:
+  route_name: entity.ces_entity_internship.edit_form
+  group: ces_entity_internship
+  title: 'Edit'
+
+entity.ces_entity_internship.delete_form:
+  route_name: entity.ces_entity_internship.delete_form
+  group: ces_entity_internship
+  title: 'Delete'
+  weight: 10

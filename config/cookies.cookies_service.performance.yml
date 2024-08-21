@@ -1,0 +1,19 @@
+uuid: c683233c-9366-48ba-a221-981b430aa475
+langcode: en
+status: true
+dependencies: {  }
+id: performance
+label: Performance
+group: performance
+info:
+  value: '<p>Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p>'
+  format: basic_html
+consentRequired: true
+purpose: ''
+placeholderMainText: 'This content is blocked because required functional cookies have not been accepted.'
+placeholderAcceptText: 'Only accept required functional cookies'
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: ''

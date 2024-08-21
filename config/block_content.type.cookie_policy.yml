@@ -1,0 +1,8 @@
+uuid: d9f54536-9abf-421d-96ed-f4408da84275
+langcode: en
+status: true
+dependencies: {  }
+id: cookie_policy
+label: 'Cookie Policy'
+revision: false
+description: ''

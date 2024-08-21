@@ -1,0 +1,93 @@
+.partners {
+  max-width: 1200px;
+  width: 75%;
+  margin: auto;
+  padding: 64px 0 128px;
+
+  &__title {
+    font-family: $font-geometric-slabserif-medium;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.8px;
+    padding-bottom: 40px;
+  }
+
+  &__items {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+
+    &__item {
+      width: calc((100% - 48px) / 4);
+      height: 120px;
+      border-radius: 24px;
+      background-color: $white;
+      border: 1px solid #f2f2f2;
+      padding: 16px;
+      justify-content: center;
+      align-items: center;
+      box-shadow:
+        rgb(0 0 0 / 5%) 0 6px 24px 0,
+        rgb(0 0 0 / 8%) 0 0 0 1px;
+
+      &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+// Mobile < 767 px.
+@include media-breakpoint-down(md) {
+  .partners {
+    width: 100%;
+    padding: 32px 16px 0;
+
+    &__items {
+      gap: 24px;
+
+      &__item {
+        width: calc((100% - 24px) / 2);
+      }
+    }
+
+    &__title {
+      padding-bottom: 24px;
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .partners {
+    width: 100%;
+    padding: 64px 48px;
+
+    &__items {
+      gap: 24px;
+
+      &__item {
+        width: calc((100% - 24px) / 2);
+      }
+    }
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .partners {
+    width: 100%;
+    padding: 64px 48px;
+
+    &__items {
+      gap: 24px;
+
+      &__item {
+        width: calc((100% - 24px) / 2);
+      }
+    }
+  }
+}

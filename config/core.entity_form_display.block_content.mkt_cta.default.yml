@@ -1,0 +1,70 @@
+uuid: 23be92cd-d8be-4418-8be7-3b96500d10b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_cta
+    - field.field.block_content.mkt_cta.body
+    - field.field.block_content.mkt_cta.field_cta_link
+    - field.field.block_content.mkt_cta.field_cta_title
+  module:
+    - link_attributes
+    - text
+id: block_content.mkt_cta.default
+targetEntityType: block_content
+bundle: mkt_cta
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_cta_link:
+    type: link_attributes
+    weight: 26
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        id: false
+        name: false
+        target: true
+        rel: true
+        class: true
+        accesskey: false
+        aria-label: false
+        title: false
+        open_modal: true
+      widget_default_open: expandIfValuesSet
+    third_party_settings: {  }
+  field_cta_title:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

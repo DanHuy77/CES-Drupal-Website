@@ -1,0 +1,11 @@
+uuid: de830f2d-98f2-4542-a6e5-0d09890d55c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_why
+id: block_content.mkt_why
+target_entity_type_id: block_content
+target_bundle: mkt_why
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,5 @@
+name: 'Link Modal Attribute'
+type: module
+description: 'Allow the link to open a modal containing the webform.'
+package: Custom
+core_version_requirement: ^10 || ^11

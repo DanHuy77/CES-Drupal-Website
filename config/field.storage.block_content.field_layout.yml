@@ -1,0 +1,30 @@
+uuid: 5c8db8c3-08ad-4cac-b3a9-08e4109bca2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_layout
+field_name: field_layout
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: technology
+      label: Technology
+    -
+      value: expertise
+      label: Expertise
+    -
+      value: case_study
+      label: 'Case Study'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

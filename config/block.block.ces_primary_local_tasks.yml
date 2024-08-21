@@ -1,0 +1,28 @@
+uuid: 630dd7a9-72fa-4698-b205-a50c8c58fec7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ces
+_core:
+  default_config_hash: ACjBZI5shAMiiUpsz-inLYVXDqNNXRnSzAWV3kV_8Hw
+id: ces_primary_local_tasks
+theme: ces
+region: header
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/node/*/layout'

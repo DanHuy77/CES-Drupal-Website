@@ -1,0 +1,30 @@
+uuid: f3d43a58-8741-44f8-adac-03e1465fb1bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - media
+id: media.field_media_image_4
+field_name: field_media_image_4
+entity_type: media
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: s3
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

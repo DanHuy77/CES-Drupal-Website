@@ -1,0 +1,25 @@
+uuid: b59a6530-d1eb-43b7-97d8-ffdf30772072
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:13205d77-70e8-4e78-aa78-09dfd3063ae0'
+  module:
+    - block_content
+  theme:
+    - ces
+id: ces_socialnetworks
+theme: ces
+region: footer_third
+weight: 0
+provider: null
+plugin: 'block_content:13205d77-70e8-4e78-aa78-09dfd3063ae0'
+settings:
+  id: 'block_content:13205d77-70e8-4e78-aa78-09dfd3063ae0'
+  label: 'Social Networks'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

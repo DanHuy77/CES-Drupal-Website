@@ -1,0 +1,876 @@
+@import 'variables';
+
+.block-slider {
+  &__container {
+    padding-top: 128px;
+    padding-bottom: 128px;
+
+    &.container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.images {
+      padding-top: 64px;
+      padding-bottom: 0;
+    }
+
+    &.case-studies {
+      padding: 64px 0 0 224px;
+
+      .slick-slide {
+        width: 427px;
+      }
+
+      .slick-track {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $font-geometric-slabserif-bold;
+    font-size: 40px;
+    line-height: 48px;
+    color: $dark-jungle-green;
+
+    &.case-studies {
+      padding-bottom: 16px;
+    }
+  }
+
+  &__images,
+  &__team {
+    margin-top: 70px;
+
+    .slick-track {
+      margin-left: -20px;
+      display: flex;
+      gap: 20px;
+      background-color: $white;
+    }
+
+    >.field__items {
+      .field__item {
+        img {
+          max-width: 100%;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    &__btn {
+      &__container {
+        padding-top: 32px;
+
+        &.see-all-btn-container {
+          text-align: center;
+          padding: 64px 0 96px;
+
+          .see-all-btn {
+            padding: 24px;
+            font-size: 24px;
+            display: block;
+            margin: auto;
+          }
+        }
+      }
+
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: $font-svn-circular-bold;
+      text-transform: uppercase;
+      width: fit-content;
+      padding: 11px 20px 11px 35px;
+      line-height: 1.2em;
+      box-shadow: none;
+      background-color: $primary;
+      text-decoration: none;
+      color: $white;
+      transition: all 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+
+      &:hover {
+        box-shadow: 0 20px 38px rgb(0 0 0 / 16%);
+        transform: translateY(-3px);
+        background-color: $primary;
+        opacity: 0.85;
+        text-decoration: none;
+        color: $white;
+      }
+
+      &:focus {
+        background-color: $primary;
+      }
+
+      span {
+        display: inline-block;
+        left: 0;
+        transform: translateX(-14px);
+      }
+
+      img {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &__body {
+    margin-top: 30px;
+
+    p {
+      font-family: $font-svn-circular;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+  }
+
+  &__testimonial {
+    margin-top: 70px;
+
+    .slick-initialized {
+      .slick-slide {
+        display: flex;
+      }
+    }
+  }
+
+  &__case-studies {
+    margin-top: 70px;
+  }
+
+  &__slidebar {
+    margin-top: 70px;
+    background-color: $dark-jungle-green;
+    width: 85%;
+    height: 1px;
+    position: relative;
+    cursor: auto;
+
+    &.images {
+      width: 100%;
+      cursor: auto;
+    }
+
+    &.case-studies {
+      width: 100%;
+    }
+
+    span {
+      background-color: $dark-jungle-green;
+      position: absolute;
+      top: -8px;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.07, 0.5, 0.34, 0.96);
+      height: 8px;
+    }
+  }
+
+  &__outer {
+    overflow-x: hidden;
+
+    &:last-child {
+      .block-slider__container {
+        &.images {
+          padding-bottom: 64px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    cursor: grab;
+  }
+
+  &__case-studies-wrapper {
+    padding: 32px 0 80px;
+    background-color: $white-smoke;
+  }
+}
+
+.slide-box {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .field__item {
+    h6 {
+      font-family: $font-svn-circular-bold;
+      font-size: 20px;
+      line-height: 27px;
+      color: $dark-jungle-green;
+    }
+
+    small {
+      text-transform: uppercase;
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 1.6px;
+      color: $gray-light;
+    }
+  }
+
+  .member {
+    &__info {
+      height: 120%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      h6 {
+        padding-top: 15px;
+        margin-bottom: -5px;
+      }
+
+      h6,
+      small {
+        transition: padding 0.3s ease-out, color 0.3s ease-out;
+      }
+    }
+
+    &__wrap {
+      text-decoration: none;
+      display: grid;
+      justify-content: start;
+
+      &:hover {
+        >.member {
+          &__avatar {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          &__info {
+            background-color: $primary;
+
+            h6,
+            small {
+              color: $white;
+              padding-left: 18px;
+              position: relative;
+            }
+
+            h6::after {
+              color: $white;
+              border-right: 2px solid currentcolor;
+              border-bottom: 2px solid currentcolor;
+              content: '';
+              position: absolute;
+              width: 7px;
+              height: 7px;
+              transform: rotate(-45deg);
+              right: 18px;
+              top: 27px;
+            }
+          }
+        }
+
+        h6:hover {
+          color: $dark-jungle-green;
+        }
+      }
+    }
+  }
+
+  &.tes__container {
+    width: 90%;
+  }
+
+  .tes {
+    &__wrap {
+      flex: 0 0 100%;
+    }
+
+    &__left-wrap {
+      .quote-right {
+        max-width: 40px;
+        margin-top: -5px;
+      }
+    }
+
+    &__right-wrap {
+      margin-left: 75px;
+      padding-right: 120px;
+
+      .reviewer {
+        &__testimonial {
+          color: $dark-jungle-green;
+
+          p {
+            font-family: $font-svn-circular;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 400;
+            padding-bottom: 11px;
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+        }
+
+        &__avatar {
+          padding-right: 18px;
+
+          img {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-dots {
+    display: none !important;
+  }
+
+  &.images-container,
+  &.case-studies__container {
+    gap: 20px;
+
+    &.center {
+      .slick-track {
+        padding: 0 173px;
+      }
+    }
+  }
+}
+
+.case-studies {
+  &__container {
+    p,
+    span {
+      color: $dark-jungle-green;
+      font-family: $font-svn-circular;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: -0.096px;
+    }
+
+    .slick-track {
+      display: flex !important;
+      gap: 20px;
+      margin-left: -20px;
+    }
+
+    .slick-slide {
+      display: flex !important;
+      height: auto;
+    }
+
+    .slick-dots {
+      bottom: -50px;
+
+      li {
+        border-radius: 50%;
+        background-color: $gray-light;
+        width: 10px !important;
+        height: 10px !important;
+      }
+
+      .slick-active {
+        background-color: $primary;
+      }
+
+      button {
+        display: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__card {
+    border-radius: 20px;
+    background-color: $white;
+    display: flex;
+    box-shadow:
+      rgb(0 0 0 / 5%) 0 6px 24px 0,
+      rgb(0 0 0 / 8%) 0 0 0 1px;
+    height: 100%;
+
+    &-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:hover {
+      box-shadow:
+        rgb(60 64 67 / 30%) 0 1px 2px 0,
+        rgb(60 64 67 / 15%) 0 1px 3px 1px,
+        rgb(60 64 67 / 15%) 0 1px 3px 1px;
+    }
+  }
+
+  &__logo {
+    padding-bottom: 16px;
+    height: 55px;
+
+    img {
+      object-fit: contain;
+      height: 100%;
+      margin: auto;
+      display: block;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  &__tag {
+    background-color: lightgray;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow:
+      rgb(60 64 67 / 30%) 0 1px 2px 0,
+      rgb(60 64 67 / 15%) 0 1px 3px 1px;
+  }
+
+  &__btn {
+    margin: auto 0 0;
+  }
+}
+
+.cursor-container {
+  pointer-events: none;
+  position: absolute;
+  mix-blend-mode: difference;
+  background: transparent;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .circle {
+    box-shadow: 0 0 0 2px inset $white-smoke;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    mix-blend-mode: difference;
+
+    &.expand {
+      width: 55px;
+      height: 55px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.clicked {
+      box-shadow: 0 0 0 1.75px inset $white-smoke;
+      width: 42px;
+      height: 42px;
+    }
+
+    &.dark {
+      box-shadow: 0 0 0 2px inset $dark-jungle-green;
+
+      &.clicked {
+        box-shadow: 0 0 0 1.75px inset $dark-jungle-green;
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 0;
+    border-right: 1px solid $white-smoke;
+    border-bottom: 1px solid $white-smoke;
+    content: '';
+    width: 7px;
+    height: 7px;
+
+    &.dark {
+      border-right: 1px solid $dark-jungle-green;
+      border-bottom: 1px solid $dark-jungle-green;
+    }
+
+    &.left-arrow {
+      transform: translate(-650%, -50%) rotate(135deg);
+    }
+
+    &.right-arrow {
+      transform: translate(550%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+// --------------- Ipad Pro ---------------
+
+@include media-breakpoint-between(lg, xl) {
+  .block-slider {
+    &__outer {
+      overflow-x: hidden;
+      padding-right: 48px;
+      padding-left: 48px;
+    }
+
+    &__container {
+      &.container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.case-studies {
+        padding-left: 0;
+        margin: 0;
+
+        .slick-slide {
+          width: 307px;
+        }
+      }
+    }
+
+    &__title {
+      &.case-studies {
+        padding: 0 25.6px 16px;
+      }
+    }
+
+    &__slidebar {
+      &.case-studies {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    &__case-studies-wrapper {
+      padding: 32px 0 64px;
+    }
+  }
+
+  .slide-box {
+    .tes {
+      &__left-wrap {
+        .fa-quote-right {
+          color: $primary;
+          font-size: 48px;
+          margin-top: -7px;
+          text-align: left;
+        }
+      }
+
+      &__right-wrap {
+        margin-left: 45px;
+        padding-right: 92px;
+      }
+    }
+  }
+}
+
+// --------------- Ipad Air / Mini ---------------
+
+@include media-breakpoint-between(md, lg) {
+  .block-slider {
+    &__outer {
+      overflow-x: hidden;
+      padding-right: 48px;
+      padding-left: 48px;
+
+      &.case-studies {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    &__images,
+    &__team,
+    &__testimonial {
+      margin-top: 24px;
+    }
+
+    &__case-studies {
+      margin-top: 40px;
+    }
+
+    &__container {
+      padding: 64px 0;
+
+      &.container {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+      }
+
+      &.images {
+        padding-top: 64px;
+      }
+
+      &.case-studies {
+        padding-left: 0;
+        margin: 0;
+
+        .slick-slide {
+          width: 350px;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+      line-height: 33px;
+
+      &.case-studies {
+        padding: 0 8px 24px;
+      }
+    }
+
+    &__slidebar {
+      margin-top: 24px;
+
+      &.case-studies {
+        width: 100%;
+        margin-top: 56px;
+        margin-left: 0;
+      }
+    }
+
+    &__body {
+      p {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    &__case-studies-wrapper {
+      padding: 8px 0 48px;
+    }
+
+    &__team {
+      &__btn {
+        &__container {
+          &.see-all-btn-container {
+            .see-all-btn {
+              padding: 20px;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slide-box {
+    .field__item {
+      h6 {
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: -1px;
+      }
+
+      small {
+        font-size: 8px;
+        line-height: 9px;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    &.tes__container {
+      width: 85%;
+    }
+
+    .tes {
+      &__left-wrap {
+        .quote-right {
+          max-width: 25px;
+          margin-top: 0;
+        }
+      }
+
+      &__right-wrap {
+        margin-left: 35px;
+        padding-right: 40px;
+
+        .reviewer {
+          &__avatar {
+            padding-right: 18px;
+            max-width: none;
+          }
+
+          &__testimonial {
+            p {
+              font-size: 16px;
+              line-height: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------- Mobile ---------------
+
+@include media-breakpoint-down(md) {
+  .block-slider {
+    &__outer {
+      overflow-x: hidden;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    &__testimonial {
+      margin-top: 24px;
+    }
+
+    &__case-studies {
+      margin-top: 30px;
+    }
+
+    &__container {
+      padding: 64px 0;
+
+      &.container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.images {
+        padding-top: 64px;
+      }
+
+      &.case-studies {
+        padding: 48px 0 0;
+
+        .slick-track {
+          gap: 16px;
+          margin-left: -16px;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+      line-height: 33px;
+    }
+
+    &__slidebar {
+      margin-top: 24px;
+      width: 100%;
+
+      &.images {
+        width: 100%;
+      }
+
+      &.case-studies {
+        margin-top: 48px;
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    &__body {
+      p {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    &__images,
+    &__team {
+      .slick-track {
+        margin-left: -70px;
+        display: flex;
+      }
+
+      margin-top: 40px;
+
+      &__btn {
+        &__container {
+          &.see-all-btn-container {
+            padding: 48px 0;
+
+            .see-all-btn {
+              padding: 16px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    &__case-studies-wrapper {
+      padding: 8px 0 48px;
+    }
+  }
+
+  .slide-box {
+    .field__item {
+      h6 {
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: -1px;
+      }
+
+      small {
+        font-size: 8px;
+        line-height: 5px;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    &.tes__container {
+      width: 100%;
+    }
+
+    .tes {
+      &__left-wrap {
+        .quote-right {
+          max-width: 25px;
+          margin-top: 0;
+        }
+      }
+
+      &__right-wrap {
+        margin-left: 24px;
+        padding-right: 15px;
+
+        .reviewer {
+          &__testimonial {
+            p {
+              font-size: 16px;
+              line-height: 21px;
+            }
+          }
+
+          &__avatar {
+            img {
+              max-width: none;
+              width: 60px;
+            }
+          }
+        }
+      }
+
+      &__wrap {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// No other solutions are available so far.
+@media only screen and (max-width: 1299px) {
+  .slide-box {
+    &.images-container,
+    &.case-studies__container {
+      &.center {
+        .slick-track {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+entity.ces_entity_internship.settings:
+  title: 'Settings'
+  route_name: entity.ces_entity_internship.settings
+  base_route: entity.ces_entity_internship.settings
+entity.ces_entity_internship.view:
+  title: 'View'
+  route_name: entity.ces_entity_internship.canonical
+  base_route: entity.ces_entity_internship.canonical
+entity.ces_entity_internship.edit_form:
+  title: 'Edit'
+  route_name: entity.ces_entity_internship.edit_form
+  base_route: entity.ces_entity_internship.canonical
+entity.ces_entity_internship.delete_form:
+  title: 'Delete'
+  route_name: entity.ces_entity_internship.delete_form
+  base_route: entity.ces_entity_internship.canonical
+  weight: 10
+entity.ces_entity_internship.collection:
+  title: 'Internships'
+  route_name: entity.ces_entity_internship.collection
+  base_route: system.admin_content
+  weight: 10

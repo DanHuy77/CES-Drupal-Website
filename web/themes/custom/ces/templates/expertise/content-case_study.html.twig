@@ -1,0 +1,5 @@
+<a class="expertise-case-study__items__item{{ redirect_url is empty ? ' link-disabled' : '' }}" href="{{ redirect_url }}" target="_blank" rel="noopener">
+  {% if icon_url %}
+    <div class="icon"><img src="{{icon_url}}" alt="tech logo" loading="lazy"></div>
+  {% endif %}
+</a>

@@ -1,0 +1,30 @@
+uuid: e0768f61-5921-449c-b893-5b97618bc5e8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a6d83b03-99d7-4263-baac-461281498821'
+  module:
+    - block_content
+    - system
+  theme:
+    - ces
+id: ces_aichatboxblock
+theme: ces
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:a6d83b03-99d7-4263-baac-461281498821'
+settings:
+  id: 'block_content:a6d83b03-99d7-4263-baac-461281498821'
+  label: 'AI Chatbox Block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/node/*/layout'

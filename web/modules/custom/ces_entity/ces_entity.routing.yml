@@ -1,0 +1,7 @@
+entity.ces_entity_internship.settings:
+  path: 'admin/structure/ces-entity-internship'
+  defaults:
+    _form: '\Drupal\ces_entity\Form\InternshipSettingsForm'
+    _title: 'Internship'
+  requirements:
+    _permission: 'administer ces_entity_internship'

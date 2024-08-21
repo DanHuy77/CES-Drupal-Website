@@ -1,0 +1,35 @@
+uuid: 4d0dd9ea-bf39-422f-a303-7ccde5823138
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_partners
+    - field.field.block_content.mkt_partners.field_partners
+    - field.field.block_content.mkt_partners.field_title
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.mkt_partners.default
+targetEntityType: block_content
+bundle: mkt_partners
+mode: default
+content:
+  field_partners:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

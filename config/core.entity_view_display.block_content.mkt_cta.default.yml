@@ -1,0 +1,46 @@
+uuid: 5374bb4c-3d59-4fda-84b2-8ab62c666e0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_cta
+    - field.field.block_content.mkt_cta.body
+    - field.field.block_content.mkt_cta.field_cta_link
+    - field.field.block_content.mkt_cta.field_cta_title
+  module:
+    - link
+    - text
+id: block_content.mkt_cta.default
+targetEntityType: block_content
+bundle: mkt_cta
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cta_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_cta_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

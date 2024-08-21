@@ -1,0 +1,14 @@
+uuid: 9da0d1e1-ff93-487f-ad6f-c3152f122ff3
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - filter
+id: reviewer
+label: Reviewer
+weight: -9
+is_admin: null
+permissions:
+  - 'use text format restricted_html'

@@ -1,0 +1,38 @@
+uuid: dfca135c-e36e-4419-a452-2f9e7f7a52ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.team_member.field_media_image_2
+    - image.style.thumbnail
+    - media.type.team_member
+  module:
+    - image
+id: media.team_member.media_library
+targetEntityType: media
+bundle: team_member
+mode: media_library
+content:
+  field_media_image_2:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,217 @@
+.cookiesjsr-banner {
+  background-color: $white;
+  color: #333;
+  padding: 14px 0;
+
+  .cookiesjsr-banner--info {
+    height: 100%;
+    margin: auto;
+    width: 70%;
+
+    .cookiesjsr-banner--text {
+      font-size: 14.5px;
+      font-family: $font-svn-circular;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+
+  .cookiesjsr-banner--action {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    padding-right: 32px;
+
+    .cookiesjsr-btn {
+      font-family: $font-svn-circular;
+      font-size: 13px;
+      line-height: 13px;
+      font-weight: 400;
+      text-transform: capitalize;
+      height: 31px;
+      min-height: 31px;
+      border-radius: 4px;
+    }
+
+    .cookiesjsr-settings {
+      background-color: rgb(222 223 224);
+      color: #333;
+      width: 117px;
+
+      &:hover {
+        background-color: $dark-grey;
+        transform: unset;
+      }
+    }
+
+    .allowAll {
+      background-color: $primary;
+      color: $white;
+      width: 88px;
+
+      &:hover {
+        background-color: rgb(193 71 30);
+        transform: unset;
+      }
+    }
+  }
+}
+
+.cookiesjsr-layer {
+  border-radius: 1%;
+  width: 645px;
+  height: 500px;
+  font-family: $font-svn-circular;
+
+  .cookiesjsr-layer--header {
+    .cookiesjsr-layer--title {
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+
+  .cookiesjsr-layer--body {
+    font-size: 14px;
+    line-height: 21px;
+
+    .cookiesjsr-service-groups {
+      .cookiesjsr-service-group {
+        &.active {
+          .cookiesjsr-service-group--tab {
+            color: #333;
+            background-color: #f2f2f2;
+          }
+        }
+
+        .cookiesjsr-service-group--content {
+          background: #f2f2f2;
+          padding-top: 8px;
+
+          .cookiesjsr-service-group--intro {
+            color: #333;
+          }
+
+          .cookiesjsr-service-group--services {
+            .cookiesjsr-service {
+              .cookiesjsr-service--description {
+                h3 {
+                  color: #333;
+                }
+              }
+
+              .cookiesjsr-service--action {
+                .cookiesjsr-service--always-on {
+                  span {
+                    background-color: #f2f2f2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cookiesjsr-layer--footer {
+    .cookiesjsr-layer--label-all {
+      font-size: 14px;
+      width: 50%;
+    }
+
+    .cookiesjsr-layer--actions {
+      width: 50%;
+
+      .cookiesjsr-btn {
+        height: 36px;
+        min-height: 36px;
+        transition: unset;
+        border-radius: 4px;
+        font-family: $font-svn-circular-bold;
+
+        &.allowAll {
+          border-color: $primary;
+          color: $primary;
+        }
+
+        &.save {
+          background-color: $primary;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+// Mobile < 767 px.
+@include media-breakpoint-down(md) {
+  .cookiesjsr-banner {
+    padding: 25px;
+
+    .cookiesjsr-banner--info {
+      width: 100%;
+      padding: unset;
+    }
+
+    .cookiesjsr-banner--action {
+      width: 100%;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-right: unset;
+
+      .cookiesjsr-settings {
+        margin-left: unset;
+        margin-right: unset;
+      }
+    }
+  }
+
+  .cookiesjsr-layer {
+    .cookiesjsr-layer--body {
+      .cookiesjsr-service-groups {
+        .cookiesjsr-service-group {
+          .cookiesjsr-service-group--content {
+            padding-top: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .cookiesjsr-banner {
+    flex-direction: column;
+    padding: 25px;
+
+    .cookiesjsr-banner--info {
+      width: 100%;
+      padding: unset;
+
+      .cookiesjsr-banner--text {
+        font-size: 14.5px;
+      }
+    }
+
+    .cookiesjsr-banner--action {
+      width: 100%;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .cookiesjsr-settings {
+        margin-left: unset;
+        margin-right: unset;
+      }
+    }
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .cookiesjsr-banner {
+    .cookiesjsr-banner--action {
+      flex-direction: row;
+    }
+  }
+}

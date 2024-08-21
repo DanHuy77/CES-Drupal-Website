@@ -1,0 +1,11 @@
+entity.ces_entity_internship.settings:
+  title: 'Internship'
+  description: 'Configure an Internship entity type.'
+  route_name:  entity.ces_entity_internship.settings
+  parent: system.admin_structure
+
+entity.ces_entity_internship.collection:
+  title: 'Internships'
+  description: 'List of internships.'
+  route_name: entity.ces_entity_internship.collection
+  parent: system.admin_content

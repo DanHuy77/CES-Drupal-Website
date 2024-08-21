@@ -1,0 +1,32 @@
+uuid: 35d9c224-f546-4a56-b2e6-426198a1f14c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.team_member.field_media_image_2
+    - image.style.large
+    - media.type.team_member
+  module:
+    - image
+id: media.team_member.default
+targetEntityType: media
+bundle: team_member
+mode: default
+content:
+  field_media_image_2:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

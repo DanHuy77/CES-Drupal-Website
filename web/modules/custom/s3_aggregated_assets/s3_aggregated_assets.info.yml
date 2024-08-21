@@ -1,0 +1,5 @@
+name: S3 Aggregated Assets
+description: "Serves files CSS, JS from a CDN."
+type: module
+package: "Web services"
+core_version_requirement: ^9.4 || ^10

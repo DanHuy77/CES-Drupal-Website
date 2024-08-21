@@ -1,0 +1,27 @@
+uuid: f25b98d8-d62b-48e7-88c6-ea601692e926
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: basic_page
+label: Content
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  9d66a3a8-cd56-4edb-a75d-f2b00b696ad0:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9d66a3a8-cd56-4edb-a75d-f2b00b696ad0
+    context_mapping:
+      node: node
+    bundles:
+      case_studies_page: case_studies_page
+      marketing: marketing
+      our_team: our_team
+      page: page
+      partnership: partnership
+      what_we_do: what_we_do
+selection_logic: and
+weight: -5
+relationships: {  }

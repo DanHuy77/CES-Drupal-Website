@@ -1,0 +1,8 @@
+uuid: 783ee0d9-fa00-4709-8a24-b15636265883
+langcode: en
+status: true
+dependencies: {  }
+id: mkt_video_hero
+label: 'MKT -  Video Hero'
+revision: 0
+description: ''

@@ -1,0 +1,29 @@
+uuid: a5c675f7-598e-4938-a2f3-c87d5d3b3ba8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_size
+    - node.type.case_studies_page
+    - taxonomy.vocabulary.company_size
+id: node.case_studies_page.field_company_size
+field_name: field_company_size
+entity_type: node
+bundle: case_studies_page
+label: 'Company Size'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      company_size: company_size
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

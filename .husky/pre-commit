@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run stylelint-fix web/themes/custom/ces/scss
+npm run stylelint-fix web/modules/custom
+npm run eslint-fix web/modules/custom
+npm run eslint-fix web/themes/custom/ces
+npm run prettier-fix web/themes/custom/ces
+npm run prettier-fix web/modules/custom
+
+./vendor/bin/phpcbf --standard=Drupal -v --extensions=php,inc,module,theme --ignore=node_modules,vendor/*,web/core/*,web/vendor/*,web/modules/contrib/* ./web/modules/custom
+
+exit 0

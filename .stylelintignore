@@ -1,0 +1,13 @@
+*.*
+!*.css
+!*.scss
+
+# Contrib in custom.
+# web/modules/custom/module_name/**/*
+
+# Custom modules.
+# web/modules/custom/module_name/*
+
+# Compiled files in the theme.
+web/themes/custom/*/css/*
+web/libraries/*

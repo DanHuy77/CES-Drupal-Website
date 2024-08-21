@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1718004405">
+  <project timestamp="1718004405">
+    <file name="/home/ces-user/Documents/CES Website/Pantheon/ces-drupal-website/web/modules/custom/download_s3_file/src/Commands/S3FileCommands.php">
+      <class name="Drupal\download_s3_file\Commands\S3FileCommands" namespace="global">
+        <metrics complexity="12" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="17" elements="36" coveredelements="17"/>
+      </class>
+      <line num="40" type="method" name="initializeS3Client" visibility="public" complexity="4" crap="4.10" count="2"/>
+      <line num="41" type="stmt" count="2"/>
+      <line num="42" type="stmt" count="2"/>
+      <line num="43" type="stmt" count="2"/>
+      <line num="45" type="stmt" count="2"/>
+      <line num="46" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="50" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="2"/>
+      <line num="53" type="stmt" count="2"/>
+      <line num="54" type="stmt" count="2"/>
+      <line num="87" type="method" name="get" visibility="public" complexity="4" crap="20" count="2"/>
+      <line num="89" type="stmt" count="2"/>
+      <line num="90" type="stmt" count="2"/>
+      <line num="92" type="stmt" count="2"/>
+      <line num="93" type="stmt" count="2"/>
+      <line num="96" type="stmt" count="2"/>
+      <line num="97" type="stmt" count="2"/>
+      <line num="98" type="stmt" count="2"/>
+      <line num="99" type="stmt" count="2"/>
+      <line num="100" type="stmt" count="2"/>
+      <line num="102" type="stmt" count="2"/>
+      <line num="104" type="stmt" count="2"/>
+      <line num="105" type="stmt" count="2"/>
+      <line num="120" type="method" name="listFiles" visibility="public" complexity="3" crap="3.07" count="2"/>
+      <line num="122" type="stmt" count="2"/>
+      <line num="124" type="stmt" count="2"/>
+      <line num="125" type="stmt" count="2"/>
+      <line num="126" type="stmt" count="2"/>
+      <line num="127" type="stmt" count="2"/>
+      <line num="129" type="stmt" count="2"/>
+      <line num="130" type="stmt" count="2"/>
+      <line num="131" type="stmt" count="2"/>
+      <line num="134" type="stmt" count="2"/>
+      <line num="135" type="stmt" count="2"/>
+      <metrics loc="140" ncloc="79" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="17" elements="36" coveredelements="17"/>
+    </file>
+    <metrics files="1" loc="140" ncloc="79" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="17" elements="36" coveredelements="17"/>
+  </project>
+</coverage>

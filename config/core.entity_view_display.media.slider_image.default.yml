@@ -1,0 +1,32 @@
+uuid: c046f6cb-d3eb-4719-bb3a-07bd7fc026a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.slider_image.field_media_image_4
+    - image.style.large
+    - media.type.slider_image
+  module:
+    - image
+id: media.slider_image.default
+targetEntityType: media
+bundle: slider_image
+mode: default
+content:
+  field_media_image_4:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

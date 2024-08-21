@@ -1,0 +1,19 @@
+uuid: 0b89852a-0e90-4eed-add8-f74d4cfa2877
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewer_name
+    - node.type.testimonial
+id: node.testimonial.field_reviewer_name
+field_name: field_reviewer_name
+entity_type: node
+bundle: testimonial
+label: 'Reviewer Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

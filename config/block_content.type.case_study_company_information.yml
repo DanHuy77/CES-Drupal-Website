@@ -1,0 +1,8 @@
+uuid: c0e06d95-6272-4f7f-a19d-e03d21c8ea8d
+langcode: en
+status: true
+dependencies: {  }
+id: case_study_company_information
+label: 'Case Study Company Information'
+revision: false
+description: ''

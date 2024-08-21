@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+<div{{attributes}}>
+  {{ title_suffix }}
+  {% block content %}
+    {% set background_image = content.field_background_image['#items'].0.entity|file_url %}
+    {% if background_image is empty %}
+      {% set background_image = '#000' %}
+    {% else %}
+      {% set background_image = 'url(' ~ background_image ~ ')' %}
+    {% endif %}
+    {% set title_first = content.field_title_first_part['#items'].0.value|trim %}
+    {% set title_second = content.field_title_second_part['#items'].0.value|trim %}
+    {% set color_first = content.field_text_color_first['#items'].0.color %}
+    {% set color_second = content.field_text_color_second['#items'].0.color %}
+    
+    <div class="homepage-hero" style="background: {{ background_image }} center no-repeat; background-size: cover; background-position-y: top">
+      <div class="homepage-hero__inner">
+        <div class="container g-0">
+          <div class="row">
+            <div class="text-wrapper">
+              <h1 style="color: {{ color_first }}">{{ title_first }}
+                <br>
+                <span style="color: {{ color_second }}">
+                  {{ title_second }}
+                </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</div>

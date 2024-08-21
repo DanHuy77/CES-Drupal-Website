@@ -1,0 +1,467 @@
+uuid: f41aa295-7202-4da6-8dca-1774fe4f8443
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: 30m_pre_audit
+title: '30m Pre-audit Session Contact form'
+description: ''
+categories: {  }
+elements: |-
+  step_1:
+    '#type': webform_wizard_page
+    '#title': 'Step 1'
+    step_1_text:
+      '#type': processed_text
+      '#text': "<p>Okay, we'll make this quick and painless. But before we start - we would like to know you more... So what's your name?</p>"
+      '#format': basic_html
+    name:
+      '#type': textfield
+      '#title': Name
+      '#placeholder': 'Enter your name'
+      '#required': true
+    actions_01:
+      '#type': webform_actions
+      '#title': 'Step 1 Submit'
+      '#states':
+        disabled:
+          ':input[name="name"]':
+            empty: true
+      '#submit__label': Send
+      '#submit__attributes':
+        class:
+          - ces-btn
+      '#wizard_prev_hide': true
+      '#wizard_next__label': Continue
+      '#wizard_next__attributes':
+        class:
+          - ces-btn
+          - arrow--slide
+  step_2:
+    '#type': webform_wizard_page
+    '#title': 'Step 2'
+    step_2_text:
+      '#type': processed_text
+      '#text': "<p>Awesome! What's your company name?</p>"
+      '#format': basic_html
+    company:
+      '#type': textfield
+      '#title': Company
+      '#placeholder': 'Company *'
+      '#required': true
+    actions_02:
+      '#type': webform_actions
+      '#title': 'Step 2 Submit'
+      '#states':
+        disabled:
+          ':input[name="company"]':
+            empty: true
+      '#submit__label': Send
+      '#submit__attributes':
+        class:
+          - ces-btn
+      '#wizard_prev_hide': true
+      '#wizard_next__label': Continue
+      '#wizard_next__attributes':
+        class:
+          - ces-btn
+          - arrow--slide
+  step_role:
+    '#type': webform_wizard_page
+    '#title': 'Step Role'
+    role_text:
+      '#type': processed_text
+      '#text': "<p>Great! What's your role?</p>"
+      '#format': basic_html
+    role:
+      '#type': webform_select_other
+      '#title': Role
+      '#title_display': none
+      '#options':
+        'CEO (Chief Executive Officer)': 'CEO (Chief Executive Officer)'
+        'CTO (Chief Technology Officer)': 'CTO (Chief Technology Officer)'
+        'COO (Chief Operating Officer)': 'COO (Chief Operating Officer)'
+        'CFO (Chief Financial Officer)': 'CFO (Chief Financial Officer)'
+        'CMO (Chief Marketing Officer)': 'CMO (Chief Marketing Officer)'
+        'CIO (Chief Information Officer)': 'CIO (Chief Information Officer)'
+        'VP of Engineering': 'VP of Engineering'
+        'VP of Product': 'VP of Product'
+        'Director of IT': 'Director of IT'
+        'Head of Sales': 'Head of Sales'
+        'Head of Marketing': 'Head of Marketing'
+        'IT Manager': 'IT Manager'
+        'Project Manager': 'Project Manager'
+        'Product Manager': 'Product Manager'
+        'Engineering Manager': 'Engineering Manager'
+        'Software Engineer': 'Software Engineer'
+        'QA Engineer': 'QA Engineer'
+        'Data Scientist': 'Data Scientist'
+        'Data Analyst': 'Data Analyst'
+        'Business Development Manager': 'Business Development Manager'
+        'Business Analyst': 'Business Analyst'
+        'Enterprise Architect': 'Enterprise Architect'
+        'CRM Manager': 'CRM Manager'
+        'ERP Manager': 'ERP Manager'
+        'DevOps Engineer': 'DevOps Engineer'
+        'Scrum Master': 'Scrum Master'
+        'Technical Lead': 'Technical Lead'
+        'Technical Support Specialist': 'Technical Support Specialist'
+        'Customer Success Manager': 'Customer Success Manager'
+        'Digital Marketing Manager': 'Digital Marketing Manager'
+        'Content Manager': 'Content Manager'
+        'Social Media Manager': 'Social Media Manager'
+        'SEO Specialist': 'SEO Specialist'
+      '#other__placeholder': 'Enter your role'
+      '#required': true
+    actions_07:
+      '#type': webform_actions
+      '#title': 'Step Role Submit'
+      '#states':
+        disabled:
+          ':input[name="role[select]"]':
+            empty: true
+      '#submit__label': Send
+      '#submit__attributes':
+        class:
+          - ces-btn
+      '#wizard_prev_hide': true
+      '#wizard_next__label': Continue
+      '#wizard_next__attributes':
+        class:
+          - ces-btn
+          - arrow--slide
+  step_3:
+    '#type': webform_wizard_page
+    '#title': 'Step 3'
+    step_3_text:
+      '#type': processed_text
+      '#text': '<p>To contact you later, what is your email address?</p>'
+      '#format': basic_html
+    email:
+      '#type': email
+      '#title': Email
+      '#placeholder': 'Email *'
+      '#required': true
+    actions_03:
+      '#type': webform_actions
+      '#title': 'Step 3 Submit'
+      '#states':
+        disabled:
+          - ':input[name="email"]':
+              empty: true
+          - or
+          - ':input[name="email"]':
+              value:
+                '!pattern': '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+      '#submit__label': Send
+      '#submit__attributes':
+        class:
+          - ces-btn
+      '#wizard_prev_hide': true
+      '#wizard_next__label': Continue
+      '#wizard_next__attributes':
+        class:
+          - ces-btn
+          - arrow--slide
+  step_4:
+    '#type': webform_wizard_page
+    '#title': 'Step 4'
+    step_4_text:
+      '#type': processed_text
+      '#text': '<p>And your Time Zone?</p>'
+      '#format': basic_html
+    timezone:
+      '#type': textfield
+      '#title': Timezone
+      '#placeholder': 'Search Timezone'
+      '#attributes':
+        class:
+          - timezone-select-autocomplete
+    actions_04:
+      '#type': webform_actions
+      '#title': 'Step 4 Submit'
+      '#submit__label': Send
+      '#submit__attributes':
+        class:
+          - ces-btn
+      '#wizard_prev_hide': true
+      '#wizard_next__label': Continue
+      '#wizard_next__attributes':
+        class:
+          - ces-btn
+          - arrow--slide
+  actions_previous:
+    '#type': webform_actions
+    '#title': Previous
+    '#submit_hide': true
+    '#update_hide': true
+    '#wizard_prev__attributes':
+      class:
+        - arrow--back
+    '#wizard_next_hide': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: inline
+  confirmation_url: ''
+  confirmation_title: 'Thank you for filling out the form.'
+  confirmation_message: '<p><span style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(50, 50, 50);display:inline !important;float:none;font-family:&quot;Nunito Sans&quot;, &quot;Open Sans&quot;, &quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">A confirmation email will be sent to the email address provided in the form.</span></p><p><span style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(50, 50, 50);display:inline !important;float:none;font-family:&quot;Nunito Sans&quot;, &quot;Open Sans&quot;, &quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">Please check your email inbox.</span></p><p><span style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(50, 50, 50);display:inline !important;float:none;font-family:&quot;Nunito Sans&quot;, &quot;Open Sans&quot;, &quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">For any further inquiries, please contact </span><a style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(241, 89, 38);font-family:SVN-Circular, arial, helvetica, sans-serif;font-size:1.125rem;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;transition:color 0.1s ease-in-out 0s;white-space:normal;widows:2;word-spacing:0px;" href="mailto:newbusiness@codeenginestudio.com">newbusiness@codeenginestudio.com</a> or <a style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(241, 89, 38);font-family:SVN-Circular, arial, helvetica, sans-serif;font-size:1.125rem;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;transition:color 0.1s ease-in-out 0s;white-space:normal;widows:2;word-spacing:0px;" href="tel:%2B1-516-900-4080">+1-516-900-4080</a>.</p>'
+  confirmation_attributes:
+    class:
+      - wizard-form--confirmation
+  confirmation_back: false
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: 'Email to submitter'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: 'noreply@codeenginestudio.com[webform_submission:values:?]'
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Successful Submit 30m Pre-audit Session Contact form'
+      body: '<p>Dear <code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">[webform_submission:values:name:raw],</code></p><p>Thank you for reaching out to Code Engine Studio and scheduling a Free 30-Minute Pre-audit Session! We’ve successfully received your information.</p><p><strong>Next Steps:</strong></p><ul><li>Review Availability: Our team will contact you to suggest some options within the next 48 hours.</li><li>Confirmation Email: You will receive a confirmation email from us shortly with the exact date and time for your session.</li><li>Pre-Audit Session: During the session, we will discuss your current system, identify any gaps, and outline a clear migration plan, including technical needs and cost estimates.</li></ul><p><strong>Your Submitted Information:</strong></p><p>Name: <code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">[webform_submission:values:name]</code></p><p><code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">Company: [webform_submission:values:company]</code></p><p><code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">Role: [webform_submission:values:role]</code></p><p><code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">Email: [webform_submission:values:email]</code></p><p>Time Zone: [webform_submission:values:timezone]</p><p><code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">If any of the above information is incorrect, please let us know as soon as possible.</code><br><br><code class="hljs language-sql" style="--theme-background-attachment:auto;--theme-background-color:#f4f4f4;--theme-background-position:top left;--theme-background-repeat:repeat;--theme-background-size:auto;--theme-base-primary-color-h:202.8125;--theme-base-primary-color-l:37.64705882%;--theme-base-primary-color-s:100%;--theme-body-font-color:var(--black-600);--theme-body-font-family:var(--ff-sans);--theme-button-active-background-color:var(--theme-primary-200);--theme-button-color:var(--theme-primary);--theme-button-hover-background-color:var(--theme-primary-100);--theme-button-hover-color:var(--theme-primary-400);--theme-button-outlined-border-color:var(--theme-primary-400);--theme-button-outlined-selected-border-color:var(--theme-primary-500);--theme-button-primary-active-background-color:var(--theme-primary-600);--theme-button-primary-active-color:var(--white);--theme-button-primary-background-color:var(--theme-primary-400);--theme-button-primary-color:var(--white);--theme-button-primary-hover-background-color:var(--theme-primary-500);--theme-button-primary-hover-color:var(--white);--theme-button-primary-selected-background-color:var(--theme-primary-600);--theme-button-primary-selected-color:var(--white);--theme-button-selected-background-color:var(--theme-primary-300);--theme-button-selected-color:var(--theme-primary-600);--theme-content-background-color:var(--white);--theme-content-border-color:var(--black-225);--theme-footer-background-border-top:0;--theme-footer-background-color:#042E4E;--theme-footer-background-position:top left;--theme-footer-background-repeat:no-repeat;--theme-footer-background-size:auto;--theme-footer-divider-color:var(--black-350);--theme-footer-link-color-hover:var(--white);--theme-footer-link-color:var(--black-225);--theme-footer-padding-bottom:0;--theme-footer-padding-top:0;--theme-footer-text-color:var(--black-300);--theme-footer-title-color:var(--white);--theme-header-background-border-bottom:0;--theme-header-background-color:var(--theme-primary);--theme-header-background-position:center left;--theme-header-background-repeat:repeat;--theme-header-background-size:auto;--theme-header-foreground-color:transparent;--theme-header-foreground-position:bottom right;--theme-header-foreground-repeat:no-repeat;--theme-header-foreground-size:auto;--theme-header-link-color:var(--theme-primary);--theme-header-sponsored-color:hsla(0,0%,100%,0.4);--theme-link-color-hover:var(--theme-primary-500);--theme-link-color-visited:var(--theme-primary-600);--theme-link-color:var(--theme-primary);--theme-post-body-font-family:var(--ff-sans);--theme-post-owner-background-color:var(--theme-primary-100);--theme-post-owner-new-background-color:var(--theme-primary-200);--theme-post-title-color-hover:var(--theme-link-color-hover);--theme-post-title-color-visited:var(--theme-link-color-visited);--theme-post-title-color:var(--theme-link-color);--theme-post-title-font-family:var(--ff-sans);--theme-primary-custom-100:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .9)));--theme-primary-custom-200:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .75)));--theme-primary-custom-300:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + ((100% - var(--theme-base-primary-color-l)) * .5)));--theme-primary-custom-400:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), var(--theme-base-primary-color-l));--theme-primary-custom-500:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.3)));--theme-primary-custom-600:hsl(var(--theme-base-primary-color-h), var(--theme-base-primary-color-s), calc(var(--theme-base-primary-color-l) + (var(--theme-base-primary-color-l) * -.6)));--theme-primary-custom:var(--theme-primary-custom-400);--theme-tag-background-color:#F8F8F8;--theme-tag-border-color:#ebebeb;--theme-tag-color:#707070;--theme-tag-hover-background-color:#ebebeb;--theme-tag-hover-border-color:#dedede;--theme-tag-hover-color:#636363;--theme-tag-required-border-color:#707070;--theme-tag-required-hover-border-color:#636363;--theme-topbar-bottom-border:none;background-color:transparent;border:0px;box-sizing:inherit;font-family:inherit;font-feature-settings:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-size:var(--_pr-code-fs);font-stretch:inherit;font-style:inherit;font-variant:inherit;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0px;padding:0px;vertical-align:baseline;white-space:inherit;">We look forward to speaking with you and helping you achieve a seamless transition with our expert guidance.</code><br>&nbsp;</p><p>Best Regards,</p><p>Code Engine Studio</p><p>Email: <a style="background-color:transparent;box-sizing:border-box;color:rgb(241, 89, 38);font-family:SVN-Circular;font-size:1.125rem;text-decoration:none;transition:color 0.1s ease-in-out 0s;" href="mailto:newbusiness@codeenginestudio.com">newbusiness@codeenginestudio.com</a></p>'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  admin_notification:
+    id: email
+    handler_id: admin_notification
+    label: 'Admin Notification'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: newbusiness@codeenginestudio.com
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: noreply@codeenginestudio.com
+      from_options: {  }
+      from_name: _default
+      reply_to: '[webform_submission:values:email:raw]'
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Form Submission from 30m Pre-audit Session - Drupal Migration'
+      body: '<p><strong>Submitted values are:</strong></p><p><strong>Name:</strong> [webform_submission:values:name]</p><p><strong>Company:</strong> [webform_submission:values:company]</p><p><strong>Role:</strong> [webform_submission:values:role]</p><p><strong>Email:</strong> [webform_submission:values:email]</p><p><strong>Time Zone:</strong> [webform_submission:values:timezone]</p><p>&nbsp;</p>'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

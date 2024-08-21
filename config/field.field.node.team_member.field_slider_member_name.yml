@@ -1,0 +1,19 @@
+uuid: 8d0d12b8-e5f7-4c5a-a1e9-5938dbb3b78a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slider_member_name
+    - node.type.team_member
+id: node.team_member.field_slider_member_name
+field_name: field_slider_member_name
+entity_type: node
+bundle: team_member
+label: 'Slider Member Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

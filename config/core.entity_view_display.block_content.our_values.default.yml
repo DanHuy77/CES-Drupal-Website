@@ -1,0 +1,43 @@
+uuid: 8f1e7296-1c9a-4125-9a07-6e8c29397fcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.our_values
+    - field.field.block_content.our_values.field_image_content
+    - field.field.block_content.our_values.field_subtitle
+    - field.field.block_content.our_values.field_value
+  module:
+    - entity_reference_revisions
+id: block_content.our_values.default
+targetEntityType: block_content
+bundle: our_values
+mode: default
+content:
+  field_image_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_subtitle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_value:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

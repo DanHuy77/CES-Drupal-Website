@@ -1,0 +1,8 @@
+uuid: f4a4beca-50da-4e87-8de9-c9c485dafef1
+langcode: en
+status: true
+dependencies: {  }
+id: mkt_partners
+label: 'MKT - Partners'
+revision: 0
+description: ''

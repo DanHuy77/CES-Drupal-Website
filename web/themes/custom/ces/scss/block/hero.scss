@@ -1,0 +1,800 @@
+.block-container {
+  .hero {
+    font-family: $font-svn-circular;
+    padding-top: 200px;
+    padding-bottom: 128px;
+
+    &.case-study {
+      padding-bottom: 0;
+    }
+
+    &.lets-talk {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+
+    .title {
+      color: $dark-jungle-green;
+      margin-bottom: 16px;
+    }
+
+    .body {
+      text-align: center;
+      color: $gray-light;
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        margin: auto;
+        max-width: 49%;
+      }
+    }
+
+    .exp_wrapper {
+      margin: auto;
+
+      .title {
+        justify-content: center;
+        align-items: center;
+
+        span {
+          margin-left: 12px;
+          font-size: 18px;
+          font-family: $font-svn-circular-bold;
+          line-height: 24px;
+        }
+      }
+
+      .subtitle {
+        text-align: center;
+        margin-bottom: 16px;
+
+        h1 {
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 64px;
+          line-height: 64px;
+          max-width: 686px;
+          margin: auto;
+          color: $dark-jungle-green;
+        }
+      }
+    }
+
+    .dxp-wrapper {
+      margin: auto;
+
+      .title {
+        text-align: center;
+
+        h1 {
+          max-width: 686px;
+          margin: auto;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 64px;
+          line-height: 64px;
+        }
+      }
+
+      .body {
+        p {
+          padding-bottom: 25px;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .our-team-wrapper {
+      margin: auto;
+
+      .title {
+        text-align: center;
+        margin-bottom: 16px;
+
+        h1 {
+          margin: auto;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 64px;
+          line-height: 64px;
+          max-width: 680px;
+        }
+      }
+
+      .body {
+        p {
+          max-width: 72%;
+        }
+      }
+    }
+
+    .case-studies-wrapper {
+      margin: auto;
+      max-width: 1036px;
+      text-align: center;
+
+      .title {
+        margin-bottom: 12px;
+
+        h1 {
+          margin: auto;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 64px;
+          line-height: 64px;
+          margin-top: 15px;
+        }
+      }
+
+      .subtitle {
+        h3 {
+          color: $gray-light;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 32px;
+          line-height: 37px;
+          max-width: 65%;
+          margin: auto;
+        }
+      }
+    }
+
+    .sgu_wrapper {
+      margin: auto;
+
+      .title {
+        color: $dark-jungle-green;
+        margin-bottom: 24px;
+
+        h1 {
+          text-align: center;
+          margin: auto;
+          width: 664px;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 64px;
+          line-height: 64px;
+        }
+      }
+
+      .button-wrap {
+        .button-inner {
+          span {
+            font-family: $font-svn-circular-bold;
+          }
+
+          img {
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+
+    .lt-wrapper {
+      margin: auto;
+
+      .title {
+        color: $white;
+        margin-bottom: 24px;
+
+        h2 {
+          text-align: center;
+          margin: auto;
+          width: 664px;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 64px;
+          line-height: 64px;
+        }
+      }
+
+      .body {
+        p {
+          color: $white;
+          max-width: 50%;
+          padding-bottom: 24px;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      .button-wrap {
+        padding: 32px 0 0;
+        text-align: center;
+
+        .lets-talk {
+          display: block;
+          margin: auto;
+          background-color: $white;
+          font-size: 24px;
+          padding: 24px;
+          border-radius: 4px;
+
+          &.ces-btn {
+            text-decoration: none;
+            color: $primary;
+
+            &:hover {
+              background-color: $primary;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .cs-top-wrapper {
+      text-align: center;
+
+      .title {
+        h1 {
+          color: $dark-jungle-green;
+          text-align: center;
+          margin: auto;
+          font-family: $font-geometric-slabserif-medium;
+          font-size: 64px;
+          font-weight: 300;
+          max-width: 100%;
+          line-height: 64px;
+        }
+      }
+
+      .subtitle {
+        h3 {
+          font-family: $font-geometric-slabserif-medium;
+          color: $dark-jungle-green;
+          font-size: 56px;
+          line-height: 56px;
+          font-weight: 500;
+          padding-bottom: 8px;
+        }
+      }
+
+      img {
+        padding-bottom: 32px;
+        max-width: 500px;
+      }
+    }
+
+    .pnf-wrapper {
+      .title {
+        h1 {
+          color: $dark-jungle-green;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 250px;
+          line-height: 250px;
+          text-align: center;
+        }
+      }
+
+      .body {
+        p {
+          color: $dark-jungle-green;
+          font-family: $font-geometric-slabserif-bold;
+          font-size: 54px;
+          line-height: 48px;
+        }
+      }
+
+      .page-not-found {
+        display: block;
+        margin: 48px auto;
+        padding: 16px 40px;
+
+        &:hover {
+          span {
+            transition: all 0.2s;
+            margin-left: 16px;
+
+            &::before {
+              color: #fff;
+              border-right: 2px solid currentcolor;
+              border-bottom: 2px solid currentcolor;
+              content: '';
+              position: absolute;
+              width: 7px;
+              height: 7px;
+              transform: rotate(135deg);
+              left: 28.8px;
+              top: 20.64px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile < 767 px.
+  @include media-breakpoint-down(md) {
+    .hero {
+      padding-top: 48px;
+      max-width: 350px;
+      padding-bottom: 64px;
+
+      &.case-study {
+        padding-bottom: 32px;
+      }
+
+      &.lets-talk {
+        padding-top: 48px;
+        padding-bottom: 64px;
+      }
+
+      .dxp-wrapper {
+        .title {
+          margin-bottom: 24px;
+
+          h1 {
+            width: unset;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+
+        .body {
+          margin: auto;
+
+          p {
+            font-size: 16px;
+            line-height: 21px;
+            max-width: 92%;
+          }
+        }
+      }
+
+      .exp_wrapper {
+        .title {
+          span {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+
+        .subtitle {
+          h1 {
+            font-size: 28.8px;
+            line-height: 28.8px;
+            max-width: 85%;
+          }
+        }
+
+        .body {
+          margin: auto;
+
+          p {
+            font-size: 16px;
+            line-height: 21px;
+            max-width: 80%;
+          }
+        }
+      }
+
+      .our-team-wrapper {
+        margin: auto;
+
+        .title {
+          text-align: center;
+
+          h1 {
+            padding: 0 10px;
+            margin: auto;
+            width: unset;
+            font-family: $font-geometric-slabserif-bold;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 16px;
+            line-height: 21px;
+            max-width: 93%;
+          }
+        }
+      }
+
+      .sgu_wrapper {
+        .title {
+          h1 {
+            padding: 0 25px;
+            margin: auto;
+            width: unset;
+            font-family: $font-geometric-slabserif-bold;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 16px;
+            line-height: 21px;
+            max-width: 90%;
+          }
+        }
+      }
+
+      .case-studies-wrapper {
+        .title {
+          h1 {
+            width: unset;
+            font-size: 29px;
+            line-height: 29px;
+          }
+        }
+
+        .subtitle {
+          h3 {
+            font-size: 22.4px;
+            line-height: 22.4px;
+            max-width: 90%;
+          }
+        }
+      }
+
+      .lt-wrapper {
+        margin: auto;
+
+        .title {
+          color: $white;
+          margin-bottom: 24px;
+
+          h2 {
+            padding: 0 25px;
+            width: unset;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+
+        .body {
+          p {
+            color: $white;
+            max-width: 100%;
+            padding-bottom: 24px;
+            font-size: 16px;
+            line-height: 21px;
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+        }
+
+        .button-wrap {
+          padding: 32px 0 0;
+
+          .lets-talk {
+            font-size: unset;
+            padding: 16px;
+          }
+        }
+      }
+
+      .cs-top-wrapper {
+        .title {
+          h1 {
+            font-size: 32px;
+            max-width: 100%;
+            line-height: 40px;
+          }
+        }
+
+        .subtitle {
+          h3 {
+            font-size: 32px;
+            line-height: 32px;
+            padding-bottom: 16px;
+          }
+        }
+
+        text-align: center;
+
+        img {
+          max-width: 320px;
+        }
+      }
+
+      .pnf-wrapper {
+        .title {
+          h1 {
+            font-size: 150px;
+            line-height: 150px;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 32px;
+            line-height: 48px;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // Tablet 768px -> 991px.
+  @include media-breakpoint-between(md, lg) {
+    .hero {
+      width: 100%;
+      padding: 48px 30px 64px;
+
+      .case-studies-wrapper,
+      .exp_wrapper {
+        .title {
+          h1 {
+            width: 100%;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+
+          span {
+            font-size: 16px;
+          }
+        }
+
+        .subtitle {
+          h1 {
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+
+          h3 {
+            font-size: 22.4px;
+            line-height: 22.4px;
+            max-width: 50%;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 16px;
+            max-width: 85%;
+            line-height: 21px;
+          }
+        }
+      }
+
+      .our-team-wrapper {
+        margin: auto;
+
+        .title {
+          text-align: center;
+
+          h1 {
+            padding: 0 169.6px;
+            margin: auto;
+            width: unset;
+            font-family: $font-geometric-slabserif-bold;
+            font-size: 28.8px;
+            line-height: 28.8px;
+            max-width: 646px;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 16px;
+            line-height: 21px;
+            max-width: 100%;
+          }
+        }
+      }
+
+      .dxp-wrapper {
+        .title {
+          margin-bottom: 16px;
+
+          h1 {
+            width: unset;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+      }
+
+      .sgu_wrapper {
+        .title {
+          h1 {
+            text-align: center;
+            margin: auto;
+            font-family: $font-geometric-slabserif-bold;
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+      }
+
+      .lt-wrapper {
+        margin: auto;
+
+        .title {
+          color: $white;
+          margin-bottom: 24px;
+
+          h2 {
+            font-size: 28.8px;
+            line-height: 28.8px;
+          }
+        }
+
+        .body {
+          p {
+            max-width: 88%;
+          }
+        }
+
+        .button-wrap {
+          padding: 48px 0 0;
+
+          .lets-talk {
+            font-size: 20px;
+            padding: 20px;
+          }
+        }
+      }
+
+      .cs-top-wrapper {
+        .title {
+          h1 {
+            font-size: 48px;
+            max-width: 100%;
+            line-height: 56px;
+          }
+        }
+
+        .subtitle {
+          h3 {
+            font-size: 32px;
+            line-height: 32px;
+            padding-bottom: 16px;
+          }
+        }
+
+        text-align: center;
+      }
+
+      .body {
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 21px;
+          margin: auto;
+          max-width: 85%;
+        }
+      }
+
+      .pnf-wrapper {
+        padding: 22.4px 0;
+      }
+    }
+  }
+
+  // Desktop 992px -> 1199px.
+  @include media-breakpoint-between(lg, xl) {
+    .hero {
+      padding: 144px 0 96px;
+      margin-bottom: 0 !important;
+
+      .case-studies-wrapper,
+      .exp_wrapper {
+        .title {
+          margin-bottom: 24px;
+
+          h1 {
+            width: 100%;
+            font-size: 48px;
+            line-height: 51px;
+          }
+
+          span {
+            font-size: 18px;
+          }
+        }
+
+        .subtitle {
+          h1 {
+            font-size: 48px;
+            line-height: 51px;
+          }
+
+          h3 {
+            font-size: 27px;
+            line-height: 27px;
+            max-width: 50%;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 18px;
+            line-height: 24px;
+            max-width: 55%;
+          }
+        }
+      }
+
+      .our-team-wrapper {
+        margin: auto;
+
+        .title {
+          text-align: center;
+
+          h1 {
+            margin: auto;
+            font-family: $font-geometric-slabserif-bold;
+            font-size: 48px;
+            line-height: 48px;
+            width: 510px;
+          }
+        }
+
+        .body {
+          p {
+            max-width: 52%;
+          }
+        }
+      }
+
+      .dxp-wrapper {
+        margin: auto;
+
+        .title {
+          margin: auto auto 2%;
+
+          h1 {
+            width: unset;
+            font-size: 48px;
+            line-height: 48px;
+            max-width: 400px;
+            margin: auto;
+          }
+        }
+
+        .body {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      .sgu_wrapper {
+        .title {
+          h1 {
+            text-align: center;
+            margin: auto;
+            font-family: $font-geometric-slabserif-bold;
+            font-size: 48px;
+            line-height: 48px;
+            width: 645px;
+          }
+        }
+
+        .body {
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            margin: auto;
+            max-width: 57%;
+          }
+        }
+      }
+
+      .cs-top-wrapper {
+        .title {
+          h1 {
+            font-size: 56px;
+            max-width: 100%;
+            line-height: 64px;
+          }
+        }
+      }
+
+      .pnf-wrapper {
+        padding: 104px 0;
+      }
+    }
+  }
+}

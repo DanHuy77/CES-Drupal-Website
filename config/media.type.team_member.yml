@@ -1,0 +1,13 @@
+uuid: 4fff9a05-b120-40d0-8178-2eee9c3f2ecf
+langcode: en
+status: true
+dependencies: {  }
+id: team_member
+label: 'Team Member'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_2
+field_map: {  }

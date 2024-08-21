@@ -1,0 +1,25 @@
+uuid: cf288b1a-2329-4358-8d66-8bc4c01a5f09
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.storage.block_content.field_form
+  module:
+    - webform
+id: block_content.contact_form_block.field_form
+field_name: field_form
+entity_type: block_content
+bundle: contact_form_block
+label: Form
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

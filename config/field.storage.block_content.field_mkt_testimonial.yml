@@ -1,0 +1,20 @@
+uuid: 21590f2b-7176-448e-b82a-da52130ee0c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - node
+id: block_content.field_mkt_testimonial
+field_name: field_mkt_testimonial
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+uuid: dcf5955a-cdb6-4b9b-a9a6-bc28989e724f
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.reviewer_avatar
+id: media.reviewer_avatar
+target_entity_type_id: media
+target_bundle: reviewer_avatar
+default_langcode: site_default
+language_alterable: false

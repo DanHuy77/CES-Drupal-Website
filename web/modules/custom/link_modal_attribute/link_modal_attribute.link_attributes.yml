@@ -1,0 +1,6 @@
+open_modal:
+  title: Open modal
+  type: select
+  options:
+    yes: Yes
+    no: No

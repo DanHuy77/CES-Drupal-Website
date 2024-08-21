@@ -1,0 +1,27 @@
+<div class="testimonial-container container">
+  <div class="row justify-content-center">
+    <div class="col-xl-8 col-12">
+      <div class="testimonial-card">
+        <div class="testimonial-card__icon">
+          <img src="/themes/custom/ces/assets/icons/quote-right1.svg" alt="quote-right" loading="lazy">
+        </div>
+        <div class="testimonial-card__content">
+          <div class="testimonial-card__content-body">
+            <div class="testimonial-card__content-body-text">
+              <p>“{{body|striptags}}”</p>
+            </div>
+            <div class="testimonial-card__content-body-detail">
+              {% if avatar is not empty %}
+                <img src="{{avatar}}" alt="avatar" loading="lazy">
+              {% endif %}
+              <div>
+                <div class="testimonial-card__content-body-name">{{name|upper}}</div>
+                <div class="testimonial-card__content-body-position">{{position|upper}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

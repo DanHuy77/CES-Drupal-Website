@@ -1,0 +1,25 @@
+uuid: dfe354cd-d145-45be-a62d-d0a6b79a50a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.homepage_hero
+    - field.storage.block_content.field_text_color_first
+  module:
+    - color_field
+id: block_content.homepage_hero.field_text_color_first
+field_name: field_text_color_first
+entity_type: block_content
+bundle: homepage_hero
+label: 'Text Color (First Part)'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    color: '#212121'
+    opacity: null
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

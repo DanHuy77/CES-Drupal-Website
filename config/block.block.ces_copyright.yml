@@ -1,0 +1,25 @@
+uuid: b76b1083-40e3-466a-9149-b06beb81abe8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:09803e04-d7b8-4c9e-a93f-a32ca75393bc'
+  module:
+    - block_content
+  theme:
+    - ces
+id: ces_copyright
+theme: ces
+region: copyright
+weight: 0
+provider: null
+plugin: 'block_content:09803e04-d7b8-4c9e-a93f-a32ca75393bc'
+settings:
+  id: 'block_content:09803e04-d7b8-4c9e-a93f-a32ca75393bc'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

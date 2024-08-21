@@ -1,0 +1,92 @@
+version: "3.8"
+
+services:
+  ces:
+    # image: ghcr.io/code-engine-studio/ces-drupal-website:c4f6490
+    build:
+      context: .
+    container_name: ces
+    depends_on:
+      - mariadb
+      - redis
+    env_file:
+      - .env
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - DRUPAL_DATABASE_USER=ces
+      - DRUPAL_DATABASE_PASSWORD=ces
+      - DRUPAL_DATABASE_NAME=ces
+      - DRUPAL_DATABASE_HOST=mariadb
+      - DRUPAL_DATABASE_PORT=3306
+      - DRUPAL_SKIP_BOOTSTRAP=true
+      - REDIS_MASTER_SERVICE_HOST=redis
+      - REDIS_MASTER_SERVICE_PORT_TCP_REDIS=6379
+      - BITNAMI_DEBUG=true # Enable show log when starting site
+    labels:
+      - "traefik.http.routers.ces-website.rule=Host(`ces-website.lndo.site`)"
+      - "traefik.http.routers.ces-website.entrypoints=web,websecure"
+      - traefik.http.routers.ces-website.tls=true # Enable TLS termination
+      - traefik.http.routers.ces-website.tls.certresolver=myresolver
+      - traefik.backend='ces-website'
+      - traefik.docker.network=traefik
+    networks:
+      - drupal-network
+      - traefik
+
+  mariadb:
+    image: bitnami/mariadb:latest
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=ces
+      - MARIADB_PASSWORD=ces
+      - MARIADB_DATABASE=ces
+    networks:
+      - drupal-network
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+
+  redis:
+    image: redis:6.2.7
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+    command: --port 6379
+    expose:
+      - 6379
+    volumes:
+      - redis-cache:/data:delegated
+    networks:
+      - drupal-network
+
+  rproxy:
+    image: traefik:latest
+    container_name: "traefik"
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+    ports:
+      - "80:80" # The HTTP port
+      - "443:443"   # The HTTPS port
+      - "8080:8080" # The Web UI (enabled by --api.insecure=true)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock #So that Traefik can listen to the Docker events
+      - ./traefik.crt:/certs/traefik.crt
+      - ./traefik.key:/certs/traefik.key
+    networks:
+      - traefik
+    restart: always
+
+networks:
+  drupal-network:
+  traefik:
+    external: true
+
+volumes:
+  mariadb_data:
+  redis-cache:

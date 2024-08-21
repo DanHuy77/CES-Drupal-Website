@@ -1,0 +1,28 @@
+uuid: 1e0625f1-eefd-4f8c-90ab-9706275a711d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cookie_policy
+    - field.storage.block_content.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.cookie_policy.field_body
+field_name: field_body
+entity_type: block_content
+bundle: cookie_policy
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - restricted_html
+    - full_html
+field_type: text_long

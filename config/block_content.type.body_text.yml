@@ -1,0 +1,8 @@
+uuid: 795185ce-ccbb-47f3-a209-41798ae8d2f2
+langcode: en
+status: true
+dependencies: {  }
+id: body_text
+label: 'Body Text'
+revision: false
+description: ''

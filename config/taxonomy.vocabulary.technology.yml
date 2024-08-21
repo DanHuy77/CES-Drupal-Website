@@ -1,0 +1,8 @@
+uuid: 8e7d8968-aa1a-4802-8a12-7bd1bfd05655
+langcode: en
+status: true
+dependencies: {  }
+name: Technology
+vid: technology
+description: Technology
+weight: 0

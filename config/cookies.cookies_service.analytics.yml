@@ -1,0 +1,19 @@
+uuid: 44304a13-eca8-4b14-944d-3ec8d2c533a4
+langcode: en
+status: true
+dependencies: {  }
+id: analytics
+label: Analytics
+group: analytics
+info:
+  value: ''
+  format: basic_html
+consentRequired: true
+purpose: ''
+placeholderMainText: Analytics
+placeholderAcceptText: Analytics
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: ''

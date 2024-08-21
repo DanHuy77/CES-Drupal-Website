@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% set title = content.field_title['#items'].0.value %}
+{% set layout = content.field_layout['#items'].0.value %}
+{% set button_block_text = content.field_button_block_text['#items'].0.value %}
+{% set current_url = path('<current>') %}
+
+{% if current_url == '/careers-at-ces'%}
+  {% set size = '6' %}
+{% else %}
+  {% set size = '12' %}
+{% endif %}
+
+<div{{attributes}}>
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block-container">
+      {% include '@ces/templates/expertise/' ~ layout ~ '.html.twig' ignore missing %}
+    </div>
+  {% endblock %}
+</div>

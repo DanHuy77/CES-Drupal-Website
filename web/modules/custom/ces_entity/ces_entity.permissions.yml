@@ -1,0 +1,3 @@
+administer ces_entity_internship:
+  title: 'Administer internships'
+  restrict access: true

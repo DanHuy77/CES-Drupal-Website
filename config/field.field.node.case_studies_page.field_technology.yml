@@ -1,0 +1,29 @@
+uuid: 24620e74-bdfc-4302-a42b-9645dbfc41e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_technology
+    - node.type.case_studies_page
+    - taxonomy.vocabulary.technology
+id: node.case_studies_page.field_technology
+field_name: field_technology
+entity_type: node
+bundle: case_studies_page
+label: Technology
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      technology: technology
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

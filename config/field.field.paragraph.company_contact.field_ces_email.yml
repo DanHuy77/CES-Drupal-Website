@@ -1,0 +1,19 @@
+uuid: bb42eb35-a0dc-442b-86a6-5f436bd68a3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ces_email
+    - paragraphs.paragraphs_type.company_contact
+id: paragraph.company_contact.field_ces_email
+field_name: field_ces_email
+entity_type: paragraph
+bundle: company_contact
+label: 'CES Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

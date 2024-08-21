@@ -1,0 +1,6 @@
+freshteam.internship_form:
+  path: '/internship'
+  defaults:
+    _form: 'Drupal\freshteam\Form\RegisterInternshipForm'
+  requirements:
+    _permission: 'access ces_internship_form'

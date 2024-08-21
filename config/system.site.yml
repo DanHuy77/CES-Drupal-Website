@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 8f8501a9-dfed-4ccc-adf5-15e5a25f7412
+name: 'Code Engine Studio'
+mail: noreply@codeenginestudio.com
+slogan: ''
+page:
+  403: ''
+  404: /node/98
+  front: /node/26
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

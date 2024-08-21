@@ -1,0 +1,29 @@
+uuid: 0f32d8ee-c659-4786-9f6c-993f0d6146f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+    - field.storage.block_content.field_background_image
+    - media.type.image
+id: block_content.mkt_video_hero.field_background_image
+field_name: field_background_image
+entity_type: block_content
+bundle: mkt_video_hero
+label: 'Top Logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

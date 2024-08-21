@@ -1,0 +1,5 @@
+name: 'Freshteam Career Synchronization'
+type: module
+description: 'Freshteam career synchronization module'
+package: Custom
+core_version_requirement: ^10

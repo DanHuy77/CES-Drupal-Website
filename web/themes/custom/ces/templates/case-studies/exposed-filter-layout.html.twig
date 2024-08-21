@@ -1,0 +1,36 @@
+{{ attach_library('ces/case_studies_landing_page') }}
+
+{% set form_elements = [] %}
+{% set form_elements = form_elements | merge(form['#info']) %}
+
+<div id="case-studies-filters" class="case-studies__filters__container container-fluid">
+  <div class="case-studies__filters__wrapper">
+    <div class="case-studies__filters__tags-filter">
+      <div class="case-studies__filters__section-label">
+        <div id="reset-btn" class="case-studies__filters__clear-filters-btn d-none">
+          <span>Clear filters</span>
+        </div>
+      </div>
+      <div class="case-studies__filters__section-wrapper">
+        {% for element in form_elements %}
+          {% set form_field = element['value'] %}
+          {% if element['value'] is same as (null) %}
+            {% set form_field = element['#name'] %}
+          {% endif %}
+          {% if loop.first %}
+            {% else %}
+              <div id="{{ loop.index }}" class="case-studies__filters__section-item">
+                {{ form[form_field] }}
+              </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="case-studies__filters__search">
+      {{ form["actions"] }}
+      {{ form["search_api_fulltext"] }}
+      <div class="button-overlay"></div>
+    </div>
+  </div>
+</div>
+<input data-drupal-selector="edit-csrf-token" type="hidden" name="csrf_token" value="ZOB7YYkA31gEGWvEn6n9Brv959EwFAYRyQZNTuS_Rio">

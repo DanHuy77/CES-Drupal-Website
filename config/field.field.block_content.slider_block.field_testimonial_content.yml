@@ -1,0 +1,29 @@
+uuid: 48bd7d44-ea1a-4492-aef7-dd903961a44f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.storage.block_content.field_testimonial_content
+    - node.type.testimonial
+id: block_content.slider_block.field_testimonial_content
+field_name: field_testimonial_content
+entity_type: block_content
+bundle: slider_block
+label: 'Testimonial Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      testimonial: testimonial
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

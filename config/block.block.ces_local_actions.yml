@@ -1,0 +1,20 @@
+uuid: a4565fd8-e0b9-4687-9228-188acc4ce5c4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ces
+_core:
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: ces_local_actions
+theme: ces
+region: content
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

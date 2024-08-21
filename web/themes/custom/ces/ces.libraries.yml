@@ -1,0 +1,75 @@
+# Main theme library.
+global:
+  js:
+    js/ces.js: {}
+    js/header-menu.js: {}
+  css:
+    layout:
+      css/style.min.css: {}
+    theme:
+      css/style.min.css: {}
+  dependencies:
+    - core/jquery
+    - core/once
+
+our_team:
+  js:
+    js/our_team.js: {}
+
+web_forms:
+  js:
+    js/web_forms.js: {}
+
+cookie_policy:
+  js:
+    js/cookie-policy.js: {}
+
+key_insights:
+  js:
+    js/key-insights.js: {}
+
+leadership_team:
+  js:
+    js/leadership-team.js: {}
+
+case_studies_landing_page:
+  js:
+    js/case-studies.js: {}
+  dependencies:
+    - core/once
+
+slick_slider:
+  js:
+    js/slick.min.js: {}
+    js/fancybox.min.js: {}
+    js/slider.js: {}
+  css:
+    theme:
+      css/slick.css: {}
+      css/slick-theme.css: {}
+      css/fancybox.min.css: {}
+
+schedule_call:
+  js:
+    js/bootstrap.min.js: {}
+
+simple_login:
+  js:
+    js/simple-login.js: {}
+
+marketing_why:
+  js:
+    js/mkt-why.js: {}
+
+wizard_form:
+  js:
+    js/bootstrap.min.js: {}
+    js/timezone-data.js: {}
+    js/flatpickr.min.js: {}
+    js/jquery-clock-timepicker.min.js: {}
+    js/jquery-ui.min.js: {}
+    js/wizard-form.js: {}
+  css:
+    theme:
+      css/flatpickr.min.css: {}
+      css/jquery-ui.min.css: {}

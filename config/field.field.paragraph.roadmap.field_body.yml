@@ -1,0 +1,26 @@
+uuid: 2e3b668b-e9ad-4a46-b33e-389009864ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.roadmap
+  module:
+    - text
+id: paragraph.roadmap.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: roadmap
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

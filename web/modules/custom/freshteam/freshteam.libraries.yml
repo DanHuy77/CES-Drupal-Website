@@ -1,0 +1,5 @@
+# Custom library for general purposes.
+freshteam:
+  css:
+    theme:
+      css/style.css: {}

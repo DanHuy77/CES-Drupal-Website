@@ -1,0 +1,130 @@
+name: Build Docker Image and Deploy to Cluster
+
+on:
+  release:
+    types: [published]
+  push:
+    branches: 
+      - cicd
+    tags:
+      - hotfix.*
+    paths:
+      - deployment/cloud/packages/**
+      - config/**
+      - web/**
+      - Dockerfile
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,enable=true,priority=100,prefix=,suffix=,format=short
+
+      - name: Build and push Docker image latest
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.tags }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache NPM dependencies
+        id: npm-cache
+        uses: actions/cache@v4
+        with:
+          path: ./deployment/cloud/packages/node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install NPM dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: |
+          cd ./deployment/cloud/packages
+          npm install
+
+      - name: Cache CDKTF imports
+        id: cdktf-cache
+        uses: actions/cache@v4
+        with:
+          path: ./deployment/cloud/packages/.gen
+          key: ${{ runner.os }}-cdktf-imports-${{ hashFiles('cdktf.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cdktf-imports-
+
+      - name: Run CDKTF get
+        if: steps.cdktf-cache.outputs.cache-hit != 'true'
+        run: |
+          cd ./deployment/cloud/packages
+          npx cdktf-cli get
+
+      - name: Install CDKTF CLI
+        env:
+          MARIADB_PASSWORD: ${{ secrets.MARIADB_PASSWORD }}
+        run: |
+          cd ./deployment/cloud/packages
+          echo "DRUPAL_TAG = \"${GITHUB_SHA::7}\"" > drupal.tfvars
+          echo "CDN_NAME = \"${{ vars.CDN_NAME }}\"" >> drupal.tfvars
+          echo "" >> drupal.tfvars
+
+      - name: Deploy CDKTF via Terraform Cloud
+        uses: hashicorp/terraform-cdk-action@v4
+        env:
+          TFE_TOKEN: ${{ secrets.TFE_TOKEN }}
+        with:
+          cdktfVersion: 0.20.7
+          terraformVersion: 1.8.2
+          mode: auto-approve-apply
+          stackName: drupal
+          # personal token not organization token
+          terraformCloudToken: ${{ secrets.TFE_TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          cdktfArgs: '--var-file=drupal.tfvars'
+          workingDirectory: ./deployment/cloud/packages

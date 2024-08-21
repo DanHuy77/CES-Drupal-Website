@@ -1,0 +1,37 @@
+uuid: 17ff34d2-39b7-46cd-beda-7d25a6bf1e45
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_animated_image
+    - field.field.block_content.mkt_animated_image.field_background_image
+  module:
+    - media_library
+id: block_content.mkt_animated_image.default
+targetEntityType: block_content
+bundle: mkt_animated_image
+mode: default
+content:
+  field_background_image:
+    type: media_library_widget
+    weight: 30
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

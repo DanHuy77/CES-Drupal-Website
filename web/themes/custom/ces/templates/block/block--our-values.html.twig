@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+<div{{attributes}}>
+  {{ title_suffix }}
+  {% block content %}
+    {% set background_image = content.field_image_content['#items'].0.entity|file_url %}
+    {% if background_image is empty %}
+      {% set background_image = '#000' %}
+    {% else %}
+      {% set background_image = 'url(' ~ background_image ~ ')' %}
+    {% endif %}
+    {% set title = content.field_subtitle['#items'].0.value %}
+    {% set side_text = content.field_side_text['#items'].0.processed %}
+    {% set core_values = content.field_value['#items'] %}
+    <div class="our-values" style="background: {{ background_image }} center no-repeat; background-size: cover">
+      <div class="our-values__inner">
+        {% if title is not empty %}
+          <h4>{{ title }}</h4>
+        {% endif %}
+        {% if core_values is iterable %}
+          <div class="core-values {{ core_values|length is odd ? 'odd' : '' }} ">
+            {% for paragraph in core_values %}
+              {% set core_value = paragraph.entity %}
+              {% set icon = core_value.field_icon.entity|file_url %}
+              {% set value_name = core_value.field_value_name.value|replace({"," : ",<br>"}) %}
+              <div class="core-values__item">
+                <img alt="our values icon" loading="lazy" src="{{ icon }}" >
+                <span>
+                  {% autoescape %}
+                    {{ value_name|raw }}
+                  {% endautoescape %}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+</div>

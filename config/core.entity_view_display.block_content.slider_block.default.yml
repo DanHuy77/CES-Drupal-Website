@@ -1,0 +1,68 @@
+uuid: 66bcd03b-5f68-41cd-b70a-4277a0eeba39
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.field.block_content.slider_block.body
+    - field.field.block_content.slider_block.field_case_studies_content
+    - field.field.block_content.slider_block.field_image_content
+    - field.field.block_content.slider_block.field_slider_title
+    - field.field.block_content.slider_block.field_team_content
+    - field.field.block_content.slider_block.field_testimonial_content
+  module:
+    - text
+id: block_content.slider_block.default
+targetEntityType: block_content
+bundle: slider_block
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_case_studies_content:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_slider_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_team_content:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_testimonial_content:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

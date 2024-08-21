@@ -1,0 +1,642 @@
+.body-text {
+  .block_title {
+    font-family: $font-geometric-slabserif-bold;
+    padding: 0 0 32px;
+    font-size: 32px;
+    color: #7a7a7a;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-family: $font-geometric-slabserif-bold;
+    font-size: 32px;
+    line-height: 37px;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color 0.3s;
+    color: $primary;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .body {
+    color: $dark-jungle-green;
+    font-size: 18px;
+    font-family: $font-svn-circular;
+    font-weight: 400;
+    line-height: 24px;
+
+    p {
+      padding-bottom: 11px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    ul,
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .item {
+    padding-top: 128px;
+    padding-bottom: 48px;
+
+    .col-default {
+      display: flex;
+      flex-direction: row;
+      padding: 0 0 48px;
+
+      .title {
+        width: 50%;
+        color: $dark-jungle-green;
+
+        h3 {
+          width: 70%;
+        }
+      }
+
+      .body {
+        width: 50%;
+      }
+    }
+  }
+
+  .item-wrapper {
+    padding: 64px 0;
+
+    &.medium-padding {
+      padding: 128px 0;
+    }
+
+    &.huge-padding {
+      padding: 128px 14%;
+    }
+
+    &.exclude {
+      &-top {
+        padding-top: 0;
+      }
+
+      &-bottom {
+        padding-bottom: 0;
+      }
+    }
+
+    .title {
+      padding-bottom: 16px;
+
+      &.no-padding {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .horizontal-body-text {
+    max-width: 1700px;
+    margin: auto;
+
+    .item-wrapper {
+      margin: 0 32px;
+      padding: 64px 0;
+      border-bottom: 1px solid $gray-light;
+      column-gap: 85px;
+    }
+
+    .horizontal-column {
+      flex: 1 0;
+    }
+  }
+
+  .block-container {
+    .testimonial-container {
+      padding: 0 224px 64px;
+    }
+  }
+}
+
+.our-process {
+  .body {
+    background-color: $white-smoke;
+    font-family: $font-svn-circular;
+    color: $dark-jungle-green;
+
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 64px 208px;
+
+      .name {
+        font-family: $font-geometric-slabserif-bold;
+
+        h2 {
+          line-height: 37px;
+        }
+      }
+
+      .item {
+        background-color: $white;
+        border-radius: 18px;
+        padding: 24px;
+
+        .step {
+          color: $primary;
+          font-family: $font-svn-circular-bold;
+          text-transform: uppercase;
+        }
+
+        .title {
+          h3 {
+            font-family: $font-svn-circular-bold;
+            margin-bottom: 16px;
+          }
+        }
+
+        .description {
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile < 767 px.
+@include media-breakpoint-down(md) {
+  .body-text {
+    padding: 0 $padding-mobile;
+
+    .item-wrapper {
+      padding: 48px 0;
+
+      &.medium-padding {
+        padding: 64px 0;
+      }
+
+      &.huge-padding {
+        padding: 64px 9%;
+      }
+
+      &.exclude {
+        &-top {
+          padding-top: 0;
+        }
+
+        &-bottom {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .item {
+      padding-top: 64px;
+      padding-bottom: 64px;
+
+      .col-default {
+        padding-bottom: 32px;
+        flex-direction: column;
+
+        .title {
+          width: 100%;
+
+          h3 {
+            width: 314px;
+          }
+        }
+
+        .body {
+          width: 100%;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: -0.1px;
+    }
+
+    .block_title {
+      font-size: 24px;
+      padding: 0;
+    }
+
+    h3 {
+      font-size: 22.4px;
+      line-height: 25.9px;
+    }
+
+    .horizontal-body-text {
+      .item-wrapper {
+        padding: 48px 0;
+        row-gap: 24px;
+      }
+
+      .horizontal-column {
+        flex: 1 0 100%;
+        padding-bottom: 0;
+
+        .title {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .block-container {
+      .testimonial-container {
+        padding: 0 0 48px;
+      }
+    }
+  }
+
+  .our-process {
+    padding-top: 0;
+
+    .body {
+      font-family: $font-svn-circular;
+
+      .container {
+        padding: 0 16px;
+
+        .items {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          padding: 48px 0;
+
+          .item {
+            border-radius: 18px;
+            padding: 24px 12px;
+
+            .step {
+              color: $primary;
+              text-transform: uppercase;
+            }
+
+            .title {
+              h3 {
+                font-family: $font-svn-circular-bold;
+                margin-bottom: 16px;
+                font-size: 20px;
+              }
+            }
+
+            .description {
+              p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          .name {
+            font-family: $font-geometric-slabserif-bold;
+
+            h2 {
+              font-size: 22px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .horizontal-body-text {
+    padding: 0 !important;
+
+    .item-wrapper {
+      margin: 0 !important;
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .body-text {
+    padding: 0 $padding-tablet;
+
+    .block_title {
+      font-size: 24px;
+      padding: 0 0 16px;
+    }
+
+    h3 {
+      font-size: 22.4px;
+      line-height: 25.9px;
+    }
+
+    .body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: -0.1px;
+    }
+
+    .container {
+      max-width: 100% !important;
+
+      .item {
+        padding-top: 64px;
+        padding-bottom: 64px;
+
+        .col-default {
+          padding-bottom: 32px;
+          flex-direction: column;
+
+          .title {
+            width: 100%;
+
+            h3 {
+              width: 100%;
+            }
+          }
+
+          .body {
+            width: 100%;
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      .item-wrapper {
+        padding: 64px 0;
+
+        &.medium-padding {
+          padding: 64px 0;
+        }
+
+        &.huge-padding {
+          padding: 32px 9%;
+        }
+
+        &.exclude {
+          &-top {
+            padding-top: 0;
+          }
+
+          &-bottom {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .horizontal-body-text {
+      .item-wrapper {
+        padding: 64px 0;
+      }
+
+      .horizontal-column {
+        flex: 1 0 100%;
+        padding-bottom: 16px;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        .title {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .block-container {
+      .testimonial-container {
+        padding: 0 0 64px;
+      }
+    }
+  }
+
+  .our-process {
+    padding-top: 0;
+
+    .body {
+      .container {
+        padding: 0 48px;
+        max-width: unset;
+
+        .items {
+          padding: 64px 0;
+
+          .item {
+            .title {
+              h3 {
+                font-size: 20px;
+              }
+            }
+
+            .description {
+              p {
+                font-size: 16px;
+              }
+            }
+          }
+
+          .name {
+            h2 {
+              font-size: 22px;
+              line-height: 26px;
+            }
+
+            &.container {
+              max-width: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .horizontal-body-text {
+    padding: 0 !important;
+
+    .item-wrapper {
+      margin: 0 !important;
+    }
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .body-text {
+    padding: 0 $padding-tablet;
+
+    .block_title {
+      font-size: 28px;
+      padding: 0 0 24px;
+    }
+
+    h3 {
+      font-size: 27.2px;
+      line-height: 31px;
+    }
+
+    .body {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .container {
+      max-width: 100% !important;
+
+      .item {
+        padding-top: 64px;
+        padding-bottom: 64px;
+
+        .col-default {
+          padding-bottom: 32px;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      .item-wrapper {
+        padding: 64px 0;
+
+        &.medium-padding {
+          padding: 64px 0;
+        }
+
+        &.huge-padding {
+          padding: 128px 28%;
+        }
+
+        &.exclude {
+          &-top {
+            padding-top: 0;
+          }
+
+          &-bottom {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .horizontal-body-text {
+      .item-wrapper {
+        padding: 64px 0;
+        column-gap: 25px;
+      }
+    }
+
+    .block-container {
+      .testimonial-container {
+        padding: 0 0 64px;
+      }
+    }
+  }
+
+  .our-process {
+    padding-top: 0;
+
+    .name {
+      h2 {
+        font-size: 27.2px;
+      }
+
+      &.container {
+        max-width: unset;
+      }
+    }
+
+    .body {
+      .container {
+        padding: 0 48px;
+        max-width: unset;
+
+        .items {
+          padding: 64px 0;
+
+          .item {
+            .title {
+              h3 {
+                font-size: 24px;
+              }
+            }
+
+            .description {
+              p {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .horizontal-body-text {
+    padding: 0 !important;
+
+    .item-wrapper {
+      margin: 0 !important;
+    }
+  }
+}
+
+// Desktop 1200px ->1400px
+@include media-breakpoint-between(xl, xxl) {
+  .section__case-study {
+    .our-process {
+      .name {
+        h2 {
+          font-size: 27.2px;
+          line-height: 26px;
+        }
+      }
+
+      .body {
+        .container {
+          padding: 0 48px;
+          max-width: unset;
+
+          .items {
+            padding: 40px 224px;
+
+            .item {
+              .title {
+                h3 {
+                  font-size: 24px;
+                }
+              }
+
+              .description {
+                p {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

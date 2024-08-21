@@ -1,0 +1,9 @@
+uuid: c5b58139-3de8-48ac-9992-a9ae5111f16f
+langcode: en
+status: true
+dependencies: {  }
+id: analytics
+label: Analytics
+weight: 4
+title: Analytics
+details: 'Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics the number of visitors, bounce rate, traffic source, etc.'

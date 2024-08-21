@@ -1,0 +1,9 @@
+extends: ./web/.eslintrc.json
+rules:
+  func-names: 0
+  object-shorthand: [2, 'never']
+  prefer-rest-params: 0
+  prefer-template: 0
+  max-nested-callbacks: [2, 5]
+  no-plusplus: 0
+  prefer-destructuring: 0

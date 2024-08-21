@@ -1,0 +1,24 @@
+uuid: 891941f8-10c2-4df7-9738-6d040c1388fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.highlight
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.highlight.field_title
+field_name: field_title
+entity_type: block_content
+bundle: highlight
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

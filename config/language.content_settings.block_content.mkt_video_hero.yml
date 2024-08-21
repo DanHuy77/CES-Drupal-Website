@@ -1,0 +1,11 @@
+uuid: fe66a608-ac43-4f35-8cbe-fe04e4c5ebc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+id: block_content.mkt_video_hero
+target_entity_type_id: block_content
+target_bundle: mkt_video_hero
+default_langcode: site_default
+language_alterable: false

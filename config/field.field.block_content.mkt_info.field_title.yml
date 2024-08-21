@@ -1,0 +1,24 @@
+uuid: 17cc3600-1c78-4219-aec4-236a60130ae1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_info
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.mkt_info.field_title
+field_name: field_title
+entity_type: block_content
+bundle: mkt_info
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

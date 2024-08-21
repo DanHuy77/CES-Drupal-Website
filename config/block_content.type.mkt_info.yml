@@ -1,0 +1,8 @@
+uuid: b5876321-84e9-4271-b174-4c1c14973325
+langcode: en
+status: true
+dependencies: {  }
+id: mkt_info
+label: 'MKT - Info'
+revision: 0
+description: ''

@@ -1,0 +1,11 @@
+uuid: 91918f19-8b78-4f6c-ad47-2d6603155c2b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aHm4Q63Ge97tcktTa_qmUqJMir45iyGY2lEvvqPW68g
+id: functional
+label: Functional
+weight: 2
+title: Functional
+details: 'Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.'

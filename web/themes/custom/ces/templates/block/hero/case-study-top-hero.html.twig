@@ -1,0 +1,19 @@
+<div class="cs-top-wrapper">
+  <div>
+    {% if icon_url %}
+      <img src="{{ icon_url }}" alt="hero banner" loading="lazy">
+    {% endif %}
+    {% if subtitle %}
+      <div class="subtitle">
+        <h3>{{ subtitle|raw }}</h3>
+      </div>
+    {% endif %}
+    {% if title %}
+      <div class="title">
+        <h1>
+          <strong>{{ title|raw }}</strong>
+        </h1>
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,22 @@
+uuid: c3792f03-daab-4c00-b1fc-84eb29d3ae23
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.marketing
+id: node.marketing.status
+field_name: status
+entity_type: node
+bundle: marketing
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

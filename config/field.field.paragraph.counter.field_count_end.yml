@@ -1,0 +1,23 @@
+uuid: d7c407f8-50e7-4a0e-84ec-d5e3ee919ef4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_count_end
+    - paragraphs.paragraphs_type.counter
+id: paragraph.counter.field_count_end
+field_name: field_count_end
+entity_type: paragraph
+bundle: counter
+label: 'Count End'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

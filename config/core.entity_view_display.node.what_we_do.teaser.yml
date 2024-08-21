@@ -1,0 +1,32 @@
+uuid: 3a40aa45-9e7a-45f1-83ec-1ae517b45b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.what_we_do.body
+    - field.field.node.what_we_do.layout_builder__layout
+    - node.type.what_we_do
+  module:
+    - text
+    - user
+id: node.what_we_do.teaser
+targetEntityType: node
+bundle: what_we_do
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true

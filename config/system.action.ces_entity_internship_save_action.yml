@@ -1,0 +1,13 @@
+uuid: 860c0354-5670-4329-a71c-aff8955c9986
+langcode: en
+status: true
+dependencies:
+  module:
+    - ces_entity
+_core:
+  default_config_hash: RmILoj8L_yvtOYW1GuZn-u6d5WerrGCxB5bRolL0sVM
+id: ces_entity_internship_save_action
+label: 'Save internships'
+type: ces_entity_internship
+plugin: 'entity:save_action:ces_entity_internship'
+configuration: {  }

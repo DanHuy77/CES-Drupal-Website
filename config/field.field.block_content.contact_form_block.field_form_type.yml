@@ -1,0 +1,21 @@
+uuid: 4390c5cf-419d-4d99-8690-f7da4f15b0fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.storage.block_content.field_form_type
+  module:
+    - options
+id: block_content.contact_form_block.field_form_type
+field_name: field_form_type
+entity_type: block_content
+bundle: contact_form_block
+label: 'Form Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

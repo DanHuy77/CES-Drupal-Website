@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ces_entity
+id: ces_entity_internship_delete_action
+label: 'Delete internships'
+type: ces_entity_internship
+plugin: entity:delete_action:ces_entity_internship
+configuration: {  }

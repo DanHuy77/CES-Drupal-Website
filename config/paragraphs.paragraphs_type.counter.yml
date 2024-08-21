@@ -1,0 +1,10 @@
+uuid: b9106f7c-25ba-4614-b0fc-94ee6eacce28
+langcode: en
+status: true
+dependencies: {  }
+id: counter
+label: Counter
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

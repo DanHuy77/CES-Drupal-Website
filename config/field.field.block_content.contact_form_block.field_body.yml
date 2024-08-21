@@ -1,0 +1,24 @@
+uuid: 69dbe691-d7c0-4bdd-9637-df0b7cfb4858
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.storage.block_content.field_body
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.contact_form_block.field_body
+field_name: field_body
+entity_type: block_content
+bundle: contact_form_block
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - restricted_html
+field_type: text_long

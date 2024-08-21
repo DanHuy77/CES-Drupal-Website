@@ -1,0 +1,19 @@
+uuid: 9cda54eb-d977-4484-811c-569d3e7c134f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_button_text
+id: block_content.hero.field_button_text
+field_name: field_button_text
+entity_type: block_content
+bundle: hero
+label: 'Button Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

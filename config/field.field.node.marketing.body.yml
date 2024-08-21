@@ -1,0 +1,24 @@
+uuid: 166129d1-90d7-4f9f-8a5f-3dd47d367512
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.marketing
+  module:
+    - text
+id: node.marketing.body
+field_name: body
+entity_type: node
+bundle: marketing
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

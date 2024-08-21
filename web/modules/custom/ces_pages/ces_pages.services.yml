@@ -1,0 +1,6 @@
+services:
+  ces_pages.twig_extension:
+    class: Drupal\ces_pages\TwigExtension
+    arguments: ['@file_url_generator']
+    tags:
+      - { name: twig.extension }

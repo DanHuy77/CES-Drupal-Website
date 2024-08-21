@@ -1,0 +1,43 @@
+{{ attach_library('ces/wizard_form') }}
+
+{% if modal_container is same as("Yes") %}
+  <div class="modal fade" id="{{ form_id }}" data-bs-backdrop="static" tabindex="-1" aria-labelledby="wizardFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        {% endif %}
+        {{form}}
+          <div class="back-to-landing-page {{ modal_container is same as('Yes') ? 'in-modal': '' }}">
+            <img src="/themes/custom/ces/assets/icons/down-chevron.svg" alt="Back">
+          </div>
+          <div class="block-form__landing-page {{ modal_container is same as('Yes') ? 'in-modal': '' }}">
+            <div class="block-form__text-wrapper">
+              {% if title %}
+                <div class="block-form__title">
+                  {{ title }}
+                </div>
+              {% endif %}
+              {% if body %}
+                <span class="block-form__form-body">
+                  {{ body }}
+                </span>
+              {% endif %}
+            </div>
+            <div id="get-started" class="block-form__get-started ces-btn">
+              Get Started
+              <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          {% if modal_container is same as("Yes") %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}

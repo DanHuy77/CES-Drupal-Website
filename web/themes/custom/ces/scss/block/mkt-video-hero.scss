@@ -1,0 +1,198 @@
+.mkt-video-hero {
+  max-width: 1400px;
+  margin: auto;
+  padding: 118px 40px 40px;
+  font-family: $font-geometric-slabserif-medium;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .top-logo {
+      max-height: 60px;
+      margin-bottom: 40px;
+    }
+
+    .title {
+      font-size: 64px;
+      line-height: 77px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+
+      >* {
+        margin-bottom: 0;
+      }
+    }
+
+    .subtitle {
+      font-size: 30px;
+      line-height: 34px;
+      font-weight: bold;
+      color: #7a7a7a;
+      margin-bottom: 34px;
+      text-align: center;
+    }
+
+    .body {
+      font-size: 18px;
+      line-height: 24px;
+      font-family: $font-svn-circular;
+      max-width: 840px;
+      margin: auto auto 36px;
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__display-container {
+    width: 100%;
+    padding: 34px 50px 0;
+    aspect-ratio: 2 / 1;
+    margin-bottom: 40px;
+
+    .video-frame,
+    .image {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  &__button.ces-btn {
+    text-decoration: none;
+    text-align: center;
+    font-family: $font-svn-circular;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: none;
+    padding: 12px 16px;
+  }
+}
+
+// Tablet
+@include media-breakpoint-down(lg) {
+  .mkt-video-hero {
+    padding: 40px 48px;
+
+    &__wrapper {
+      .top-logo {
+        max-height: 50px;
+        margin-bottom: 35px;
+      }
+
+      .title {
+        font-size: 50px;
+        line-height: 64px;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 35px;
+      }
+
+      .body {
+        font-size: 16px;
+        line-height: 18px;
+        margin: auto auto 30px;
+      }
+    }
+
+    &__display-container {
+      padding: 35px 0 0;
+      margin-bottom: 35px;
+    }
+
+    &__button.ces-btn {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
+
+// Mobile < 768 px.
+@include media-breakpoint-down(md) {
+  .mkt-video-hero {
+    padding: 60px 16px 20px;
+
+    &__wrapper {
+      .top-logo {
+        max-height: 45px;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        font-size: 40px;
+        line-height: 44px;
+        margin-bottom: 15px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+
+      .body {
+        margin: auto auto 20px;
+      }
+    }
+
+    &__display-container {
+      padding: 20px 20px 0;
+      margin-bottom: 20px;
+    }
+
+    &__button.ces-btn {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
+
+// Desktop 992px -> 1200px.
+@include media-breakpoint-between(lg, xl) {
+  .mkt-video-hero {
+    padding: 118px 48px 40px;
+
+    &__wrapper {
+      .top-logo {
+        max-height: 50px;
+        margin-bottom: 35px;
+      }
+
+      .title {
+        font-size: 50px;
+        line-height: 64px;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 35px;
+      }
+
+      .body {
+        font-size: 16px;
+        line-height: 18px;
+        margin: auto auto 30px;
+      }
+    }
+
+    &__display-container {
+      padding: 35px 0 0;
+      margin-bottom: 35px;
+    }
+
+    &__button.ces-btn {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+uuid: b09e260e-646f-4d1f-a00e-b9cae74a3a92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.partners.field_partner_icon
+    - field.field.paragraph.partners.field_partner_link
+    - paragraphs.paragraphs_type.partners
+  module:
+    - link
+id: paragraph.partners.default
+targetEntityType: paragraph
+bundle: partners
+mode: default
+content:
+  field_partner_icon:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_partner_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

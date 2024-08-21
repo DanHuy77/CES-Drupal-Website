@@ -1,0 +1,108 @@
+@import 'block/index.scss';
+
+.block-container {
+  .button-wrap {
+    .button-inner {
+      margin-top: 24px;
+      text-align: center;
+
+      a {
+        text-transform: uppercase;
+        padding: 12px 30px 13px 40px;
+        background-color: #f15926;
+        border-radius: 4px;
+        color: $white;
+        transform: translateY(0);
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.33, 1);
+
+        span {
+          font-size: 14px;
+          font-family: $font-svn-circular-bold;
+          transform: translateX(-14px);
+          display: inline-block;
+        }
+
+        .svg-inline--fa {
+          font-size: 12px;
+          padding-left: 4px;
+        }
+
+        &:hover {
+          box-shadow: 0 20px 38px rgb(0 0 0 / 16%);
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}
+
+// body block
+.body-wrapper {
+  margin-top: 128px;
+  margin-bottom: 128px;
+
+  .row {
+    margin-bottom: 64px;
+
+    .column-inner {
+      .left-wrap {
+        font-size: 32px;
+        font-family: $font-geometric-slabserif-bold;
+        margin-right: 164px;
+      }
+
+      .right-wrap {
+        font-weight: 400;
+        font-family: $font-svn-circular;
+        font-size: 18px;
+
+        ul {
+          padding-left: unset;
+
+          li {
+            list-style: none;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 18px;
+            color: #212121;
+            font-family: $font-svn-circular;
+
+            &::before {
+              content: '\2022';
+              color: #f15926;
+              font-size: 20px;
+              position: absolute;
+              left: -27px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile < 768 px.
+@include media-breakpoint-down(md) {
+  .body-wrapper {
+    margin-top: 64px;
+    margin-bottom: 0;
+    padding: 0 30px !important;
+
+    .row {
+      margin-bottom: 32px;
+
+      .column-inner {
+        .left-wrap {
+          margin-right: 0;
+          font-size: 23px;
+        }
+
+        .right-wrap {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+uuid: 199c625a-f3b3-4f1c-8754-08040bf05e64
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_content
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.image_content.field_title
+field_name: field_title
+entity_type: block_content
+bundle: image_content
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

@@ -1,0 +1,8 @@
+uuid: 97a86ea5-da9c-495f-bbe1-30d59ebac9c7
+langcode: en
+status: true
+dependencies: {  }
+id: case_study
+label: ' Case Study'
+revision: false
+description: ''

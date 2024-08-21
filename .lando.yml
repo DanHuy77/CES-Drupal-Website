@@ -1,0 +1,61 @@
+name: ces-website
+recipe: drupal10
+config:
+  webroot: web
+services:
+  appserver:
+    type: php:8.2
+    xdebug: true
+    config:
+      php: xdebug.ini
+    build:
+      - composer install
+    scanner: false
+    overrides:
+      environment:
+        SIMPLETEST_BASE_URL: 'http://ces-website.lndo.site'
+        SIMPLETEST_DB: 'mysql://root:@database/database'
+        MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
+        PHP_IDE_CONFIG: 'serverName=appserver'
+  mailhog:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver
+  phpmyadmin:
+    type: phpmyadmin
+    overrides:
+      environment:
+        UPLOAD_LIMIT: 25600000
+    hosts:
+      - database
+  node:
+    type: 'node:20'
+    ssl: true
+    command: cd /app/web/themes/custom/ces && node_modules/.bin/gulp serve
+    globals:
+      gulp-cli: latest
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
+  yarn:
+    service: node
+proxy:
+  phpmyadmin:
+    - db-ces-website.lndo.site
+  mailhog:
+    - mail-ces-website.lndo.site

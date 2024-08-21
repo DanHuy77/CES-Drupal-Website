@@ -1,0 +1,23 @@
+uuid: c41441c1-2ded-45aa-90b0-461d3a039900
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.expertises
+    - field.storage.block_content.field_layout
+  module:
+    - options
+id: block_content.expertises.field_layout
+field_name: field_layout
+entity_type: block_content
+bundle: expertises
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: technology
+default_value_callback: ''
+settings: {  }
+field_type: list_string

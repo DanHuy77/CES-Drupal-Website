@@ -1,0 +1,21 @@
+uuid: 55e0703f-cd53-4c96-9041-9e2cb8d12642
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ces_phone_number
+    - paragraphs.paragraphs_type.company_contact
+  module:
+    - telephone
+id: paragraph.company_contact.field_ces_phone_number
+field_name: field_ces_phone_number
+entity_type: paragraph
+bundle: company_contact
+label: 'CES Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

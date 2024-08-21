@@ -1,0 +1,8 @@
+uuid: 88327533-c83f-4cfa-873d-5cfcb9ab88bb
+langcode: en
+status: true
+dependencies: {  }
+id: case_study_text
+label: 'Case Study Text'
+revision: false
+description: ''

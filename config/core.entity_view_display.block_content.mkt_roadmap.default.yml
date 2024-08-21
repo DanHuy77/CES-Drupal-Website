@@ -1,0 +1,65 @@
+uuid: 1be5ab77-aeb2-4b66-b7e9-77f6cd3b707e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_roadmap
+    - field.field.block_content.mkt_roadmap.body
+    - field.field.block_content.mkt_roadmap.field_background_color
+    - field.field.block_content.mkt_roadmap.field_roadmap_content
+    - field.field.block_content.mkt_roadmap.field_show_image_first
+    - field.field.block_content.mkt_roadmap.field_title
+  module:
+    - color_field
+    - entity_reference_revisions
+    - text
+id: block_content.mkt_roadmap.default
+targetEntityType: block_content
+bundle: mkt_roadmap
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_background_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_roadmap_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_show_image_first:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

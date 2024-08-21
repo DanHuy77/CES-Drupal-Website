@@ -1,0 +1,23 @@
+uuid: 92eccf01-d49f-4044-bee4-8875feb3915b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cookie_policy
+    - field.field.block_content.cookie_policy.field_body
+  module:
+    - text
+id: block_content.cookie_policy.default
+targetEntityType: block_content
+bundle: cookie_policy
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

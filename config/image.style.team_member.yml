@@ -1,0 +1,20 @@
+uuid: 14bbe43f-22f8-4f0c-8d29-22b14e9bf301
+langcode: en
+status: true
+dependencies: {  }
+name: team_member
+label: 'Team Member'
+effects:
+  d55db69d-d0eb-418d-bdcc-84dd55cc43c0:
+    uuid: d55db69d-d0eb-418d-bdcc-84dd55cc43c0
+    id: image_desaturate
+    weight: 1
+    data: {  }
+  f5133862-5334-4dda-8503-bd7b413a8a17:
+    uuid: f5133862-5334-4dda-8503-bd7b413a8a17
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 606
+      height: 404
+      anchor: center-top

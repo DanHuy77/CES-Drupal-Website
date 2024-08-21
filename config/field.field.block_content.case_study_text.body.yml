@@ -1,0 +1,30 @@
+uuid: 40e28042-a550-4c4c-8e60-3707dc55a013
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study_text
+    - field.storage.block_content.body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.case_study_text.body
+field_name: body
+entity_type: block_content
+bundle: case_study_text
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - basic_html
+    - restricted_html
+    - full_html
+field_type: text_with_summary

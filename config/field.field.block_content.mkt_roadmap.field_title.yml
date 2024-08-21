@@ -1,0 +1,24 @@
+uuid: dcdd16e0-c4b4-4f50-a18f-fb534e6fc622
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_roadmap
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.mkt_roadmap.field_title
+field_name: field_title
+entity_type: block_content
+bundle: mkt_roadmap
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

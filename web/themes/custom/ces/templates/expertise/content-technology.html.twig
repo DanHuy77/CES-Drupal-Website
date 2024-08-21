@@ -1,0 +1,13 @@
+<div class="col-xl-{{ item_size }} col-6 order-block-{{ loop.index }}" style="background-color:{{background_color}}">
+  <a target="_blank" class="wrapper {{ redirect_url is empty ? ' link-disabled' : ''}}" href="{{ redirect_url }}" rel="noopener">
+    {% if icon_url %}
+      <div class="icon"><img src="{{icon_url}}" alt="tech logo" loading="lazy"></div>
+    {% endif %}
+    {% if name %}
+      <div class="name">
+        <span>{{name}}</span>
+        <img src="/themes/custom/ces/assets/icons/right-arrow.png" alt="right arrow" loading="lazy"/>
+      </div>
+    {% endif %}
+  </a>
+</div>

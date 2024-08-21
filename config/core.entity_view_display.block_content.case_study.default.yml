@@ -1,0 +1,69 @@
+uuid: 58d39175-3bc6-4e3a-a763-0d415827d551
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study
+    - field.field.block_content.case_study.body
+    - field.field.block_content.case_study.field_button_link
+    - field.field.block_content.case_study.field_button_text
+    - field.field.block_content.case_study.field_color
+    - field.field.block_content.case_study.field_image_content
+    - field.field.block_content.case_study.field_title
+  module:
+    - color_field
+    - text
+id: block_content.case_study.default
+targetEntityType: block_content
+bundle: case_study
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_button_link:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_button_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

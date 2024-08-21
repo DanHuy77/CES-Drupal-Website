@@ -1,0 +1,35 @@
+uuid: 63e07565-e1da-4b6d-8fae-11b17e0d7e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - search_api_autocomplete.search.case_study_landing_page
+  module:
+    - comment
+    - contact
+    - filter
+    - media
+    - paragraphs_type_permissions
+    - search_api_autocomplete
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'use search_api_autocomplete for case_study_landing_page'
+  - 'use text format restricted_html'
+  - 'view media'
+  - 'view paragraph content basic'
+  - 'view paragraph content company_contact'
+  - 'view paragraph content counter'
+  - 'view paragraph content partners'
+  - 'view paragraph content representative'
+  - 'view paragraph content roadmap'
+  - 'view paragraph content value'

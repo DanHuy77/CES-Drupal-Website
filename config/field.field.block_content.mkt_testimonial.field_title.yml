@@ -1,0 +1,24 @@
+uuid: fcc07abd-5ed5-4787-b3c1-bffd2381c47d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_testimonial
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.mkt_testimonial.field_title
+field_name: field_title
+entity_type: block_content
+bundle: mkt_testimonial
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

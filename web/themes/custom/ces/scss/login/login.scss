@@ -1,0 +1,77 @@
+.simplelogin-wrapper {
+  .simplelogin-form {
+    border-radius: 2%;
+
+    .messages-list {
+      display: none;
+    }
+
+    .simplelogin-link {
+      display: none;
+    }
+
+    .simplelogin-bg {
+      .simplelogin-logo {
+        h1 {
+          display: none;
+        }
+      }
+
+      .messages-list {
+        display: block;
+        font-family: $font-svn-circular-bold;
+
+        .messages-list__wrapper {
+          .messages-list__item {
+            &.messages--error {
+              text-align: center;
+
+              .item-list__comma-list {
+                li {
+                  a {
+                    color: red;
+                  }
+                }
+              }
+
+              .messages__content {
+                margin-inline-start: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    input {
+      font-family: $font-svn-circular;
+
+      &.form-submit {
+        font-family: $font-svn-circular-bold;
+        background-color: $primary;
+        transition: all 0.5s;
+        transform: translateY(0);
+
+        &:hover {
+          box-shadow: 0 20px 38px rgb(0 0 0 / 16%);
+          transform: translateY(-3px);
+        }
+      }
+    }
+
+    .forgot-password {
+      a {
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    .form-item {
+      &__error-message {
+        font-family: $font-svn-circular;
+        padding-right: 16px;
+      }
+    }
+  }
+}

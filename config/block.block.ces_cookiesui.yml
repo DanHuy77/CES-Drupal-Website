@@ -1,0 +1,20 @@
+uuid: 2c64d3ef-5af5-4ad7-82bb-f55e6d8ddb52
+langcode: en
+status: true
+dependencies:
+  module:
+    - cookies
+  theme:
+    - ces
+id: ces_cookiesui
+theme: ces
+region: content
+weight: 0
+provider: null
+plugin: cookies_ui_block
+settings:
+  id: cookies_ui_block
+  label: 'Cookies UI'
+  label_display: '0'
+  provider: cookies
+visibility: {  }

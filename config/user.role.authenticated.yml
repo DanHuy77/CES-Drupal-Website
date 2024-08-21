@@ -1,0 +1,43 @@
+uuid: 6e94bdc4-d373-4ec0-a933-5ffadea2b637
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.webform_default
+    - search_api_autocomplete.search.case_study_landing_page
+  module:
+    - comment
+    - contact
+    - file
+    - filter
+    - media
+    - paragraphs_type_permissions
+    - search_api_autocomplete
+    - shortcut
+    - system
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'delete own files'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use search_api_autocomplete for case_study_landing_page'
+  - 'use text format basic_html'
+  - 'use text format webform_default'
+  - 'view media'
+  - 'view paragraph content basic'
+  - 'view paragraph content company_contact'
+  - 'view paragraph content counter'
+  - 'view paragraph content partners'
+  - 'view paragraph content representative'
+  - 'view paragraph content roadmap'
+  - 'view paragraph content value'

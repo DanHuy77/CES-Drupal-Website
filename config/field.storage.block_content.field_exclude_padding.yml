@@ -1,0 +1,27 @@
+uuid: adefd949-6e31-40be-a2e3-fdecbbd87317
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_exclude_padding
+field_name: field_exclude_padding
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: top
+      label: exclude-top
+    -
+      value: bottom
+      label: exclude-bottom
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

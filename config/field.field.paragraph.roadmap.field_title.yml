@@ -1,0 +1,19 @@
+uuid: 7f76ca15-d027-4a1f-8824-e9b8f51221c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.roadmap
+id: paragraph.roadmap.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: roadmap
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

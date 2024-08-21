@@ -1,0 +1,9 @@
+uuid: 68312ec9-4605-4218-bfa4-58dd6608013a
+langcode: en
+status: true
+dependencies: {  }
+id: others
+label: Others
+weight: 5
+title: Others
+details: 'Other uncategorized cookies are those that are being analyzed and have not been classified into a category as yet.'

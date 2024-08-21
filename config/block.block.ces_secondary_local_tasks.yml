@@ -1,0 +1,22 @@
+uuid: 044157cd-fa27-487a-a889-3c3aab0e92a0
+langcode: en
+status: false
+dependencies:
+  theme:
+    - ces
+_core:
+  default_config_hash: 2L0geP-ixCbCkEpW6BVF6H7vDUZN4ea07_Y9CociQm4
+id: ces_secondary_local_tasks
+theme: ces
+region: header
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

@@ -1,0 +1,222 @@
+uuid: 7b54040e-c9cb-4472-bcf7-9e33621c5775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.case_studies_page.body
+    - field.field.node.case_studies_page.field_company_logo
+    - field.field.node.case_studies_page.field_company_size
+    - field.field.node.case_studies_page.field_industry
+    - field.field.node.case_studies_page.field_meta_tag
+    - field.field.node.case_studies_page.field_region
+    - field.field.node.case_studies_page.field_technology
+    - field.field.node.case_studies_page.layout_builder__layout
+    - node.type.case_studies_page
+  module:
+    - layout_builder
+    - layout_discovery
+    - metatag
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          878b96b1-7fa8-4246-92dc-820c3f13d401:
+            uuid: 878b96b1-7fa8-4246-92dc-820c3f13d401
+            region: content
+            configuration:
+              id: 'extra_field_block:node:case_studies_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          16df2ba7-46fe-4ce4-8fd7-77b62567deb0:
+            uuid: 16df2ba7-46fe-4ce4-8fd7-77b62567deb0
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          39bd09b3-f2c5-4ea4-908d-e62d0204938c:
+            uuid: 39bd09b3-f2c5-4ea4-908d-e62d0204938c
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:field_region'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          a0ea0912-ee80-41d2-a690-ee236d1c1053:
+            uuid: a0ea0912-ee80-41d2-a690-ee236d1c1053
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:field_company_logo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          cc1f38aa-6e7d-4003-b2b7-aa71db7fd2ac:
+            uuid: cc1f38aa-6e7d-4003-b2b7-aa71db7fd2ac
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:field_company_size'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          9c59ef88-3e94-4ab0-a15b-f51dfd64a1b5:
+            uuid: 9c59ef88-3e94-4ab0-a15b-f51dfd64a1b5
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:field_industry'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          d8dbc2e4-b16c-4bc1-bd0e-a9dd1dd6077a:
+            uuid: d8dbc2e4-b16c-4bc1-bd0e-a9dd1dd6077a
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:field_technology'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          677a1563-6e7f-4fd4-9f6c-b2f195f7907f:
+            uuid: 677a1563-6e7f-4fd4-9f6c-b2f195f7907f
+            region: content
+            configuration:
+              id: 'field_block:node:case_studies_page:field_meta_tag'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+        third_party_settings: {  }
+id: node.case_studies_page.default
+targetEntityType: node
+bundle: case_studies_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_company_logo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_company_size:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_industry:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_meta_tag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_region:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_technology:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_meta_tags: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

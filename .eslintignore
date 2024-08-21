@@ -1,0 +1,7 @@
+web/modules/contrib/
+**/gulpfile.js
+**/*.min.js
+
+# Ignore compiled files.
+*.es6.js
+web/libraries/*

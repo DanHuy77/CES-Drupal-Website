@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run stylelint web/themes/custom/ces/scss
+npm run stylelint web/modules/custom
+npm run eslint web/modules/custom
+npm run eslint web/themes/custom/ces
+npm run prettier web/modules/custom
+npm run prettier web/themes/custom/ces

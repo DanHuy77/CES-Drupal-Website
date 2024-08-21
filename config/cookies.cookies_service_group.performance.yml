@@ -1,0 +1,11 @@
+uuid: 9b050df2-d9a4-4d5e-b9c2-7b3fbe77b924
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Jv3uIJviBj7D282Qu1ZpEQwuOEb3lCcDvx-XVHeOJpw
+id: performance
+label: Performance
+weight: 3
+title: Performance
+details: 'Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.'

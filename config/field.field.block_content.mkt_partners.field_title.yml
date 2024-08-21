@@ -1,0 +1,24 @@
+uuid: 0c74ee61-9f5c-437f-a769-214a65485081
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_partners
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.mkt_partners.field_title
+field_name: field_title
+entity_type: block_content
+bundle: mkt_partners
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

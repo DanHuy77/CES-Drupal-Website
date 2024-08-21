@@ -1,0 +1,11 @@
+uuid: 4bb9170e-b39a-4674-91b5-176de47cb12c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_roadmap
+id: block_content.mkt_roadmap
+target_entity_type_id: block_content
+target_bundle: mkt_roadmap
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,30 @@
+uuid: 839d11f3-276d-44b8-abe3-6bef455328ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_image_content_type
+field_name: field_image_content_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: only_image
+      label: 'Only Image'
+    -
+      value: content
+      label: 'Content Image'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

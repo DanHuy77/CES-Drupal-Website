@@ -1,0 +1,22 @@
+uuid: d54feb1c-3399-46af-8f41-3f5d9299be86
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_offer
+    - field.storage.block_content.field_body
+  module:
+    - text
+id: block_content.mkt_offer.field_body
+field_name: field_body
+entity_type: block_content
+bundle: mkt_offer
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

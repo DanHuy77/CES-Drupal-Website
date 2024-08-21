@@ -1,0 +1,19 @@
+uuid: 5183a4f0-5b94-464f-bfdc-a67150f90bd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_offer
+    - field.storage.block_content.field_title_plain
+id: block_content.mkt_offer.field_title_plain
+field_name: field_title_plain
+entity_type: block_content
+bundle: mkt_offer
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

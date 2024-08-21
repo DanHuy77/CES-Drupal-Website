@@ -1,0 +1,12 @@
+apikey: official_sendgrid_api_key
+test_defaults:
+  to: huy.dang@codeenginestudio.com
+  subject: Test
+  body:
+    value: '<p>asdasd</p>'
+    format: basic_html
+  from_name: ''
+  to_name: ''
+  reply_to: ''
+trackopens: 0
+trackclicks: 0

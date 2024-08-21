@@ -1,0 +1,11 @@
+uuid: 730829d9-a3db-404d-bbb6-d32c4d945463
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_testimonial
+id: block_content.mkt_testimonial
+target_entity_type_id: block_content
+target_bundle: mkt_testimonial
+default_langcode: site_default
+language_alterable: false

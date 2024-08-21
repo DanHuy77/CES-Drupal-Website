@@ -1,0 +1,5 @@
+services:
+  freshteam.service:
+    class: Drupal\freshteam\Services\FreshTeamService
+    autowire: true
+    arguments: ['@http_client', '@database', '@plugin.manager.mail']

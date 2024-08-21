@@ -1,0 +1,19 @@
+uuid: 8bd447ef-ab85-46e4-94f6-a3cc1d48242e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_subtitle
+id: block_content.hero.field_subtitle
+field_name: field_subtitle
+entity_type: block_content
+bundle: hero
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

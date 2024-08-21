@@ -1,0 +1,26 @@
+uuid: d4c7ee7e-fd65-41e9-bd9a-a5ac16cbdb8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study_text
+    - field.storage.block_content.field_side_text
+    - filter.format.basic_html
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.case_study_text.field_side_text
+field_name: field_side_text
+entity_type: block_content
+bundle: case_study_text
+label: 'Side Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - restricted_html
+field_type: text_long

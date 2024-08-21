@@ -1,0 +1,13 @@
+uuid: ae4763c2-2759-41eb-be04-5e4f0ecc62d6
+langcode: en
+status: true
+dependencies: {  }
+id: reviewer_avatar
+label: 'Reviewer Avatar'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_3
+field_map: {  }

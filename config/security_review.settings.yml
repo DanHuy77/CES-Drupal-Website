@@ -1,0 +1,40 @@
+_core:
+  default_config_hash: 62GMsnqB8RjxdgNyxCGrnNjjxDft8qnQQIWXU9YbUbw
+untrusted_roles:
+  - anonymous
+log: false
+skipped:
+  upload_extensions:
+    skipped: true
+    skipped_by: '1'
+    skipped_on: 1714015122
+  admin_user:
+    skipped: true
+    skipped_by: '1'
+    skipped_on: 1714015122
+  file_permissions:
+    skipped: true
+    skipped_by: '1'
+    skipped_on: 1714015122
+  fields:
+    skipped: true
+    skipped_by: '1'
+    skipped_on: 1715570111
+  vendor_directory:
+    skipped: true
+    skipped_by: '1'
+    skipped_on: 1715582995
+  executable_php:
+    skipped: true
+    skipped_by: '1'
+    skipped_on: 1715596915
+views_access:
+  ignore_default: true
+upload_extensions:
+  hush_upload_extensions: {  }
+fields:
+  known_risky_fields: {  }
+file_permissions:
+  hushed_files: {  }
+headers:
+  headers_to_check: {  }

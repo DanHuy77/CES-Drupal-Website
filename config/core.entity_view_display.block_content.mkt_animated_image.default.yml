@@ -1,0 +1,24 @@
+uuid: f7cd08f0-a9a7-49d1-9012-f24015b08b1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_animated_image
+    - field.field.block_content.mkt_animated_image.field_background_image
+id: block_content.mkt_animated_image.default
+targetEntityType: block_content
+bundle: mkt_animated_image
+mode: default
+content:
+  field_background_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

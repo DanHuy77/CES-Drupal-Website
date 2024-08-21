@@ -1,0 +1,19 @@
+<div class="pnf-wrapper">
+  {% if title %}
+    <div class="title">
+      <h1{{title_attributes}}>{{ title|raw }}</h1>
+    </div>
+  {% endif %}
+  {% if body %}
+    <div class="body">
+      {{ body|raw }}
+    </div>
+  {% endif %}
+  {% if button_text %}
+    <div class="button-wrap">
+      <a class="ces-btn page-not-found" href="{{ button_link|replace({'internal:': ''}) }}">
+        <span>{{ button_text }}</span>
+      </a>
+    </div>
+  {% endif %}
+</div>

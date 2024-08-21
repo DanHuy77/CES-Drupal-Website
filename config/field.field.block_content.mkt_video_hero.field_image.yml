@@ -1,0 +1,29 @@
+uuid: aa864766-f5dd-4169-8eb8-2b2e05933d78
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+    - field.storage.block_content.field_image
+    - media.type.image
+id: block_content.mkt_video_hero.field_image
+field_name: field_image
+entity_type: block_content
+bundle: mkt_video_hero
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

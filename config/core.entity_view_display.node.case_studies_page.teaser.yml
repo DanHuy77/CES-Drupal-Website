@@ -1,0 +1,47 @@
+uuid: df821201-0ac0-410d-ad8b-90ce3e9ea676
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.case_studies_page.body
+    - field.field.node.case_studies_page.field_company_logo
+    - field.field.node.case_studies_page.field_company_size
+    - field.field.node.case_studies_page.field_industry
+    - field.field.node.case_studies_page.field_meta_tag
+    - field.field.node.case_studies_page.field_region
+    - field.field.node.case_studies_page.field_technology
+    - field.field.node.case_studies_page.layout_builder__layout
+    - node.type.case_studies_page
+  module:
+    - text
+    - user
+id: node.case_studies_page.teaser
+targetEntityType: node
+bundle: case_studies_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_company_logo: true
+  field_company_size: true
+  field_industry: true
+  field_meta_tag: true
+  field_meta_tags: true
+  field_region: true
+  field_technology: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

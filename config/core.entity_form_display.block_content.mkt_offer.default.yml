@@ -1,0 +1,86 @@
+uuid: 015d64d4-17ad-4e37-9ce1-be152edfe0a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_offer
+    - field.field.block_content.mkt_offer.field_body
+    - field.field.block_content.mkt_offer.field_button_block_text
+    - field.field.block_content.mkt_offer.field_image_content
+    - field.field.block_content.mkt_offer.field_link
+    - field.field.block_content.mkt_offer.field_title_plain
+  module:
+    - link_attributes
+    - media_library
+    - text
+id: block_content.mkt_offer.default
+targetEntityType: block_content
+bundle: mkt_offer
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_button_block_text:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_content:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_attributes
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        id: false
+        name: false
+        target: true
+        rel: true
+        class: true
+        accesskey: false
+        aria-label: false
+        title: false
+        open_modal: true
+      widget_default_open: expandIfValuesSet
+    third_party_settings: {  }
+  field_title_plain:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

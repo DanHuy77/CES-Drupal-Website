@@ -1,0 +1,8 @@
+uuid: 7c30a804-1e25-45e5-8619-25a3ed217f1c
+langcode: en
+status: true
+dependencies: {  }
+id: slider_block
+label: 'Slider Block'
+revision: 0
+description: 'To create Block Slider contains images or testimonials'

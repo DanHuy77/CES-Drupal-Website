@@ -1,0 +1,9 @@
+uuid: c69cedd1-1f98-404f-9664-9a8df1d06317
+langcode: en
+status: true
+dependencies: {  }
+id: necessary
+label: Necessary
+weight: 1
+title: Necessary
+details: 'Necessary cookies are absolutely essential for the website to function properly. These cookies ensure basic functionalities and security features of the website, anonymously.'

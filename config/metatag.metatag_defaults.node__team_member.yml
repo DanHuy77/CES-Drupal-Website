@@ -1,0 +1,8 @@
+uuid: 84178a3f-0538-48b3-a8a8-e6c1b2bbda55
+langcode: en
+status: true
+dependencies: {  }
+id: node__team_member
+label: 'Content: Team Member'
+tags:
+  robots: 'noindex, nofollow'

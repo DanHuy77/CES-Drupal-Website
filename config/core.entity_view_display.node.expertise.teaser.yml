@@ -1,0 +1,24 @@
+uuid: ad239387-3415-4a2b-bcb5-e600eadb61a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.expertise.field_icon
+    - field.field.node.expertise.field_redirect_url
+    - node.type.expertise
+  module:
+    - user
+id: node.expertise.teaser
+targetEntityType: node
+bundle: expertise
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_icon: true
+  field_redirect_url: true

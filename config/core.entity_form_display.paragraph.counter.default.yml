@@ -1,0 +1,57 @@
+uuid: 96884aea-8014-42de-ac91-386910385d80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.counter.field_count_end
+    - field.field.paragraph.counter.field_count_start
+    - field.field.paragraph.counter.field_postfix
+    - field.field.paragraph.counter.field_prefix
+    - field.field.paragraph.counter.field_summary
+    - paragraphs.paragraphs_type.counter
+id: paragraph.counter.default
+targetEntityType: paragraph
+bundle: counter
+mode: default
+content:
+  field_count_end:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_count_start:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_postfix:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_prefix:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_summary:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

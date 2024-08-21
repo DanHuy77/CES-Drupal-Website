@@ -1,0 +1,29 @@
+uuid: d3390c2b-abf5-495b-96fc-b3262d8f263c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.storage.block_content.field_team_content
+    - node.type.team_member
+id: block_content.slider_block.field_team_content
+field_name: field_team_content
+entity_type: block_content
+bundle: slider_block
+label: 'Team Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      team_member: team_member
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+<div class="lt-wrapper">
+  {% if title %}
+    <div class="title">
+      <h2{{title_attributes}}>{{ title|raw }}</h2>
+    </div>
+  {% endif %}
+  {% if body %}
+    <div class="body">
+      {{ body|raw }}
+    </div>
+  {% endif %}
+  {% if button_text %}
+    <div class="button-wrap">
+      <a data-bs-toggle="modal" data-bs-target="#contactUsOverlay" id="openButton" class="ces-btn lets-talk">
+        <span>{{ button_text }}</span>
+      </a>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,485 @@
+@import 'bootstrap';
+
+// variable
+@import 'variables';
+
+// menu
+@import 'header';
+
+// Footer
+@import 'footer';
+
+// Typography
+@import 'typography';
+
+// Blocks
+@import 'block';
+
+// Form
+@import 'form';
+
+// Slider
+@import 'slider';
+
+// Case Study Company Info
+@import 'block/case-study-company-info';
+
+// Case Study Landing Page
+@import 'block/case-study-landing-page';
+
+// Representatives
+@import 'block/schedule-call.scss';
+@import 'login/login.scss';
+@import 'layout/layout.scss';
+
+// Wizard Form
+@import 'wizard-form';
+
+body {
+  #drupal-off-canvas {
+    .inline-block-list {
+      li {
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-wrapper {
+      font-family: $font-svn-circular;
+
+      .ui-dialog-title {
+        font-family: $font-svn-circular-bold;
+      }
+    }
+  }
+}
+
+.ces-btn {
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: $font-svn-circular-bold;
+  text-transform: uppercase;
+  width: fit-content;
+  padding: 13px 32px;
+  line-height: 1.2em;
+  box-shadow: none;
+  background-color: $primary;
+  color: $white;
+  text-decoration: none;
+  transition: all 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+
+  &:hover {
+    box-shadow: 0 10px 38px rgb(0 0 0 / 16%);
+    transform: translateY(-3px);
+    background-color: $primary;
+    opacity: 0.85;
+    color: $white;
+    cursor: pointer;
+  }
+
+  &:focus {
+    background-color: $primary;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &.load-more {
+    background-color: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+    padding: 13px 48px;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+      border-color: transparent;
+    }
+  }
+
+  &.field-order {
+    background-color: $white;
+    border-radius: 6px;
+    margin: 34.56px 8px 0 -6.5px;
+    padding: 0 11.2px;
+
+    img {
+      margin-top: 8.8px;
+    }
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.body {
+  strong {
+    font-family: $font-svn-circular-bold;
+    font-weight: normal;
+  }
+
+  ul {
+    margin-left: unset;
+
+    li {
+      list-style: disc;
+
+      &::marker {
+        color: $primary;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.right-chevron {
+  width: 10px;
+}
+
+.page-content {
+  margin-bottom: unset;
+  margin-top: unset;
+}
+
+.gin-secondary-toolbar--frontend {
+  display: none;
+}
+
+.main-page-content {
+  .messages-list {
+    &__item {
+      font-family: $font-svn-circular-bold;
+
+      &.messages {
+        &--error,
+        &--warning {
+          display: none;
+        }
+
+        &--status {
+          display: block;
+          margin-top: 107px;
+          margin-bottom: -39px;
+        }
+      }
+    }
+  }
+
+  .js-form-type-vertical-tabs {
+    margin-top: -40px;
+  }
+
+  .layout-builder {
+    font-family: $font-svn-circular;
+    border-top: none;
+
+    .messages-list {
+      display: block;
+
+      &__item {
+        &.messages--error {
+          display: none;
+        }
+      }
+    }
+
+    &-form {
+      z-index: 100;
+      position: sticky;
+      top: 0;
+      background-color: #eff6fc;
+      font-family: $font-svn-circular;
+      border: 3px solid #2f91da;
+      padding-bottom: 24px;
+      margin-top: 75px;
+
+      .layout-builder__message {
+        display: none;
+      }
+
+      .messages {
+        &-list {
+          display: block;
+          padding-top: 0;
+          margin-block: 0;
+
+          &__item {
+            &.messages {
+              &--status {
+                display: none;
+              }
+
+              &--warning {
+                display: block;
+                border: 3px solid #e0ac00;
+                position: absolute;
+                z-index: 1;
+                top: -19px;
+                width: 100%;
+
+                .messages__content {
+                  text-align: center;
+                  padding: 9.6px 0;
+                }
+              }
+
+              &--error {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &__header {
+          display: none;
+        }
+
+        &__content {
+          margin-inline: 0;
+        }
+      }
+
+      .vertical-tabs {
+        display: none;
+      }
+
+      .form-actions {
+        margin-left: 20.5px;
+        padding-top: 10px;
+        font-family: $font-svn-circular-bold;
+      }
+
+      #edit-unlock {
+        color: $white;
+        background-color: #003ecc;
+      }
+    }
+
+    &-revert-overrides,
+    &-discard-changes {
+      &.confirmation {
+        text-align: center;
+        font-family: $font-svn-circular;
+        margin: 350px 0;
+
+        .form-actions {
+          font-family: $font-svn-circular-bold;
+          display: block;
+          padding: 0;
+
+          .dialog-cancel {
+            margin-inline: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .tfa-entry-form {
+    margin: 304px auto 480px;
+    text-align: center;
+    font-family: $font-svn-circular;
+
+    .form-item {
+      display: block;
+
+      &__label {
+        font-family: $font-svn-circular-bold;
+        display: block;
+        font-size: 28px;
+      }
+    }
+
+    .form-actions {
+      display: block;
+
+      #edit-login {
+        font-family: $font-svn-circular-bold;
+        background-color: $primary;
+        border-radius: 4px;
+        margin-inline: 0;
+        margin-block: 0;
+      }
+    }
+
+    .form-element {
+      text-align: center;
+      font-size: 18px;
+      border-radius: 4px;
+
+      &:hover {
+        box-shadow: none;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+.ajax-progress {
+  .ajax-progress {
+    &__throbber {
+      border: 3px solid $primary;
+      border-right: 3px dotted transparent;
+    }
+  }
+}
+
+.search-api-autocomplete-search {
+  .search-api-autocomplete-suggestion {
+    font-family: $font-svn-circular;
+  }
+
+  .ui-menu-item-wrapper.ui-state-active {
+    background-color: $darker-grey;
+
+    .search-api-autocomplete-suggestion {
+      background: transparent;
+    }
+  }
+}
+
+.page-wrapper {
+  width: 100%;
+}
+
+.background-white {
+  background-color: #f5f5f5;
+}
+
+.bs-pt-128 {
+  padding-top: 128px !important;
+}
+
+.bs-pt-64 {
+  padding-top: 64px !important;
+}
+
+.bs-pb-64 {
+  padding-bottom: 64px !important;
+}
+
+.bs-pb-128 {
+  padding-bottom: 128px !important;
+}
+
+.bs-pl-64 {
+  padding-left: 64px !important;
+}
+
+.bs-pl-128 {
+  padding-left: 128px !important;
+}
+
+.bs-pr-64 {
+  padding-right: 64px !important;
+}
+
+.bs-pr-128 {
+  padding-right: 128px !important;
+}
+
+.bs-bg-smoke {
+  background-color: #f5f5f5 !important;
+}
+
+.bs-bg-gray-dark {
+  background-color: $darker-grey !important;
+}
+
+.bs-ml-64 {
+  margin-left: 64px !important;
+}
+
+.bs-ml-128 {
+  margin-left: 128px !important;
+}
+
+.bs-mr-64 {
+  margin-right: 64px !important;
+}
+
+.bs-mr-128 {
+  margin-right: 128px !important;
+}
+
+.bs-mt-64 {
+  margin-top: 64px !important;
+}
+
+.bs-mt-128 {
+  margin-top: 128px !important;
+}
+
+.bs-mb-64 {
+  margin-bottom: 64px !important;
+}
+
+.bs-mb-128 {
+  margin-bottom: 128px !important;
+}
+
+#block-ces-mainnavigationwebsite {
+  .sf-menu {
+    ul {
+      width: 15.6875em !important;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+body.prevent-interaction {
+  overflow: hidden;
+}
+
+#drupal-lbim-modal {
+  overflow: hidden;
+}
+
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  background-image: url('../assets/icons/close.png');
+  width: 30px;
+  height: 30px;
+}
+
+.contextual .trigger.focusable.visually-hidden {
+  clip: unset !important;
+}
+
+.layout-builder-discard-changes,
+.layout-builder-revert-overrides {
+  .form-actions {
+    padding: 64px 0 0 64px;
+  }
+}
+
+.ui-menu {
+  .ui-menu-item-wrapper {
+    font-family: $font-svn-circular;
+
+    &.ui-state-active {
+      border: none;
+      background-color: rgb(29 78 216);
+    }
+  }
+
+  .ui-menu-item {
+    &.ui-selected {
+      background-color: rgb(29 78 216);
+      color: $white;
+    }
+  }
+}

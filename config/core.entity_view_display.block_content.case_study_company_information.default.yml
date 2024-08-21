@@ -1,0 +1,32 @@
+uuid: f35dfcbf-00b8-42ba-8672-bab229d3fed1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study_company_information
+    - field.field.block_content.case_study_company_information.body
+    - field.field.block_content.case_study_company_information.field_case_study_page
+  module:
+    - text
+id: block_content.case_study_company_information.default
+targetEntityType: block_content
+bundle: case_study_company_information
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_case_study_page:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

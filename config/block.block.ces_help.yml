@@ -1,0 +1,22 @@
+uuid: 6d985b11-19c4-4881-812b-ec585d9f0e47
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - ces
+_core:
+  default_config_hash: jccFSSVqV0WCDb6NtML1VWAWTtDbZ-zn5YgTRMgMrIM
+id: ces_help
+theme: ces
+region: header
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

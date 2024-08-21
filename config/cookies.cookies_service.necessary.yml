@@ -1,0 +1,19 @@
+uuid: ded847ae-e4de-491f-a7bb-98c20bc6d45f
+langcode: en
+status: true
+dependencies: {  }
+id: necessary
+label: Necessary
+group: necessary
+info:
+  value: ''
+  format: basic_html
+consentRequired: false
+purpose: ''
+placeholderMainText: Necessary
+placeholderAcceptText: Necessary
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: ''

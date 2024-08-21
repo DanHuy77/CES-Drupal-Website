@@ -1,0 +1,16 @@
+<div class="expertises">
+  <div class="row content-wrapper g-0">
+    <div class="col-xl-3 col-md-12 col-lg-3 wrapper">
+      <div class="column-inner">
+        {% if title %}
+          <h3>{{title}}</h3>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-xl-9 col-md-12 col-lg-9">
+      <div class="row">
+        {% include '@ces/templates/expertise/content.html.twig' %}
+      </div>
+    </div>
+  </div>
+</div>

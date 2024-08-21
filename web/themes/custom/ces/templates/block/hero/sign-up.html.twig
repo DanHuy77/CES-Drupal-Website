@@ -1,0 +1,26 @@
+<div class="sgu_wrapper">
+  <div class="title">
+    {% if title %}
+      <h1{{title_attributes}}>
+        {{ title|raw }}
+      </h1>
+    {% endif %}
+  </div>
+  <div class="body">
+    {{ body|raw }}
+  </div>
+  {% if button_text %}
+    <div class="button-wrap">
+      <div class="button-inner">
+        {% if '#' in button_link %}
+          <a class="btn" href="{{ button_link|replace({'internal:': ''}) }}">
+          {% else %}
+            <a class="btn" href="{{ button_link }}">
+            {% endif %}
+            <span>{{ button_text }}</span>
+            <img class="right-chevron" src="/themes/custom/ces/assets/icons/right-chevron-white.png" alt="right arrow" loading="lazy"/>
+          </a>
+        </div>
+      </div>
+    {% endif %}
+  </div>

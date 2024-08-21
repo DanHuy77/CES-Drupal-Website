@@ -1,0 +1,44 @@
+uuid: c91a744d-8f2a-4b04-96fc-87c2a6c1f357
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.book_a_call
+    - field.field.block_content.book_a_call.field_representatives
+    - field.field.block_content.book_a_call.field_subtitle
+    - field.field.block_content.book_a_call.field_title_plain
+  module:
+    - entity_reference_revisions
+id: block_content.book_a_call.default
+targetEntityType: block_content
+bundle: book_a_call
+mode: default
+content:
+  field_representatives:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title_plain:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

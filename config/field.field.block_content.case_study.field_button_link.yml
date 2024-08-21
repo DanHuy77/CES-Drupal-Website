@@ -1,0 +1,19 @@
+uuid: 914e23ed-f07e-41c1-8cb6-d65cfefbc8a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study
+    - field.storage.block_content.field_button_link
+id: block_content.case_study.field_button_link
+field_name: field_button_link
+entity_type: block_content
+bundle: case_study
+label: 'Button Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

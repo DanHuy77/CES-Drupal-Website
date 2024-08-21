@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Provides integration with CDNs for files.
+ */
+
+use Drupal\Core\Site\Settings;
+use Drupal\s3_aggregated_assets\S3ServiceProvider;
+
+const S3_AGGREGATED_ASSETS_S3_BUCKET = 'AWS_S3_BUCKET';
+const S3_AGGREGATED_ASSETS_CDN_NAME = 'CDN_NAME';
+
+/**
+ * Implements hook_cache_rebuild().
+ *
+ * This function is triggered during the cache rebuild process in Drupal.
+ * It initializes the S3 service provider and attempts to delete specific
+ * folders ('js' and 'css') from an S3 bucket, as defined in the settings.
+ *
+ * If any folder deletion fails, an error message is displayed to the user.
+ */
+function s3_aggregated_assets_rebuild() {
+  // Initialize the S3 service provider.
+  $s3_service = new S3ServiceProvider();
+
+  // Define the bucket name and folders to delete.
+  $bucket_name = Settings::get(S3_AGGREGATED_ASSETS_S3_BUCKET);
+  $folders_to_delete = ['js', 'css'];
+
+  // Attempt to delete each folder specified.
+  $failed_folders = [];
+  foreach ($folders_to_delete as $folder) {
+    $folder_path = rtrim($folder, '/') . '/';
+    if (!$s3_service->deleteFolder($bucket_name, $folder_path)) {
+      $failed_folders[] = $folder;
+    }
+  }
+
+  // Final status message based on the overall success of deletions.
+  if (!empty($failed_folders)) {
+    $failed_folders_list = implode(', ', $failed_folders);
+    \Drupal::messenger()->addError('The following folders could not be deleted: ' . $failed_folders_list);
+  }
+}

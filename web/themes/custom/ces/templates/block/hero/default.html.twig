@@ -1,0 +1,57 @@
+{% if subtitle is empty and icon_url is empty and button_link is empty  and button_text is empty %}
+  {% if current_url == "/our-team" %}
+    {% set wrapper = "our-team-wrapper" %}
+  {% else %}
+    {% set wrapper = "dxp-wrapper" %}
+  {% endif %}
+  <div class="{{wrapper}}">
+    <div class="title">
+      {% if title %}
+        <h1>
+          <strong>{{ title|raw }}</strong>
+        </h1>
+      {% endif %}
+    </div>
+    <div class="body">
+      {{ body|raw }}
+    </div>
+  </div>
+{% elseif body is empty %}
+  <div class="case-studies-wrapper">
+    <div class="title">
+      {% if icon_url %}
+        <img src="{{ icon_url }}" alt="hero banner" loading="lazy">
+      {% endif %}
+      {% if title %}
+        <h1>
+          <strong>{{ title|raw }}</strong>
+        </h1>
+      {% endif %}
+    </div>
+    <div class="subtitle">
+      <h3>
+        {{ subtitle|raw }}
+      </h3>
+    </div>
+  </div>
+{% else %}
+  <div class="exp_wrapper">
+    <div class="title d-flex">
+      {% if icon_url %}
+        <img src="{{ icon_url }}" alt="hero icon" loading="lazy">
+      {% endif %}
+      {% if title %}
+        <span{{title_attributes}}>
+          <strong>{{ title|raw }}</strong>
+        </span>
+      {% endif %}
+    </div>
+    <div class="subtitle">
+      <h1>{{ subtitle|raw }}</h1>
+    </div>
+
+    <div class="body">
+      {{ body|raw }}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,12 @@
+custom_layouts_one_column:
+  label: 'Case Study Tabled Content'
+  category: 'Custom Layouts'
+  template: templates/case_study_one_col_section/layout--case-study-layouts-one-column
+  library: custom_layouts/case_study_one_col_section
+  icon_map:
+    - [first]
+  regions:
+    first:
+      label: Column One
+      classes:
+        - col-sm-12

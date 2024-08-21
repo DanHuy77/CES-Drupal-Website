@@ -1,0 +1,80 @@
+{#
+  /**
+   * @file
+   * Default implementation for a custom layout onecol section.
+   *
+   * Available variables:
+   * - content: The content for this layout.
+   * - attributes: HTML attributes for the layout <div>.
+   * - region_attributes: HTML attributes for the region <div>.
+   * - settings: An array of configured settings for the layout.
+   *
+   * @ingroup themeable
+   */
+  #}
+{%
+  set classes = [
+  'section',
+  'section__case-study'
+]
+%}
+
+{{ attach_library('custom_layouts/case_study_one_col_section') }}
+
+{% if content %}
+  <section{{attributes.addClass(classes)}}>
+    <div class="container-fluid px-0">
+      <div class="section-wrapper">
+        <div class="section-menu">
+          <div class="section-menu__inner">
+            {% if content.first %}
+              {% if not content['#in_preview'] %}
+                <span style="color: #7a7a7a">JUMP TO SECTION</span>
+                <div class="section-anchors">
+                  {% for item in content.first|sort((a, b) => a['#weight'] * 1 <=> b['#weight'] * 1) %}
+                    {% if item['#configuration'].label is not empty %}
+                      {% set block_label = item['#configuration'].label %}
+                      {% set anchor = '#' ~ block_label|lower|replace({' ': '-'})  %}
+                      <p class="case-study-anchor" block-index="{{ loop.index }}">
+                        <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#f15926" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                        </svg>
+                        <span>{{ block_label }}</span>
+                      </p>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <a class="form-button" data-bs-toggle="modal" data-bs-target="#contactUsOverlay">
+                  <span>BOOK A CALL NOW</span>
+                </a>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-12 px-0 section-content">
+          {% if content.first %}
+            {% if not content['#in_preview'] %}
+              {% for item in content.first|sort((a, b) => a['#weight'] * 1 <=> b['#weight'] * 1) %}
+                {% set block_label = '' %}
+                {% set anchor = '' %}
+                {% if item['#configuration'].label is not empty %}
+                  {% set block_label = item['#configuration'].label %}
+                  {% set anchor = block_label|lower|replace({' ': '-'})  %}
+                {% endif %}
+                <div id="{{ anchor }}" class="case-study-component" block-index="{{ loop.index }}">
+                  {{ item }}
+                </div>
+              {% endfor %}
+            {% else %}
+              {{ content.first }}
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

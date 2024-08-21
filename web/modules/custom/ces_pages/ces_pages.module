@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Ces Pages module hook implementations.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ces_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Add token to form.
+  if (!isset($form['csrf_token'])) {
+    $form['csrf_token'] = [
+      '#type' => 'token',
+      '#default_value' => \Drupal::csrfToken()->get(),
+    ];
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function ces_pages_library_info_alter(&$libraries, $extension) {
+
+  // Add integrity and crossorigin for cookiesjsr libraries.
+  if ($extension == 'cookies' && isset($libraries['cookiesjsr.cdn'])) {
+    unset($libraries['cookiesjsr.cdn']['js']);
+    $hash = ces_pages_generate_sha384_hash('https://cdn.jsdelivr.net/gh/jfeltkamp/cookiesjsr@1.0.13/dist/cookiesjsr-preloader.min.js');
+    $libraries['cookiesjsr.cdn']['js']['https://cdn.jsdelivr.net/gh/jfeltkamp/cookiesjsr@1.0.13/dist/cookiesjsr-preloader.min.js'] = [
+      'preprocess' => FALSE,
+      'type' => 'external',
+      'minified' => TRUE,
+      'attributes' => [
+        'defer' => TRUE,
+        'integrity' => 'sha384-' . $hash,
+        'crossorigin' => 'anonymous',
+      ],
+    ];
+  }
+
+  // Add integrity and crossorigin for aos remote libraries.
+  if (isset($libraries['aos.remote'])) {
+    $key_js = array_key_first($libraries['aos.remote']['js']);
+    $key_css = array_key_first($libraries['aos.remote']['css']['theme']);
+    $hash_js = ces_pages_generate_sha384_hash($key_js);
+    $hash_css = ces_pages_generate_sha384_hash($key_css);
+    $libraries['aos.remote']['js'][$key_js]['attributes']['integrity'] = 'sha384-' . $hash_js;
+    $libraries['aos.remote']['js'][$key_js]['attributes']['crossorigin'] = 'anonymous';
+    $libraries['aos.remote']['css']['theme'][$key_css]['attributes']['integrity'] = 'sha384-' . $hash_css;
+    $libraries['aos.remote']['css']['theme'][$key_css]['attributes']['crossorigin'] = 'anonymous';
+  }
+}
+
+/**
+ * Generate SHA-384 hash.
+ */
+function ces_pages_generate_sha384_hash($file_path) {
+  $fileContent = file_get_contents($file_path);
+
+  // Generate the SHA-384 hash.
+  $hash = openssl_digest($fileContent, 'sha384', TRUE);
+
+  // Encode the hash in base64.
+  $base64Hash = base64_encode($hash);
+  return $base64Hash;
+}

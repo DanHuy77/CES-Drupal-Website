@@ -1,0 +1,21 @@
+uuid: 3808a80f-50e3-4183-b56f-a91bbf48cf7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.marketing
+  module:
+    - layout_builder
+id: node.marketing.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: marketing
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

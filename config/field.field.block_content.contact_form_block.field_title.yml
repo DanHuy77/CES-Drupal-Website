@@ -1,0 +1,24 @@
+uuid: 9216c58e-4655-422f-b185-ade24a138516
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.storage.block_content.field_title
+    - filter.format.basic_html
+  module:
+    - text
+id: block_content.contact_form_block.field_title
+field_name: field_title
+entity_type: block_content
+bundle: contact_form_block
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

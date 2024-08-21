@@ -1,0 +1,6 @@
+name: 'CES Entity'
+type: module
+description: 'CES Custom Entity'
+package: Custom
+core_version_requirement: ^10 || ^11
+

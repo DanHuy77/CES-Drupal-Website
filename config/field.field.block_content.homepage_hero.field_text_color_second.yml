@@ -1,0 +1,25 @@
+uuid: 12c60f4a-d3d0-419e-b286-36a2fafa1c91
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.homepage_hero
+    - field.storage.block_content.field_text_color_second
+  module:
+    - color_field
+id: block_content.homepage_hero.field_text_color_second
+field_name: field_text_color_second
+entity_type: block_content
+bundle: homepage_hero
+label: 'Text Color (Second Part)'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    color: '#7a7a7a'
+    opacity: null
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

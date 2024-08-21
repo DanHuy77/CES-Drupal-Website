@@ -1,0 +1,28 @@
+<a target="_self" href={{ node_url }} rel="noopener">
+  <div class="case-studies__card">
+    <div class="case-studies__card-body">
+      {% if logo is not empty %}
+        <div class="case-studies__logo">
+          <img src={{ logo }} alt="case-studies-logo">
+        </div>
+      {% endif %}
+      {% if title is not empty %}
+        <div class="case-studies__body">
+          <p>
+            {{ title|raw }}
+          </p>
+        </div>
+      {% endif %}
+      {% if tags is not empty %}
+        <div class="case-studies__tags">
+          {% for tag in tags %}
+            <span class="case-studies__tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="case-studies__btn ces-btn">
+        READ MORE
+      </div>
+    </div>
+  </div>
+</a>

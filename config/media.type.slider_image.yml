@@ -1,0 +1,13 @@
+uuid: e96be03d-fffa-48b1-a4d1-1ec3e186f882
+langcode: en
+status: true
+dependencies: {  }
+id: slider_image
+label: 'Slider Image'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_4
+field_map: {  }

@@ -1,0 +1,8 @@
+uuid: c93f205b-6c78-4b0c-8c7d-9f9ad8eb0489
+langcode: en
+status: true
+dependencies: {  }
+id: file
+label: File
+tags:
+  robots: 'noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate'

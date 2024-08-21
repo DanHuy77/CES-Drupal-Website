@@ -1,0 +1,102 @@
+{
+  "name": "code-style",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "script": "bash ./web/scripts/codestyle/do.sh",
+    "prettier": "prettier --config ./.prettierrc.yml --ignore-path ./.prettierignore",
+    "stylelint": "stylelint --config ./.stylelintrc.yml --ignore-path ./.stylelintignore --config-basedir=./ --allow-empty-input",
+    "eslint": "eslint --config ./.eslintrc.yml --ignore-path ./.eslintignore --ext .js --ext es6 --no-error-on-unmatched-pattern"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "build": "npm-run-all build-js build-css",
+    "build-css": "$npm_package_config_less",
+    "build-js": "babel --extensions '.es6' --out-file-extension '.es6.js' --relative ./web -d ./ --verbose",
+    "watch-js": "babel --extensions '.es6' --out-file-extension '.es6.js' --relative ./web -d ./ --verbose --watch",
+    "test": "$npm_package_config_script prettier; $npm_package_config_script stylelint; $npm_package_config_script eslint; $npm_package_config_script phpcs",
+    "fix": "$npm_package_config_script prettier-fix; $npm_package_config_script stylelint-fix; $npm_package_config_script eslint-fix; $npm_package_config_script phpcs-fix",
+    "script": "$npm_package_config_script",
+    "prettier": "$npm_package_config_prettier --check",
+    "prettier-fix": "$npm_package_config_prettier --write",
+    "stylelint": "$npm_package_config_stylelint",
+    "stylelint-fix": "$npm_package_config_stylelint --fix",
+    "eslint": "$npm_package_config_eslint",
+    "eslint-fix": "$npm_package_config_eslint --fix",
+    "phpcs": "composer run phpcs -- ",
+    "phpcs-fix": "composer run phpcbf",
+    "test-path": "npm-run-all -c \"phpcs -- {1}\" \"prettier -- {1}\" \"eslint -- {1}\" \"stylelint -- {1}\" --",
+    "fix-path": "npm-run-all -c \"phpcs-fix -- {1}\" \"prettier-fix -- {1}\" \"eslint-fix -- {1}\" \"stylelint-fix -- {1}\" --",
+    "prepare": "npm install husky --save-dev; npx husky install; npm install @commitlint/cli @commitlint/config-conventional"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
+    "@babel/plugin-proposal-decorators": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@babel/runtime": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "eslint-plugin-yml": "^1.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-no-browser-hacks": "^1.2.1",
+    "stylelint-order": "^5.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "ie >= 11"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "*.css|scss": [
+      "npm run stylelint-fix"
+    ],
+    "*.es6": [
+      "npm run prettier-fix",
+      "npm run eslint-fix"
+    ],
+    "*.js": [
+      "npm run prettier-fix",
+      "npm run eslint-fix"
+    ],
+    "*.yml": [
+      "npm run prettier-fix"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "husky": "^8.0.3",
+    "stylelint-prettier": "^3.0.0"
+  }
+}

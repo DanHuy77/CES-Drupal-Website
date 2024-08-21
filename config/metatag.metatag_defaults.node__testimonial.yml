@@ -1,0 +1,8 @@
+uuid: 1622b017-69e6-489f-9f01-80ee1fa6ccce
+langcode: en
+status: true
+dependencies: {  }
+id: node__testimonial
+label: 'Content: Testimonial'
+tags:
+  robots: 'noindex, nofollow'

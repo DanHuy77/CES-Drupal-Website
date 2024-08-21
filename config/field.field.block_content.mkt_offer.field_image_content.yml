@@ -1,0 +1,29 @@
+uuid: 39acb654-a6f7-4834-a638-01834871a173
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_offer
+    - field.storage.block_content.field_image_content
+    - media.type.image
+id: block_content.mkt_offer.field_image_content
+field_name: field_image_content
+entity_type: block_content
+bundle: mkt_offer
+label: Images
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

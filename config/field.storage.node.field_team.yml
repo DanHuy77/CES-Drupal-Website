@@ -1,0 +1,30 @@
+uuid: 403930cf-b352-4a1a-8d92-2f6748b727b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_team
+field_name: field_team
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: executive
+      label: Executive
+    -
+      value: leadership
+      label: Leadership
+    -
+      value: staff
+      label: Staff
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

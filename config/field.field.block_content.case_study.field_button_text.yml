@@ -1,0 +1,19 @@
+uuid: 2eb93e05-e6ef-417d-a218-4f4fded49fd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study
+    - field.storage.block_content.field_button_text
+id: block_content.case_study.field_button_text
+field_name: field_button_text
+entity_type: block_content
+bundle: case_study
+label: 'Button Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

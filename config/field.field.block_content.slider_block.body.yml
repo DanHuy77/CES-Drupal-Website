@@ -1,0 +1,24 @@
+uuid: 46362f29-42fa-40ba-9cf8-f57ec7f51eaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.slider_block.body
+field_name: body
+entity_type: block_content
+bundle: slider_block
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

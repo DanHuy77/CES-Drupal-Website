@@ -1,0 +1,11 @@
+uuid: 63264447-079b-4af1-bf13-587d5e921850
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_animated_image
+id: block_content.mkt_animated_image
+target_entity_type_id: block_content
+target_bundle: mkt_animated_image
+default_langcode: site_default
+language_alterable: false

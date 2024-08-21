@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Link Modal Attribute module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Alter the base field information for entities.
+ *
+ * @param array &$fields
+ *   The fields to alter.
+ * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+ *   The entity type object.
+ *
+ * @return void
+ *   This function does not return anything.
+ */
+function link_modal_attribute_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'menu_link_content') {
+    $fields['link']->setDisplayOptions('form', [
+      'type' => 'link_attributes',
+      'weight' => -2,
+      'settings' => [
+        'enabled_attributes' => [
+          'id' => FALSE,
+          'name' => FALSE,
+          'target' => TRUE,
+          'rel' => TRUE,
+          'class' => TRUE,
+          'accesskey' => FALSE,
+          // Custom attributes.
+          'open_modal' => FALSE,
+        ],
+      ],
+    ]);
+  }
+}
+
+/**
+ * Modifies the link attributes plugin options by adding options from webforms.
+ *
+ * @param array &$plugins
+ *   The link attributes plugins.
+ *
+ * @return void
+ *   This function does not return anything.
+ */
+function link_modal_attribute_link_attributes_plugin_alter(&$plugins) {
+  $webform_storage = \Drupal::entityTypeManager()->getStorage('webform');
+  $webforms = $webform_storage->loadMultiple();
+  $options = [];
+  $options['none'] = "- None -";
+  foreach ($webforms as $webform) {
+    $options[$webform->id()] = $webform->label();
+  }
+
+  $plugins['open_modal']['options'] = $options;
+
+}

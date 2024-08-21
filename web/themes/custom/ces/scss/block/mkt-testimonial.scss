@@ -1,0 +1,171 @@
+.mkt-testimonial {
+  background-color: #f2f2f2;
+  padding: 32px 48px;
+
+  &__title {
+    font-family: $font-geometric-slabserif-medium;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.4px;
+    text-align: center;
+  }
+
+  &__description {
+    font-family: $font-svn-circular;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 16px;
+    max-width: 658px;
+    margin: auto;
+    text-align: center;
+    color: #7a7a7a;
+  }
+
+  &__content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+    padding-top: 32px;
+
+    &__item {
+      width: calc((100% - 48px) / 3);
+      border-radius: 12px;
+      background-color: $white;
+      box-shadow:
+        rgb(0 0 0 / 5%) 0 6px 24px 0,
+        rgb(0 0 0 / 8%) 0 0 0 1px;
+
+      &__wrapper {
+        padding: 18px;
+
+        &__info {
+          display: flex;
+
+          .avatar {
+            margin-right: 16px;
+
+            img {
+              width: 40px;
+              height: 40px;
+              min-width: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          .icon {
+            margin-left: auto;
+            min-width: fit-content;
+
+            img {
+              height: 24px;
+            }
+          }
+
+          .detail {
+            font-family: $font-svn-circular;
+
+            .name {
+              font-family: $font-svn-circular-bold;
+              font-size: 14px;
+              line-height: 15.6px;
+            }
+
+            .position {
+              font-weight: 450;
+              font-size: 12px;
+              line-height: 15px;
+              text-transform: capitalize;
+            }
+          }
+        }
+
+        .rating {
+          padding-top: 8px;
+          padding-bottom: 12px;
+        }
+
+        .body {
+          font-family: $font-svn-circular;
+          font-weight: 450;
+          font-size: 14px;
+          line-height: 18px;
+          color: #3d3a3a;
+        }
+      }
+    }
+  }
+}
+
+// Mobile < 767 px.
+@include media-breakpoint-down(md) {
+  .mkt-testimonial {
+    padding: 32px 16px;
+
+    &__title {
+      font-size: 22.4px;
+      line-height: 25.9px;
+    }
+
+    &__description {
+      width: 100%;
+      font-size: 16px;
+      line-height: 21px;
+      padding-top: 24px;
+    }
+
+    &__content {
+      &__item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .mkt-testimonial {
+    &__title {
+      font-size: 22.4px;
+      line-height: 25.9px;
+    }
+
+    &__description {
+      width: 100%;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &__content {
+      &__item {
+        width: calc(50% - 12px);
+      }
+    }
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .mkt-testimonial {
+    &__title {
+      font-size: 22.4px;
+      line-height: 25.9px;
+    }
+
+    &__description {
+      width: 100%;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &__content {
+      &__item {
+        width: calc((100% - 48px) / 3);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+case_study_one_col_section:
+  version: VERSION
+  css:
+    theme:
+      src/css/case-study-layouts-one-column.css: {}
+  js:
+    src/js/case-study-layouts-one-column.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery  

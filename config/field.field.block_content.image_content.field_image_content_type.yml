@@ -1,0 +1,23 @@
+uuid: 17df4e83-0e87-4763-b803-2d653c9032e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_content
+    - field.storage.block_content.field_image_content_type
+  module:
+    - options
+id: block_content.image_content.field_image_content_type
+field_name: field_image_content_type
+entity_type: block_content
+bundle: image_content
+label: 'Image Content Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

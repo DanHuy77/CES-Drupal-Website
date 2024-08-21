@@ -1,0 +1,29 @@
+uuid: 3aa5816c-3d16-4f06-ac03-65ade9040500
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study_company_information
+    - field.storage.block_content.field_case_study_page
+    - node.type.case_studies_page
+id: block_content.case_study_company_information.field_case_study_page
+field_name: field_case_study_page
+entity_type: block_content
+bundle: case_study_company_information
+label: 'Case Study Page'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      case_studies_page: case_studies_page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

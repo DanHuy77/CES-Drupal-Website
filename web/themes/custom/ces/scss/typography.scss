@@ -1,0 +1,29 @@
+/* TYPOGRAPHY */
+
+@font-face {
+  font-family: SVN-Circular;
+  font-style: normal;
+  font-weight: normal;
+  src: local('Cronos Pro'), url('../css/fonts/SVN-Circular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: SVN-Circular-Bold;
+  font-style: normal;
+  font-weight: normal;
+  src: local('Cronos Pro'), url('../css/fonts/SVN-Circular-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Geometric-Slabserif-Bold;
+  font-style: normal;
+  font-weight: normal;
+  src: local('Cronos Pro'), url('../css/fonts/Geometric-Slabserif-712-Bold-BT.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Geometric-Slabserif-Medium;
+  font-style: normal;
+  font-weight: normal;
+  src: local('Cronos Pro'), url('../css/fonts/GEOSLAB703-MEDIUM.TTF') format('truetype');
+}

@@ -1,0 +1,11 @@
+uuid: eaae4be9-8588-49a1-a30d-409fa9918f31
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.case_study_landing_page_default
+label: 'Case Study Landing Page Default'
+description: 'Default view mode for case study landing page'
+targetEntityType: node
+cache: true

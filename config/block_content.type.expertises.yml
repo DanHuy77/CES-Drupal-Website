@@ -1,0 +1,8 @@
+uuid: eae1c6ed-fda1-4fb5-b8d2-400f9b2c3b8a
+langcode: en
+status: true
+dependencies: {  }
+id: expertises
+label: Expertises
+revision: false
+description: ''

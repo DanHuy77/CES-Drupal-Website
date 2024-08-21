@@ -1,0 +1,24 @@
+uuid: 572a56b6-e985-4cbd-8564-618e9e063255
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_testimonial_body
+    - filter.format.basic_html
+    - node.type.testimonial
+  module:
+    - text
+id: node.testimonial.field_testimonial_body
+field_name: field_testimonial_body
+entity_type: node
+bundle: testimonial
+label: 'Testimonial Body'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

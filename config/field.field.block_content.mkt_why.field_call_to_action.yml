@@ -1,0 +1,23 @@
+uuid: c83f3fb2-3e6a-427e-bf19-ab7d93b1af3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_why
+    - field.storage.block_content.field_call_to_action
+  module:
+    - link
+id: block_content.mkt_why.field_call_to_action
+field_name: field_call_to_action
+entity_type: block_content
+bundle: mkt_why
+label: 'Call To Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

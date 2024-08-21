@@ -1,0 +1,47 @@
+{% set footer_item_size = 3 %}
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      {% if page.footer_first %}
+        <div class="footer-column footer-logo">
+          {{ page.footer_first }}
+        </div>
+      {% endif %}
+      <div class="footer-links">
+        {% if page.footer_first %}
+          <div class="footer-column footer-logo-mobile">
+            {{ page.footer_first }}
+          </div>
+        {% endif %}
+        {% if page.footer_second %}
+          <div class="footer-column">
+            {{ page.footer_second }}
+          </div>
+        {% endif %}
+
+        {% if page.footer_third %}
+          <div class="footer-column">
+            {{ page.footer_third }}
+          </div>
+        {% endif %}
+
+        {% if page.footer_four %}
+          <div class="footer-column">
+            {{ page.footer_four }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if page.copyright %}
+      <div class="copyright-inner">
+        {{ page.copyright }}
+      </div>
+    {% endif %}
+    <a id="back-to-top" href="#" data-target="html" class="scroll-to-top">
+      <img alt="chevron" src="/themes/custom/ces/assets/icons/chevron-up-solid.svg"/>
+      <div class="hover-state">
+        <img alt="chevron" src="/themes/custom/ces/assets/icons/chevron-up-solid.svg"/>
+      </div>
+    </a>
+  </div>
+</footer>

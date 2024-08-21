@@ -1,0 +1,11 @@
+uuid: 2a544dcd-6ed2-4e07-bdad-0710fc31005f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.book_a_call
+id: block_content.book_a_call
+target_entity_type_id: block_content
+target_bundle: book_a_call
+default_langcode: site_default
+language_alterable: false

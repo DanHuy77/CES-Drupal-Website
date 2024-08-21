@@ -1,0 +1,24 @@
+uuid: 2eab96c3-adfc-4fc8-bd88-4cf0d86191f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.case_studies_page
+    - views.view.case_study_landing_page
+  module:
+    - views
+    - search_api_autocomplete
+id: case_study_landing_page
+label: 'Case Study Landing Page'
+index_id: case_studies_page
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:case_study_landing_page':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

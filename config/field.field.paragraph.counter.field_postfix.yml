@@ -1,0 +1,19 @@
+uuid: d3f95dc0-23a6-4c99-a093-e203003a693d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_postfix
+    - paragraphs.paragraphs_type.counter
+id: paragraph.counter.field_postfix
+field_name: field_postfix
+entity_type: paragraph
+bundle: counter
+label: Postfix
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

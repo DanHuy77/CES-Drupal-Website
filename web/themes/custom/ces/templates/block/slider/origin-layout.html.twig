@@ -1,0 +1,32 @@
+<div class="{{ container }}">
+  <div class="block-slider__wrap">
+    {% if title %}
+      <div class="block-slider__title">
+        {{ title }}
+      </div>
+    {% endif %}
+    <div class="block-slider__inner">
+      <div class="block-slider__content">
+        {% if body['#items'] is not empty %}
+          <div class="block-slider__body">
+            {{ body }}
+          </div>
+        {% endif %}
+        <div class="{{ content_class }}">
+          {{ content }}
+        </div>
+      </div>
+      <div class="{{ slidebar_class }}">
+        <span></span>
+      </div>
+      {% if team['#items'] is not empty %}
+        <div class="block-slider__team__btn__container">
+          <a href="/our-team" class="block-slider__team__btn" target="_blank" rel="alternate">
+            <span>SEE OUR TEAM</span>
+            <img class="right-chevron" src="/themes/custom/ces/assets/icons/right-chevron-white.png" alt="right arrow" loading="lazy"/>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

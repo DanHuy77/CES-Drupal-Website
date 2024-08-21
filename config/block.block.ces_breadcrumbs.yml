@@ -1,0 +1,22 @@
+uuid: 7524a1aa-bd61-4d95-bb8b-a1d333e076e4
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - ces
+_core:
+  default_config_hash: NjcxOBrPOiK5-38t56DwFBDVY4yer7YSlbRWXFuHe7A
+id: ces_breadcrumbs
+theme: ces
+region: header
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

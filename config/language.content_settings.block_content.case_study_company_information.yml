@@ -1,0 +1,11 @@
+uuid: 93afbdb2-be3f-460f-b910-96a062732eca
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study_company_information
+id: block_content.case_study_company_information
+target_entity_type_id: block_content
+target_bundle: case_study_company_information
+default_langcode: site_default
+language_alterable: false

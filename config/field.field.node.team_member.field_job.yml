@@ -1,0 +1,19 @@
+uuid: be6d939f-063b-4cec-b0c2-49daf3d5c633
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job
+    - node.type.team_member
+id: node.team_member.field_job
+field_name: field_job
+entity_type: node
+bundle: team_member
+label: Job
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

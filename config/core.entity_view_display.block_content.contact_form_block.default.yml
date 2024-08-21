@@ -1,0 +1,74 @@
+uuid: a50a1de8-ac3b-4050-916b-b0bcba1aaf57
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_block
+    - field.field.block_content.contact_form_block.field_body
+    - field.field.block_content.contact_form_block.field_company_contact
+    - field.field.block_content.contact_form_block.field_form
+    - field.field.block_content.contact_form_block.field_form_type
+    - field.field.block_content.contact_form_block.field_modal_container
+    - field.field.block_content.contact_form_block.field_title
+  module:
+    - entity_reference_revisions
+    - options
+    - text
+    - webform
+id: block_content.contact_form_block.default
+targetEntityType: block_content
+bundle: contact_form_block
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_company_contact:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_form:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_form_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_modal_container:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

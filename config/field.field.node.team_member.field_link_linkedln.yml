@@ -1,0 +1,19 @@
+uuid: 7f266d2c-fc4a-4cb6-97df-24c43eb49c3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_linkedln
+    - node.type.team_member
+id: node.team_member.field_link_linkedln
+field_name: field_link_linkedln
+entity_type: node
+bundle: team_member
+label: 'Link Linkedln'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

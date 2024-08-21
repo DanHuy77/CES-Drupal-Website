@@ -1,0 +1,169 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% set title = content.field_title['#items'].0.value %}
+{% set subtitle = content.field_subtitle['#items'].0.value %}
+{% set type = content.field_highlight_type['#items'].0.value %}
+<div{{attributes}}>
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block-container">
+      {% if type == 'default'%}
+        <div class="highlight">
+          <div class="row content-wrapper" style="background-color:#f5f5f5">
+            <div class="col-xl-6 col-12 col-md-12 left-wrapper">
+              <div class="column-inner">
+                <h2>
+                  <span class="title">{{title}}</span>
+                  <br>
+                  {{subtitle}}
+                </h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-12 col-md-12 right-wrapper">
+              <div class="row items">
+                {% for item in content.field_case_studies['#items']%}
+                  {% set highlight = item.entity %}
+                  {% set item_size = 12 / content.field_case_studies['#items']|length %}
+                  {% set name = highlight.title.value %}
+                  {% set image_url = highlight.field_study_image.0.entity|file_url %}
+                  {% set color = highlight.field_color.0.color %}
+                  {% set button_text = highlight.field_button_text.0.value %}
+                  {% set button_link = highlight.field_button_link.0.value %}
+                  {% set body = highlight.body.0.value|raw %}
+                  <div class="col-xl-{{ item_size }} col-{{ item_size }}">
+                    <div class="row item" style="background-color:{{color}}">
+                      <div class="col-xl-6 col-12 col-md-12 col-lg-6 column-inner-left">
+                        <div class="detail-wrapper">
+                          <div class="name">
+                            <h5>
+                              {{name}}
+                            </h5>
+                          </div>
+                          <div class="body">
+                            <p>
+                              {{ body|raw }}
+                            </p>
+                          </div>
+                          {% if button_text %}
+                            <div class="button-wrap">
+                              <div class="button-inner">
+                                <a class="btn" href="{{ button_link }}">
+                                  <span>{{ button_text }}</span>
+                                  <img class="right-chevron" src="/themes/custom/ces/assets/icons/right-chevron-primary.png" alt="right arrow" loading="lazy"/>
+                                </a>
+                              </div>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-12 col-md-12 col-lg-6 column-inner-right">
+                        <img class="image" alt="highlight" loading="lazy" src="{{image_url}}">
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="highlight-center" id="how-we-work-with-our-partners">
+          <div class="container">
+            <div class="row content-wrapper">
+              <div class="col-xl-12 col-12 col-md-12 left-wrapper">
+                <div class="column-inner">
+                  <h2>
+                    {% if title %}
+                      <span class="title">{{title}}</span>
+                    {% endif %}
+                    <br>
+                    {% if subtitle %}
+                      {{subtitle}}
+                    {% endif %}
+                  </h2>
+                </div>
+              </div>
+              <div class="col-xl-12 col-12 col-md-12 right-wrapper">
+                <div class="row items">
+                  {% for item in content.field_case_studies['#items']%}
+                    {% set highlight = item.entity %}
+                    {% set item_size = 12 / content.field_case_studies['#items']|length %}
+                    {% set name = highlight.title.value %}
+                    {% set image_url = highlight.field_study_image.0.entity|file_url %}
+                    {% set color = highlight.field_color.0.color %}
+                    {% set button_text = highlight.field_button_text.0.value %}
+                    {% set button_link = highlight.field_button_link.0.value %}
+                    {% set body = highlight.body.0.value|raw %}
+                    <div class="col-xl-{{ item_size }} col-12 col-md-6">
+                      <div class="row item" style="background-color:{{color}}">
+                        <div class="col-xl-6 col-12 col-md-12 col-lg-6 column-inner-left">
+                          <div class="detail-wrapper">
+                            <div class="name">
+                              {% if name %}
+                                <h4>
+                                  {{name}}
+                                </h4>
+                              {% endif %}
+                            </div>
+                            <div class="body">
+                              {% if body %}
+                                <p>
+                                  {{ body|raw }}
+                                </p>
+                              {% endif %}
+                            </div>
+                            {% if button_text %}
+                              <div class="button-wrap">
+                                <div class="button-inner">
+                                  <a class="btn" href="{{ button_link }}">
+                                    <span>{{ button_text }}</span>
+                                    <img class="right-chevron" src="/themes/custom/ces/assets/icons/right-chevron-primary.png" alt="right arrow" loading="lazy"/>
+                                  </a>
+                                </div>
+                              </div>
+                            {% endif %}
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-12 col-md-12 col-lg-6 column-inner-right">
+                          {% if image_url %}
+                            <img class="image" alt="highlight" loading="lazy" src="{{image_url}}">
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endblock %}
+</div>

@@ -1,0 +1,70 @@
+uuid: 8687a4b7-de93-49e1-9ad6-450518520113
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_text
+    - field.field.block_content.body_text.field_body_text
+    - field.field.block_content.body_text.field_direction
+    - field.field.block_content.body_text.field_exclude_padding
+    - field.field.block_content.body_text.field_testimonial
+    - field.field.block_content.body_text.field_title
+    - field.field.block_content.body_text.field_type
+  module:
+    - entity_reference_revisions
+    - options
+    - text
+id: block_content.body_text.default
+targetEntityType: block_content
+bundle: body_text
+mode: default
+content:
+  field_body_text:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_direction:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_exclude_padding:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_testimonial:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_block_title: true
+  langcode: true
+  search_api_excerpt: true

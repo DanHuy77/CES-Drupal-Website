@@ -1,0 +1,19 @@
+uuid: d3ce05fe-3a1b-4bae-971b-8aa5f25d203f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.homepage_hero
+    - field.storage.block_content.field_title_first_part
+id: block_content.homepage_hero.field_title_first_part
+field_name: field_title_first_part
+entity_type: block_content
+bundle: homepage_hero
+label: 'Title (First Part)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

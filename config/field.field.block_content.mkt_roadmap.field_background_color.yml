@@ -1,0 +1,25 @@
+uuid: ff7f6e84-6696-4ee9-848c-0a0abe5d08bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_roadmap
+    - field.storage.block_content.field_background_color
+  module:
+    - color_field
+id: block_content.mkt_roadmap.field_background_color
+field_name: field_background_color
+entity_type: block_content
+bundle: mkt_roadmap
+label: 'Background Color'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    color: '#ffffff'
+    opacity: null
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

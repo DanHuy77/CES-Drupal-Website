@@ -1,0 +1,30 @@
+uuid: 16fd203b-579b-4517-90a4-0c43c541408e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.storage.block_content.field_slider_title
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.plain_text
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.slider_block.field_slider_title
+field_name: field_slider_title
+entity_type: block_content
+bundle: slider_block
+label: 'Slider Title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - restricted_html
+    - full_html
+    - plain_text
+field_type: text

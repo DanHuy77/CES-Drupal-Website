@@ -1,0 +1,8 @@
+uuid: e6ec04ba-1061-4a7d-9a76-70d9eab88abf
+langcode: en
+status: true
+dependencies: {  }
+id: mkt_animated_image
+label: 'MKT - Animated Image'
+revision: 0
+description: ''

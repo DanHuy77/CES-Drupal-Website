@@ -1,0 +1,15 @@
+services:
+  Drupal\s3_aggregated_assets\S3ServiceProvider:
+    arguments: []
+
+  Drupal\s3_aggregated_assets\File\FileUrlGenerator:
+    public: false
+    decorates: file_url_generator
+    arguments:
+      - '@Drupal\s3_aggregated_assets\File\FileUrlGenerator.inner'
+      - '%app.root%'
+      - '@stream_wrapper_manager'
+      - '@module_handler'
+      - '@request_stack'
+      - '@private_key'
+      - '@Drupal\s3_aggregated_assets\S3ServiceProvider'

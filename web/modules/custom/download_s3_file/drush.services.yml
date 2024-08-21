@@ -1,0 +1,6 @@
+services:
+  download_s3_file.commands:
+    class: Drupal\download_s3_file\Commands\S3FileCommands
+    tags:
+      - { name: drush.command }
+      

@@ -1,0 +1,24 @@
+uuid: 6696a8ad-1571-4209-95fd-290f76874f05
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.our_team
+    - field.storage.block_content.field_title
+    - filter.format.plain_text
+  module:
+    - text
+id: block_content.our_team.field_title
+field_name: field_title
+entity_type: block_content
+bundle: our_team
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

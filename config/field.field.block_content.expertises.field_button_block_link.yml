@@ -1,0 +1,23 @@
+uuid: 9fcffa01-97be-4d60-ae68-b0bd889364c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.expertises
+    - field.storage.block_content.field_button_block_link
+  module:
+    - link
+id: block_content.expertises.field_button_block_link
+field_name: field_button_block_link
+entity_type: block_content
+bundle: expertises
+label: 'Button Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

@@ -1,0 +1,22 @@
+uuid: dca4722e-7a86-415e-b983-5038287783d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.case_study
+    - field.storage.block_content.field_color
+  module:
+    - color_field
+id: block_content.case_study.field_color
+field_name: field_color
+entity_type: block_content
+bundle: case_study
+label: Color
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

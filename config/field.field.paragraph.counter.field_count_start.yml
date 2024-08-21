@@ -1,0 +1,23 @@
+uuid: ec5118ac-447c-4133-bdb5-89137ebabc6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_count_start
+    - paragraphs.paragraphs_type.counter
+id: paragraph.counter.field_count_start
+field_name: field_count_start
+entity_type: paragraph
+bundle: counter
+label: 'Count Start'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

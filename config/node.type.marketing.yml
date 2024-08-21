@@ -1,0 +1,18 @@
+uuid: 4a42b6ed-6250-497e-835f-e3c63af4a614
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Marketing
+type: marketing
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

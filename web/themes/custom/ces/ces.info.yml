@@ -1,0 +1,16 @@
+name: Ces Website
+type: theme
+base theme: claro
+description: Ces Website theme.
+package: Custom
+core_version_requirement: ^10
+libraries:
+  - ces/global
+regions:
+  header: 'Header'
+  content: 'Main Content'
+  footer_first: 'Footer Fisrt'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'
+  footer_four: 'Footer Four'
+  copyright: 'Copyright'

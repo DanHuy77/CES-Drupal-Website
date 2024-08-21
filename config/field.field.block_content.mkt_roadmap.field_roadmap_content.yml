@@ -1,0 +1,46 @@
+uuid: 4d0e6f60-51de-4ff9-966a-be6e20168968
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_roadmap
+    - field.storage.block_content.field_roadmap_content
+    - paragraphs.paragraphs_type.roadmap
+  module:
+    - entity_reference_revisions
+id: block_content.mkt_roadmap.field_roadmap_content
+field_name: field_roadmap_content
+entity_type: block_content
+bundle: mkt_roadmap
+label: 'Roadmap Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      roadmap: roadmap
+    negate: 0
+    target_bundles_drag_drop:
+      basic:
+        weight: 7
+        enabled: false
+      company_contact:
+        weight: 8
+        enabled: false
+      counter:
+        weight: 9
+        enabled: false
+      representative:
+        weight: 10
+        enabled: false
+      roadmap:
+        weight: 11
+        enabled: true
+      value:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

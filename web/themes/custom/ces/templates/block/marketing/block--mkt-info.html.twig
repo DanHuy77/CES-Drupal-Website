@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+{% set classes = [
+  'block',
+  'block-' ~ configuration.provider|clean_class,
+  'block-' ~ plugin_id|clean_class,
+  'block-mkt-info'
+] %}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_suffix }}
+  {% block content %}
+    {% set title = content.field_title['#items'].0.value %}
+    {% set body = content.body['#items'].0.value %}
+    {% set button_link = content.field_button_block_link.0['#url'] %}
+    {% set button_title = content.field_button_block_link.0['#title'] %}
+    {% set image_url = content.field_image_content['#items'].entity|file_url %}
+    <div class="rectangle-background"></div>
+    <div class="mkt-info">
+      <div class="mkt-info__container">
+        <div class="mkt-info__content flex-fill{% if image_url is empty %} no-image{% endif %}">
+          <div class="text flex-fill">
+            {% if title is not empty %}
+              <div class="title">
+                {{ title }}
+              </div>
+            {% endif %}
+            {% if body is not empty %}
+              <div class="body">
+                {{ body|raw }}
+              </div>
+            {% endif %}
+          </div>
+          {% if button_link is not empty %}
+            <a href="{{ button_link }}" class="ces-btn" target="_blank" rel="noopener">
+              {{ button_title is not empty ? button_title : 'Learn more' }}
+            </a>
+          {% endif %}
+        </div>
+
+        {% if image_url is not empty %}
+          <img class="mkt-info__image" src="{{ image_url }}" alt="img-content" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+</div>

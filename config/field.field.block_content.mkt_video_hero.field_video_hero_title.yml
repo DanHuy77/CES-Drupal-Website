@@ -1,0 +1,26 @@
+uuid: 624a4deb-b813-4d9b-b1e0-0ba206fc6072
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_video_hero
+    - field.storage.block_content.field_video_hero_title
+    - filter.format.basic_html
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.mkt_video_hero.field_video_hero_title
+field_name: field_video_hero_title
+entity_type: block_content
+bundle: mkt_video_hero
+label: 'Video Hero Title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - restricted_html
+field_type: text_long

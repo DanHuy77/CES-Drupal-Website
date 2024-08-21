@@ -1,0 +1,84 @@
+.homepage-hero {
+  font-family: $font-geometric-slabserif-bold;
+  background-position-y: bottom;
+
+  &__inner {
+    padding: 200px 0;
+
+    .text-wrapper {
+      h1 {
+        margin-bottom: 0;
+        font-size: 64px;
+        line-height: 64px;
+      }
+    }
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .homepage-hero {
+    padding-left: $padding-tablet;
+
+    &__inner {
+      .row {
+        margin: 0;
+
+        .text-wrapper {
+          h1 {
+            font-size: 48px;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .homepage-hero {
+    padding-left: $padding-tablet;
+
+    &__inner {
+      padding: 100px 50px 100px 0;
+
+      .text-wrapper {
+        h1 {
+          font-size: 29px;
+          line-height: 29px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .homepage-hero {
+    padding-left: $padding-mobile;
+
+    &__inner {
+      padding: 124px 16px 64px 0;
+
+      .text-wrapper {
+        h1 {
+          font-size: 29px;
+          line-height: 29px;
+        }
+      }
+    }
+  }
+}
+
+// No other solutions are available so far.
+@media only screen and (max-width: 460px) {
+  .homepage-hero {
+    &__inner {
+      .text-wrapper {
+        br {
+          display: contents;
+        }
+      }
+    }
+  }
+}

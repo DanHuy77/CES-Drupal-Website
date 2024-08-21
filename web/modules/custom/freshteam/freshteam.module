@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Freshteam module.
+ */
+
+/**
+ * Implements hook_theme() for main pages.
+ */
+function freshteam_theme() {
+  return [
+    'jobs_list' => [
+      'template' => 'jobs-list',
+      'variables' => [
+        'data' => [],
+      ],
+    ],
+    'internship_opening_mail' => [
+      'template' => 'internship-opening-mail',
+      'variables' => [
+        'content' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_cron().
+ */
+function freshteam_cron() {
+
+  $jobsList = json_decode(\Drupal::service('freshteam.service')->getJobsList());
+
+  // Remove jobs that are not of the specified type or are deleted.
+  foreach ($jobsList as $key => $job) {
+    if ($job->type !== 'intern') {
+      unset($jobsList[$key]);
+    }
+    if ($job->deleted) {
+      unset($jobsList[$key]);
+    }
+  }
+
+  // Sends emails to internship applicants with a status of 0 (pending)
+  // and updates their status to 1 (sent).
+  if (!empty($jobsList)) {
+    $emails = \Drupal::service('freshteam.service')->getAllFieldByStatus('ces_entity_internship', 0, 'label');
+    foreach ($emails as $email) {
+      $result = \Drupal::service('freshteam.service')->sendMail($email);
+      if ($result == TRUE) {
+        \Drupal::service('freshteam.service')->updateStatusByEmail('ces_entity_internship', $email);
+      }
+    }
+  }
+
+  // Deletes internships for expired emails.
+  $emails_expired = \Drupal::service('freshteam.service')->getAllFieldByStatus('ces_entity_internship', 1, 'label');
+  foreach ($emails_expired as $email) {
+    \Drupal::service('freshteam.service')->deleteInternByEmail('ces_entity_internship', $email);
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function freshteam_mail($key, &$message, $params) {
+
+  $message['headers'] = [
+    'MIME-Version' => '1.0',
+    'Content-Type' => 'text/html; charset=UTF-8; format=flowed',
+    'Content-Transfer-Encoding' => '8Bit',
+    'X-Mailer' => 'Drupal',
+  ];
+
+  switch ($key) {
+    case 'internship_email':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = 'Exciting Internship Opportunities Now Open - Apply Today!';
+      $renderable = [
+        '#theme' => 'internship_opening_mail',
+        '#module' => 'freshteam',
+        '#content' => $params['jobs_list'],
+      ];
+      $body = \Drupal::service('renderer')->renderPlain($renderable);
+      $message['body'][] = $body;
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function freshteam_theme_suggestions_alter(array &$suggestions, array &$variables, $hook) {
+  if (!isset($variables['element']['#id'])) {
+    return;
+  }
+
+  if (in_array($hook, [
+    'form_element',
+  ]) && $variables['element']['#id'] === 'edit-freshteam-email') {
+    $suggestions[] = $hook . '__webform_textfield';
+  }
+}

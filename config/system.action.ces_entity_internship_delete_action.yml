@@ -1,0 +1,13 @@
+uuid: 8e710ace-5085-4a7e-b3eb-954408fa82d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - ces_entity
+_core:
+  default_config_hash: c-JR4pwVQAR3PnvC-Ezw5A0OFn7HeGKssGc5_ScUn7I
+id: ces_entity_internship_delete_action
+label: 'Delete internships'
+type: ces_entity_internship
+plugin: 'entity:delete_action:ces_entity_internship'
+configuration: {  }

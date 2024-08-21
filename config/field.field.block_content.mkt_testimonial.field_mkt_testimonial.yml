@@ -1,0 +1,29 @@
+uuid: 5289bbf7-1cfc-4c95-9046-2b55e641927e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mkt_testimonial
+    - field.storage.block_content.field_mkt_testimonial
+    - node.type.testimonial
+id: block_content.mkt_testimonial.field_mkt_testimonial
+field_name: field_mkt_testimonial
+entity_type: block_content
+bundle: mkt_testimonial
+label: Testimonial
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      testimonial: testimonial
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

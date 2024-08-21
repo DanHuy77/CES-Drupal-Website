@@ -1,0 +1,11 @@
+uuid: 3cb73d1e-6692-45ef-8415-a3ecdf2fef70
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.company_logo
+id: media.company_logo
+target_entity_type_id: media
+target_bundle: company_logo
+default_langcode: site_default
+language_alterable: false

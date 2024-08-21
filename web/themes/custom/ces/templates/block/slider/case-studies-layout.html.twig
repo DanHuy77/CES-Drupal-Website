@@ -1,0 +1,21 @@
+<div class="{{ container }}">
+  <div class="container g-0">
+    {% if title %}
+      <div class="block-slider__title case-studies">
+        {{ title }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="block-slider__case-studies-wrapper">
+    <div class="container g-0">
+      <div class="block-slider__content">
+        <div class="{{ content_class }}">
+          {{ content }}
+        </div>
+        <div class="{{ slidebar_class }}">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="expertise-technology">
+  <div class="container-fluid g-0">
+    <div class="row g-0">
+      <div class="col-xl-5 col-md-6 col-sm-12 col-lg-5">
+        <div class="column-inner">
+          {% if title %}
+            <h3>{{title}}</h3>
+          {% endif %}
+          {% if button_block_text %}
+            <a class="button-inner" href="#how-we-work-with-our-partners">
+              <span>{{ button_block_text }}</span>
+              <img class="right-chevron" src="/themes/custom/ces/assets/icons/right-chevron-white.png" alt="right arrow" loading="lazy"/>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-xl-7 col-md-6 col-sm-12 col-lg-7">
+        <div class="row g-0">
+          {% include '@ces/templates/expertise/content.html.twig' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

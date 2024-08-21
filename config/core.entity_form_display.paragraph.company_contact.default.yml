@@ -1,0 +1,33 @@
+uuid: d3327d9a-4f5c-4d15-b2ba-fa077b31a83b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.company_contact.field_ces_email
+    - field.field.paragraph.company_contact.field_ces_phone_number
+    - paragraphs.paragraphs_type.company_contact
+  module:
+    - telephone
+id: paragraph.company_contact.default
+targetEntityType: paragraph
+bundle: company_contact
+mode: default
+content:
+  field_ces_email:
+    type: email_default
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_ces_phone_number:
+    type: telephone_default
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,29 @@
+uuid: 9ce69a7c-bafc-409c-a638-ad2968330adf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.expertises
+    - field.storage.block_content.field_expertises
+    - node.type.expertise
+id: block_content.expertises.field_expertises
+field_name: field_expertises
+entity_type: block_content
+bundle: expertises
+label: Expertises
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      expertise: expertise
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

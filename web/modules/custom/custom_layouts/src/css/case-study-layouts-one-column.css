@@ -1,0 +1,106 @@
+.section-wrapper {
+  position: relative;
+  font-family: SVN-Circular, Arial, Helvetica, sans-serif;
+}
+
+.section-menu {
+  max-width: 22% !important;
+  height: 100%;
+  position: absolute;
+  padding: 40px 20px 0;
+  top: 0;
+  left: 0;
+}
+
+.section-menu .section-menu__inner {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0 80px 15%;
+  transition: top 0.2s ease;
+}
+
+.section-menu .section-menu__inner .section-anchors {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.section-menu .section-menu__inner .section-anchors .case-study-anchor {
+  margin-bottom: 6px;
+}
+
+.section-menu .section-menu__inner .section-anchors .case-study-anchor span {
+  color: #212121;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(transparent calc(100% - 1px), #212121 1px);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.section-menu .section-menu__inner .section-anchors .case-study-anchor:hover span {
+  color: #f15926;
+  background-image: linear-gradient(transparent calc(100% - 1px), #f15926 1px);
+  background-size: 0 100%;
+}
+
+.section-menu .section-menu__inner .section-anchors .case-study-anchor svg {
+  width: 0;
+  height: 15px;
+  transition: width 0.2s ease;
+  margin-bottom: 3px;
+}
+
+.section-menu .section-menu__inner .section-anchors .case-study-anchor.active span {
+  color: #f15926;
+  background-image: linear-gradient(transparent calc(100% - 1px), #f15926 1px);
+  background-size: 0 100%;
+  transform: translateX(15px);
+}
+
+.section-menu .section-menu__inner .section-anchors .case-study-anchor.active svg {
+  width: 15px;
+}
+
+.section-menu .section-menu__inner .form-button {
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  background: #f15926;
+  opacity: 1;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+  transition: opacity 0.2s ease;
+}
+
+.section-menu .section-menu__inner .form-button:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.section-menu .section-menu__inner .form-button span {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section-menu .section-menu__inner.header-menu-retracted {
+  top: 72px;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .section-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .section-menu {
+    left: calc((100% - 1700px) / 2);
+  }
+}

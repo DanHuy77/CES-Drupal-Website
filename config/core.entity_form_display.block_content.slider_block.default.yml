@@ -1,0 +1,91 @@
+uuid: b7bbabfe-da0c-4c0f-92f0-a10550b42b99
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider_block
+    - field.field.block_content.slider_block.body
+    - field.field.block_content.slider_block.field_case_studies_content
+    - field.field.block_content.slider_block.field_image_content
+    - field.field.block_content.slider_block.field_slider_title
+    - field.field.block_content.slider_block.field_team_content
+    - field.field.block_content.slider_block.field_testimonial_content
+  module:
+    - media_library
+    - text
+id: block_content.slider_block.default
+targetEntityType: block_content
+bundle: slider_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_case_studies_content:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_content:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_slider_title:
+    type: text_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_content:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_testimonial_content:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

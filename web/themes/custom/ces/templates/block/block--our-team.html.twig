@@ -1,0 +1,242 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{{ attach_library('ces/our_team') }}
+{{ attach_library('ces/leadership_team') }}
+
+{% set type = content.field_our_team_type['#items'].0.value %}
+{% set title = content.field_title['#items'].0.value %}
+<div{{attributes}} class="custom-block">
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block-container">
+      <div class="our-team container">
+        {% if type == 'executive' %}
+          <div class="row items">
+            <div class="col-xl-3 col-lg-4 wrapper">
+              <div class="scrolling column-inner sticky">
+                {% if title %}
+                  <h3>{{title}}</h3>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-xl-9 col-lg-8 wrapper">
+              <div class="column-inner">
+                {% for item in content.field_team_member['#items']%}
+                  {% set team_member = item.entity %}
+                  {% set id = team_member.id %}
+                  {% set name = team_member.title.value %}
+                  {% set body = team_member.body.0.value|raw %}
+                  {% set job = team_member.field_job.0.value %}
+                  {% set avatar = team_member.field_avatar.0.entity|file_url %}
+                  {% set link = team_member.field_link_linkedln.0.value %}
+                  {% set team = team_member.field_team.0.value %}
+
+                  {% if team == 'executive'%}
+                    <div id="{{id}}">
+                      <div class="row item">
+                        <div class="col-xl-4 col-md-6 col-lg-6 left-wrapper">
+                          {% if avatar %}
+                            <img class="avatar" alt="avatar" loading="lazy" src="{{avatar}}"/>
+                          {% endif %}
+                        </div>
+                        <div class="col-xl-8 col-md-6 col-lg-6 right-wrapper">
+                          <div>
+                            {% if name %}
+                              <h3>{{name}}</h3>
+                            {% endif %}
+                          </div>
+                          <div class="personal-info">
+                            {% if job %}
+                              <span class="job">{{job}}</span>
+                            {% endif %}
+                            {% if link %}
+                              <span class="social-link">
+                                <a href="{{link}}" target="_blank" rel="noopener noreferrer" rel="noopener">linkedin</a>
+                              </span>
+                            {% endif %}
+                          </div>
+                          {% if body %}
+                            <div class="body">
+                              <p>{{body|striptags}}</p>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% elseif type == 'leadership' %}
+          <div class="row items leadership">
+            <div class="col-xl-3 col-12 col-md-12 col-lg-4 wrapper">
+              <div class="scrolling column-inner sticky leadership">
+                {% if title %}
+                  <h3>{{title}}</h3>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-xl-9 col-12 col-md-12 col-lg-8 wrapper-leadership">
+              <div class="column-inner">
+                <div class="row items-leadership">
+                  {% for item in content.field_team_member['#items']%}
+                    {% set team_member = item.entity %}
+                    {% set id = team_member.id %}
+                    {% set name = team_member.title.value %}
+                    {% set body = team_member.body.0.value|raw %}
+                    {% set job = team_member.field_job.0.value %}
+                    {% set avatar = team_member.field_avatar.0.entity|file_url %}
+                    {% set link = team_member.field_link_linkedln.0.value %}
+                    {% set info = team_member.field_info %}
+                    <div class="col-xl-4 col-12 col-md-6 col-lg-4 item">
+                      <div id="{{id}}" class="item-wrapper">
+                        <div>
+                          {% if avatar %}
+                            <img class="avatar" alt="avatar" loading="lazy" src="{{avatar}}"/>
+                          {% endif %}
+                          <div class="team-link-control">
+                            <div class="info">
+                              <div>
+                                {% if name %}
+                                  <h3 class="name">{{name}}</h3>
+                                {% endif %}
+                              </div>
+                              <div class="job">
+                                {% if job %}
+                                  <span>{{job}}</span>
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% if body %}
+                        <div class="content-top hidden">
+                          <img alt="triangle-up-svgrepo" loading="lazy" src="/themes/custom/ces/images/icons/triangle-up-svgrepo.svg"/>
+                        </div>
+                        <div id="grid-show-{{id}}" class="grid-show hidden">
+                          <div class="grid-expanded-content">
+                            <div class="grid-navigation-close"></div>
+                            <div class="personal-details">
+                              <div class="content-scrollbar">
+                                <div class="text">
+                                  {% if body %}
+                                    <p>{{body|striptags}}</p>
+                                  {% endif %}
+                                </div>
+                                <div class="block-images">
+                                  {% if info is iterable %}
+                                    {% for item in info %}
+                                      <div class="image-item">
+                                        <img alt="our-team" loading="lazy" src="{{ item.entity|file_url }}"/>
+                                      </div>
+                                    {% endfor %}
+                                  {% endif %}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="personal-contact-info">
+                              {% if link %}
+                                <div class="social-icons">
+                                  <a href="{{ link }}" target="_blank" rel="noopener">
+                                    <div class="linkedin">
+                                      <img alt="linkedin" class="fa-linkedin" src='/themes/custom/ces/assets/icons/linkedin.svg'/>
+                                    </div>
+                                  </a>
+                                </div>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="staff">
+            <div class="title text-center">
+              {% if title%}
+                <h2>{{title|raw}}</h2>
+              {% endif %}
+            </div>
+            <div class="container">
+              <div class="staff-items row">
+                {% for item in content.field_team_member['#items']%}
+                  {% set team_member = item.entity %}
+                  {% set name = team_member.title.value %}
+                  {% set body = team_member.body.0.value|raw %}
+                  {% set job = team_member.field_job.0.value %}
+                  {% set avatar = team_member.field_avatar.0.entity|file_url %}
+                  {% set link = team_member.field_link_linkedln.0.value %}
+                  {% set team = team_member.field_team.0.value %}
+                  {% if team == 'staff'%}
+                    <div id="{{id}}" class="col-xl-6 col-12 col-md-6 col-lg-12 item">
+                      <div class="row inner">
+                        <div class="col-xl-7 col-12 col-lg-8 left-wrapper">
+                          <div class="info">
+                            <div class="body">
+                              {% if body %}
+                                <p>{{body|striptags}}</p>
+                              {% endif %}
+                            </div>
+                            <div class="info-inner">
+                              {% if name %}
+                                <h6 class="name">{{name}}</h6>
+                              {% endif %}
+                              {% if job %}
+                                <div class="job">
+                                  <p>{{job}}</p>
+                                </div>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-5 col-12 col-lg-4 right-wrapper">
+                          {% if avatar %}
+                            <div class="avatar">
+                              <img loading="lazy" alt="avatar" src="{{avatar}}"/>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+</div>

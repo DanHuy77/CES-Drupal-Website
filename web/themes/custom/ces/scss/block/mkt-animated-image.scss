@@ -1,0 +1,41 @@
+.block-mkt-animated {
+  background-color: #f2f2f2;
+}
+
+.mkt-animated {
+  max-width: 1400px;
+  padding: 50px 40px 20px;
+  margin: auto;
+
+  &__wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 16px;
+    }
+  }
+}
+
+// Tablet 768px -> 991px.
+@include media-breakpoint-between(md, lg) {
+  .mkt-animated {
+    padding: 40px 48px 20px;
+  }
+}
+
+// Mobile < 767 px.
+@include media-breakpoint-down(md) {
+  .mkt-animated {
+    padding: 16px;
+  }
+}
+
+// Desktop 992px -> 1199px.
+@include media-breakpoint-between(lg, xl) {
+  .mkt-animated {
+    padding: 40px 48px 20px;
+  }
+}

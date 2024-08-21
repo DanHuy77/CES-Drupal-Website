@@ -1,0 +1,32 @@
+uuid: 10a43f7a-1b52-46fc-931b-44065ad44cc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.company_logo.field_media_image_1
+    - image.style.large
+    - media.type.company_logo
+  module:
+    - image
+id: media.company_logo.default
+targetEntityType: media
+bundle: company_logo
+mode: default
+content:
+  field_media_image_1:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
